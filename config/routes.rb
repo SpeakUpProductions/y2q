@@ -1,6 +1,6 @@
 Y2q::Application.routes.draw do
   resources :tests
-
+  root to: "tests#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
