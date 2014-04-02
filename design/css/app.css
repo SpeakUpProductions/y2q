@@ -1,0 +1,116 @@
+div.row div.columns{
+  /*border: 1px solid #333;*/
+}
+
+/* HOME PAGE */
+.choicesHeader{
+	padding-bottom:20px;
+}
+
+.giveHeader{
+	margin-bottom:20px;
+	margin-top:20px;
+}
+
+div.columns{
+	text-align:center;
+}
+
+span.subtext{
+	font-size:.5em;
+}
+
+.button{
+	background-color:black;
+}
+
+div.choices .button{
+	text-transform:uppercase;
+	box-shadow:2px 2px 1px #888888;
+	border:1px solid white;
+}
+
+div.choices{
+  background-color:#66C266;
+}
+
+select.scrunch{
+	margin-bottom: 5px;
+}
+
+span.subLink{
+	font-size:.75em;
+	color:white;
+	text-transform:none;
+}
+
+div.quoteImage{
+	text-align:center;
+	vertical-align:middle;
+	padding-top:80px;
+}
+
+span.quote{
+	font-size:1em;
+	font-style:italic;
+	color:white;
+	text-transform:none;
+}
+
+span.quoteSignature{
+	font-size:.75em;
+	font-style:italic;
+	color:white;
+}
+
+/* RESULTS PAGE */
+.message{
+	background-color:#ccc;
+	padding-top:30px;
+	padding-left:30px;
+}
+
+.resultsButton{
+	background-color:#66C266;
+	text-transform:uppercase;
+	box-shadow:2px 2px 1px #888888;
+	border:1px solid white;
+}
+
+
+/* GENERIC*/
+.white{
+	color:white;
+}
+
+.caps{
+	text-transform:uppercase;
+}
+
+.bold{
+	font-weight:bold;
+}
+
+.headerShadow{
+	text-shadow:2px 2px #000;
+}
+
+div.footer{
+	height:80px;
+	background-color:black;
+	margin-top:30px;
+}
+
+div.footer div.columns{
+	font-size:.75em;
+	text-align:left;
+	margin:30px;
+}
+
+/* TEMP STYLES */
+div.quoteImage{
+  height:250px;
+  background-color:#000;
+}
+
+
