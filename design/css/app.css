@@ -34,8 +34,9 @@ div.choices{
   background-color:#8cc63e;
 }
 
-select.scrunch{
+.questionSelect{
 	margin-bottom: 5px;
+	margin-top: 10px;
 }
 
 span.subLink{
@@ -61,6 +62,12 @@ span.quoteSignature{
 	font-size:.75em;
 	font-style:italic;
 	color:white;
+	display:block;
+	margin-top:20px;
+}
+
+.question{
+	margin-bottom:10px;
 }
 
 /* RESULTS PAGE */
