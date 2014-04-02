@@ -31,7 +31,7 @@ div.choices .button{
 }
 
 div.choices{
-  background-color:#66C266;
+  background-color:#8cc63e;
 }
 
 select.scrunch{
@@ -71,7 +71,7 @@ span.quoteSignature{
 }
 
 .resultsButton{
-	background-color:#66C266;
+	background-color:#8cc63e;
 	text-transform:uppercase;
 	box-shadow:2px 2px 1px #888888;
 	border:1px solid white;
