@@ -89,19 +89,22 @@ div.choices{
 
 .subLink{
 	font-size:.75em;
-	text-transform:none;
 }
 
 .quoteImage{
 	text-align:center;
 	vertical-align:middle;
 	padding-top:80px;
+	background-image:url("file:///Users/eric.neunaber/Documents/Projects/y2q-github/design/images/city.jpg");
+	background-repeat:no-repeat;
+	background-position:center center;
+	height:250px;
+  	background-color:#000;
 }
 
 .quote{
 	font-size:1em;
 	font-style:italic;
-	text-transform:none;
 }
 
 .quoteSignature{
@@ -151,12 +154,4 @@ div.footer div.columns{
 	text-align:left;
 	margin:30px;
 }
-
-
-/* TEMP STYLES */
-div.quoteImage{
-  height:250px;
-  background-color:#000;
-}
-
 
