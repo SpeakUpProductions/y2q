@@ -37,7 +37,20 @@
 	color:#333;
 }
 
+/* MENEU */
+.logo{
+	height:40px;
+}
+
+.top-bar-section ul li a{
+	text-transform:uppercase;
+}
+
 /* MISC */
+.center{
+	text-align:center;
+}
+
 .block{
 	display:block;
 }
@@ -49,10 +62,6 @@
 .giveHeader{
 	margin-bottom:20px;
 	margin-top:20px;
-}
-
-div.columns{
-	text-align:center;
 }
 
 .blackButton{
@@ -117,6 +126,9 @@ div.choices{
 	padding-left:30px;
 }
 
+.message p{
+	font-size:.8em;
+}
 .resultsButton{
 	box-shadow:2px 2px 1px #888888;
 	border:1px solid white;
