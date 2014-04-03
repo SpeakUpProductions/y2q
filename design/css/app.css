@@ -1,5 +1,43 @@
 
-/* HOME PAGE */
+/* FONTS */
+.thickFont{
+	font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
+}
+
+.thinFont{
+	font-family: 'Open Sans', Verdana, Arial, sans-serif;
+}
+
+.caps{
+	text-transform:uppercase;
+}
+
+.bold{
+	font-weight:bold;
+}
+
+.subtext{
+	font-size:.75em;
+}
+
+/* COLORS */
+.white{
+	color:white;
+}
+
+.lightGray{		
+	color:#888;
+}
+
+.medGray{
+	color:#666;
+}
+
+.mainGray{
+	color:#333;
+}
+
+/* MISC */
 .choicesHeader{
 	padding-bottom:20px;
 }
@@ -11,10 +49,6 @@
 
 div.columns{
 	text-align:center;
-}
-
-span.subtext{
-	font-size:.75em;
 }
 
 .button{
@@ -36,29 +70,26 @@ div.choices{
 	margin-top: 10px;
 }
 
-span.subLink{
+.subLink{
 	font-size:.75em;
-	color:white;
 	text-transform:none;
 }
 
-div.quoteImage{
+.quoteImage{
 	text-align:center;
 	vertical-align:middle;
 	padding-top:80px;
 }
 
-span.quote{
+.quote{
 	font-size:1em;
 	font-style:italic;
-	color:white;
 	text-transform:none;
 }
 
-span.quoteSignature{
+.quoteSignature{
 	font-size:.75em;
 	font-style:italic;
-	color:white;
 	display:block;
 	margin-top:20px;
 }
@@ -81,24 +112,12 @@ span.quoteSignature{
 	border:1px solid white;
 }
 
-
-/* GENERIC*/
-.white{
-	color:white;
-}
-
-.caps{
-	text-transform:uppercase;
-}
-
-.bold{
-	font-weight:bold;
-}
-
 .headerShadow{
 	text-shadow:2px 2px #000;
 }
 
+
+/* MISC */
 div.footer{
 	height:80px;
 	background-color:black;
@@ -106,15 +125,11 @@ div.footer{
 }
 
 div.footer div.columns{
-	font-size:.75em;
+	font-size:.50em;
 	text-align:left;
 	margin:30px;
 }
 
-.standardFont{
-	font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
-	color: #888;
-}
 
 /* TEMP STYLES */
 div.quoteImage{
