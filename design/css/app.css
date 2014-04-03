@@ -38,6 +38,10 @@
 }
 
 /* MISC */
+.block{
+	display:block;
+}
+
 .choicesHeader{
 	padding-bottom:20px;
 }
@@ -100,6 +104,10 @@ div.choices{
 
 .question{
 	margin-bottom:10px;
+}
+
+.social img{
+	display:inline;
 }
 
 /* RESULTS PAGE */
