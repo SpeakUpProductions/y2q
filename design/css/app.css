@@ -39,7 +39,7 @@
 
 /* MENU */
 .logo{
-	height:40px;
+	height:35px;
 }
 
 .top-bar-section ul li a{
@@ -80,7 +80,7 @@ div.choices .button{
 
 div.choices{
   background-color:#8cc63e;
-  margin-top:-10px;
+  margin-top:-16px;
 }
 
 .questionSelect{
@@ -117,6 +117,7 @@ div.choices{
 
 .question{
 	margin-bottom:10px;
+	font-size:1.30em;
 }
 
 .social img{
@@ -143,7 +144,7 @@ div.choices{
 }
 
 
-/* MISC */
+/* FOOTER */
 div.footer{
 	height:80px;
 	background-color:black;
@@ -153,6 +154,5 @@ div.footer{
 div.footer div.columns{
 	font-size:.50em;
 	text-align:left;
-	margin:30px;
+	margin-top:30px;
 }
-
