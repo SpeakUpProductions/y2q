@@ -51,8 +51,12 @@ div.columns{
 	text-align:center;
 }
 
-.button{
+.blackButton{
 	background-color:black;
+}
+
+.greenButton{
+	background-color:#8cc63e;
 }
 
 div.choices .button{
@@ -106,8 +110,6 @@ div.choices{
 }
 
 .resultsButton{
-	background-color:#8cc63e;
-	text-transform:uppercase;
 	box-shadow:2px 2px 1px #888888;
 	border:1px solid white;
 }
