@@ -25,6 +25,10 @@
 	color:white;
 }
 
+.black{
+	color:black;
+}
+
 .lightGray{		
 	color:#888;
 }
@@ -37,6 +41,14 @@
 	color:#333;
 }
 
+.lightGreen{
+	color:#dcecc4;
+}
+
+.mainGreen{
+	color:#8cc63e;
+}
+
 /* MENU */
 .logo{
 	height:35px;
@@ -47,6 +59,12 @@
 }
 
 /* MISC */
+span.external{
+	background-image:url(../images/externalsite-11x11.png);
+	height:11px;
+	width:11px;
+}
+
 .center{
 	text-align:center;
 }
@@ -70,6 +88,20 @@
 
 .greenButton{
 	background-color:#8cc63e;
+}
+
+.buttonText{
+	font-size:.80em;
+}
+
+.submitText{
+	margin-top:5px;
+}
+
+.largeNumber{
+	font-size:2em;
+	display:block;
+	float:left;
 }
 
 div.choices .button{
@@ -96,7 +128,7 @@ div.choices{
 	text-align:center;
 	vertical-align:middle;
 	padding-top:80px;
-	background-image:url("file:///Users/eric.neunaber/Documents/Projects/y2q-github/design/images/city.jpg");
+	background-image:url(../images/city.jpg);
 	background-repeat:no-repeat;
 	background-position:center center;
 	height:250px;
@@ -129,6 +161,7 @@ div.choices{
 	background-color:#ccc;
 	padding-top:30px;
 	padding-left:30px;
+	margin-bottom:20px;
 }
 
 .message p{
@@ -140,7 +173,7 @@ div.choices{
 }
 
 .headerShadow{
-	text-shadow:1px 1px #000;
+	text-shadow:1px 2px #000;
 }
 
 
