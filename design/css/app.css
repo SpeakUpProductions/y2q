@@ -190,7 +190,36 @@ div.choices{
 }
 
 .video-grid{
-	margin-top: 30px;
+	margin-top:15px;
+}
+
+/* MY2Q PAGE */
+.bio{
+	list-style:none;
+	margin-left:0px;
+	margin-top:15px;
+	margin-bottom:25px;
+	background-color:#ccc;
+	height:100%;
+	width:100%;
+}
+
+.bio-category{
+	font-size:.75em;
+	background-color:#ccc;
+	height:100%;
+	width:50%;
+	text-align:right;
+	font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
+	border-bottom: 1px solid white;
+}
+
+.bio-details{
+	font-size:.75em;
+	background-color:#ddd;
+	height:100%;
+	width:50%;
+	font-family: 'Open Sans', Verdana, Arial, sans-serif;
 }
 
 /* FOOTER */
