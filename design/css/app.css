@@ -59,10 +59,10 @@
 }
 
 /* MISC */
-span.external{
-	background-image:url(../images/externalsite-11x11.png);
+.external{
 	height:11px;
 	width:11px;
+	margin-left:3px;
 }
 
 .center{
