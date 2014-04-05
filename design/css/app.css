@@ -73,13 +73,12 @@
 	display:block;
 }
 
-.choices-header{
-	padding-bottom:20px;
+.minus-10{
+	margin-top: -10px;
 }
 
-.give-header{
-	margin-bottom:20px;
-	margin-top:20px;
+.minus-20{
+	margin-top: -20px;
 }
 
 .black-button{
@@ -88,6 +87,16 @@
 
 .green-button{
 	background-color:#8cc63e;
+}
+
+/* HOME PAGE */
+.choices-header{
+	padding-bottom:20px;
+}
+
+.give-header{
+	margin-bottom:20px;
+	margin-top:20px;
 }
 
 .button-text{
@@ -220,6 +229,12 @@ div.choices{
 	height:100%;
 	width:50%;
 	font-family: 'Open Sans', Verdana, Arial, sans-serif;
+}
+
+.bio-button{
+	width:100%;
+	box-shadow:2px 2px 1px #888888;
+	border:1px solid white;
 }
 
 /* FOOTER */
