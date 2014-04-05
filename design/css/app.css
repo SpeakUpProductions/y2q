@@ -1,10 +1,10 @@
 
 /* FONTS */
-.thickFont{
+.thick-font{
 	font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
 }
 
-.thinFont{
+.thin-font{
 	font-family: 'Open Sans', Verdana, Arial, sans-serif;
 }
 
@@ -29,23 +29,23 @@
 	color:black;
 }
 
-.lightGray{		
+.light-gray{		
 	color:#888;
 }
 
-.medGray{
+.med-gray{
 	color:#666;
 }
 
-.mainGray{
+.main-gray{
 	color:#333;
 }
 
-.lightGreen{
+.light-green{
 	color:#dcecc4;
 }
 
-.mainGreen{
+.main-green{
 	color:#8cc63e;
 }
 
@@ -73,32 +73,32 @@
 	display:block;
 }
 
-.choicesHeader{
+.choices-header{
 	padding-bottom:20px;
 }
 
-.giveHeader{
+.give-header{
 	margin-bottom:20px;
 	margin-top:20px;
 }
 
-.blackButton{
+.black-button{
 	background-color:black;
 }
 
-.greenButton{
+.green-button{
 	background-color:#8cc63e;
 }
 
-.buttonText{
+.button-text{
 	font-size:.80em;
 }
 
-.submitText{
+.submit-text{
 	margin-top:5px;
 }
 
-.largeNumber{
+.large-number{
 	font-size:2em;
 	display:block;
 	float:left;
@@ -115,7 +115,7 @@ div.choices{
   margin-top:-16px;
 }
 
-.questionSelect{
+.question-select{
 	margin-bottom: 5px;
 	margin-top: 10px;
 }
@@ -124,7 +124,7 @@ div.choices{
 	font-size:.75em;
 }
 
-.quoteImage{
+.quote-image{
 	text-align:center;
 	vertical-align:middle;
 	padding-top:80px;
@@ -140,7 +140,7 @@ div.choices{
 	font-style:italic;
 }
 
-.quoteSignature{
+.quote-signature{
 	font-size:.75em;
 	font-style:italic;
 	display:block;
@@ -168,28 +168,28 @@ div.choices{
 .message p{
 	font-size:.8em;
 }
-.resultsButton{
+.results-button{
 	box-shadow:2px 2px 1px #888888;
 	border:1px solid white;
 }
 
-.headerShadow{
+.header-shadow{
 	text-shadow:1px 2px #000;
 }
 
-.whatLists{
+.what-lists{
 	list-style:none;
 	margin-left:0px;
 	margin-top:15px;
 	margin-bottom:25px;
 }
 
-.whatLists li{
+.what-lists li{
 	background-color:#dcecc4;
 	height:25px;
 }
 
-.videoGrid{
+.video-grid{
 	margin-top: 30px;
 }
 
