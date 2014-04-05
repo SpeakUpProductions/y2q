@@ -177,6 +177,16 @@ div.choices{
 	text-shadow:1px 2px #000;
 }
 
+.whatLists{
+	list-style:none;
+	margin-left:0px;
+}
+
+.whatLists li{
+	background-color:#dcecc4;
+	height:25px;
+}
+
 
 /* FOOTER */
 div.footer{
