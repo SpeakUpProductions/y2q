@@ -1,0 +1,253 @@
+
+/* FONTS */
+.thick-font{
+	font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
+}
+
+.thin-font{
+	font-family: 'Open Sans', Verdana, Arial, sans-serif;
+}
+
+.caps{
+	text-transform:uppercase;
+}
+
+.bold{
+	font-weight:bold;
+}
+
+.subtext{
+	font-size:.75em;
+}
+
+/* COLORS */
+.white{
+	color:white;
+}
+
+.black{
+	color:black;
+}
+
+.light-gray{		
+	color:#888;
+}
+
+.med-gray{
+	color:#666;
+}
+
+.main-gray{
+	color:#333;
+}
+
+.light-green{
+	color:#dcecc4;
+}
+
+.main-green{
+	color:#8cc63e;
+}
+
+/* MENU */
+.logo{
+	height:35px;
+}
+
+.top-bar-section ul li a{
+	text-transform:uppercase;
+}
+
+/* MISC */
+.external{
+	height:11px;
+	width:11px;
+	margin-left:3px;
+}
+
+.center{
+	text-align:center;
+}
+
+.block{
+	display:block;
+}
+
+.minus-10{
+	margin-top: -10px;
+}
+
+.minus-20{
+	margin-top: -20px;
+}
+
+.black-button{
+	background-color:black;
+}
+
+.green-button{
+	background-color:#8cc63e;
+}
+
+/* HOME PAGE */
+.choices-header{
+	padding-bottom:20px;
+}
+
+.give-header{
+	margin-bottom:20px;
+	margin-top:20px;
+}
+
+.button-text{
+	font-size:.80em;
+}
+
+.submit-text{
+	margin-top:5px;
+}
+
+.large-number{
+	font-size:2em;
+	display:block;
+	float:left;
+}
+
+div.choices .button{
+	text-transform:uppercase;
+	box-shadow:2px 2px 1px #888888;
+	border:1px solid white;
+}
+
+div.choices{
+  background-color:#8cc63e;
+  margin-top:-16px;
+}
+
+.question-select{
+	margin-bottom: 5px;
+	margin-top: 10px;
+}
+
+.subLink{
+	font-size:.75em;
+}
+
+.quote-image{
+	text-align:center;
+	vertical-align:middle;
+	padding-top:80px;
+	background-image:url(../images/city.jpg);
+	background-repeat:no-repeat;
+	background-position:center center;
+	height:250px;
+  	background-color:#000;
+}
+
+.quote{
+	font-size:1em;
+	font-style:italic;
+}
+
+.quote-signature{
+	font-size:.75em;
+	font-style:italic;
+	display:block;
+	margin-top:20px;
+}
+
+.question{
+	margin-bottom:10px;
+	font-size:1.30em;
+}
+
+.social img{
+	display:inline;
+}
+
+/* RESULTS PAGE */
+.message{
+	background-color:#ccc;
+	padding-top:30px;
+	padding-left:30px;
+	margin-bottom:20px;
+	box-shadow:2px 2px 1px #888888;
+}
+
+.message p{
+	font-size:.8em;
+}
+.results-button{
+	box-shadow:2px 2px 1px #888888;
+	border:1px solid white;
+}
+
+.header-shadow{
+	text-shadow:1px 2px #000;
+}
+
+.what-lists{
+	list-style:none;
+	margin-left:0px;
+	margin-top:15px;
+	margin-bottom:25px;
+}
+
+.what-lists li{
+	background-color:#dcecc4;
+	height:25px;
+}
+
+.video-grid{
+	margin-top:15px;
+}
+
+/* MY2Q PAGE */
+.bio{
+	list-style:none;
+	margin-left:0px;
+	margin-top:15px;
+	margin-bottom:25px;
+	background-color:#ccc;
+	height:100%;
+	width:100%;
+}
+
+.bio-category{
+	font-size:.75em;
+	background-color:#ccc;
+	height:100%;
+	width:50%;
+	text-align:right;
+	font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
+	border-bottom: 1px solid white;
+}
+
+.bio-details{
+	font-size:.75em;
+	background-color:#ddd;
+	height:100%;
+	width:50%;
+	font-family: 'Open Sans', Verdana, Arial, sans-serif;
+}
+
+.bio-button{
+	width:100%;
+	box-shadow:2px 2px 1px #888888;
+	border:1px solid white;
+}
+
+/* BIO FORM PAGE */
+
+/* FOOTER */
+div.footer{
+	height:80px;
+	background-color:black;
+	margin-top:30px;
+}
+
+div.footer div.columns{
+	font-size:.50em;
+	text-align:left;
+	margin-top:30px;
+}
