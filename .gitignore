@@ -17,3 +17,7 @@
 
 # Ignore database.yml file
 database.yml
+
+# Ignore files with sensitive info
+.secret
+.env*
