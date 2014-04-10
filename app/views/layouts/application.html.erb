@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,10 +9,48 @@
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "fonts" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
+    <div class="row">
+      <div class="contain-to-grid">
+        <nav class="top-bar" data-topbar>
+          <ul class="title-area">
+            <li class="name">
+              <h1><a href="#">
+                <img src="images/logo.png" class="logo">
+              </a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon">
+              <a href="#">Menu</a>
+            </li>
+          </ul>
+
+          <section class="top-bar-section">
+            <ul class="left">
+              <li>
+                <a href="#">home</a>
+              </li>
+              <li>
+                <a href="#">about</a>
+              </li>
+              <li>
+                <a href="#">resources</a>
+              </li>
+              <li>
+                <a href="#">videos</a>
+              </li>
+              <li>
+                <a href="#">my2q</a>
+              </li>
+            </ul>
+          </section>
+        </nav>
+      </div>
+    </div>
+
     <% if user_signed_in? %>
       Signed in as <%= current_user.name %>. Not you?
       <%= link_to "Sign out", destroy_user_session_path,:method => :delete %>
@@ -23,5 +62,6 @@
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
+
   </body>
 </html>
