@@ -27,9 +27,11 @@
     <li>
       <a href="#">videos</a>
     </li>
+    <% if user_signed_in? %>
     <li>
-      <a href="#">my2q</a>
+      <%= link_to 'my2q', profile_path %>
     </li>
+    <% end %>
     </ul>
     <ul class="right">
     <li>
