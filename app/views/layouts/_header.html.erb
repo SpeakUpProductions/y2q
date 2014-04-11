@@ -1,46 +1,47 @@
-<div class="contain-to-grid">
-  <nav class="top-bar" data-topbar>
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="#">
-          <%= image_tag "logo.png", class: "logo" %>
-        </a></h1>
-      </li>
-      <li class="toggle-topbar menu-icon">
-        <a href="#">Menu</a>
-      </li>
-    </ul>
+<div class="row">
+	<div class="contain-to-grid">
+	  <nav class="top-bar" data-topbar>
+		<ul class="title-area">
+		  <li class="name">
+			<h1><a href="#">
+			  <%= image_tag "logo.png", class: "logo" %>
+			</a></h1>
+		  </li>
+		  <li class="toggle-topbar menu-icon">
+			<a href="#">Menu</a>
+		  </li>
+		</ul>
 
-    <section class="top-bar-section">
-      <ul class="left">
-        <li>
-          <a href="#">home</a>
-        </li>
-        <li>
-          <a href="#">about</a>
-        </li>
-        <li>
-          <a href="#">resources</a>
-        </li>
-        <li>
-          <a href="#">videos</a>
-        </li>
-        <li>
-          <a href="#">my2q</a>
-        </li>
-      </ul>
-      <ul class="right">
-        <li>
-          <% if user_signed_in? %>
-            <%= link_to "Logout", destroy_user_session_path,:method => :delete %>
-          <% else %>
-            <%= link_to "Login", new_user_session_path %>
-          <% end %>
-        </li>
-      </ul>
-    </section>
-  </nav>
+		<section class="top-bar-section">
+		  <ul class="left">
+			<li>
+			  <a href="#">home</a>
+			</li>
+			<li>
+			  <a href="#">about</a>
+			</li>
+			<li>
+			  <a href="#">resources</a>
+			</li>
+			<li>
+			  <a href="#">videos</a>
+			</li>
+			<li>
+			  <a href="#">my2q</a>
+			</li>
+		  </ul>
+		  <ul class="right">
+			<li>
+			  <% if user_signed_in? %>
+				<%= link_to "Logout", destroy_user_session_path,:method => :delete %>
+			  <% else %>
+				<%= link_to "Login", new_user_session_path %>
+			  <% end %>
+			</li>
+		  </ul>
+		</section>
+	  </nav>
+	</div>
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
 </div>
-
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>

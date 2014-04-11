@@ -14,12 +14,8 @@
   </head>
 
   <body>
-	<div class="row">
-	  <%= render "/layouts/header" %>
-    </div>
-    <div class="row">
-      <%= yield %>
-    </div>
+    <%= render "/layouts/header" %>
+    <%= yield %>
     <%= javascript_include_tag "application" %>
 
   </body>
