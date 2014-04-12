@@ -277,3 +277,35 @@ div.footer div.columns{
 	margin-top:30px;
 }
 
+/* ---- isotope ---- */
+
+.isotope {
+  background: #DDD;
+}
+
+/* clear fix */
+.isotope:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .element-item ---- */
+
+/* 5 columns, percentage width */
+.item,
+.grid-sizer {
+  width: 20%;
+}
+
+.item {
+  float: left;
+  height: 100px;
+  background: #0D8;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.7);
+}
+
+.item.width2 { width: 40%; }
+.item.height2 { height: 200px; }
+
