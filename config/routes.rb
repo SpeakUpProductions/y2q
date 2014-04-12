@@ -1,4 +1,5 @@
 Y2q::Application.routes.draw do
+  get "videos/index"
   get "about/index"
   resource :profile, only: ['show']
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
