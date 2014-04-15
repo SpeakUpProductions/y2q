@@ -1,17 +1,17 @@
 class VideosController < ApplicationController
   def index
-	@heartbreaks = Heartbreak.all
-	@inspirations = Inspiration.all
+    @heartbreaks = Heartbreak.all
+    @inspirations = Inspiration.all
   end
 
   def new
-    if !user_signed_in? 
-	  redirect_to new_user_session_path
+    if !user_signed_in?
+    redirect_to new_user_session_path
     end
-    
+
     @video = Video.new
-	@heartbreaks = Heartbreak.all
-	@inspirations = Inspiration.all
+    @heartbreaks = Heartbreak.all
+    @inspirations = Inspiration.all
   end
 
   def create

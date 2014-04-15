@@ -17,23 +17,23 @@
       <div class="row">
         <div class="small-1 columns">&nbsp;</div>
         <div class="small-4 columns center">
-			<span class="question caps thick-font">what breaks your heart?</span>
-			<select class="question-select">
-			<% @heartbreaks.each do |hb| %>
-				<option value="<%=hb.id%>"><%= hb.display %></option>
-			<% end %>
-			</select>
-			<span class="subLink white thin-font">Find out &raquo;</span>
-		</div>
-		<div class="small-2 columns">&nbsp;</div>
-		<div class="small-4 columns center">
-			<span class="question caps thick-font">what makes you come alive?</span>
-			<select class="question-select">
-			<% @inspirations.each do |i| %>
-				<option value="<%=i.id%>"><%= i.display %></option>
-			<% end %>
-			</select>
-			<span class="subLink white thin-font">Know thyself &raquo;</span>
+      <span class="question caps thick-font">what breaks your heart?</span>
+      <select class="question-select">
+      <% @heartbreaks.each do |hb| %>
+        <option value="<%=hb.id%>"><%= hb.display %></option>
+      <% end %>
+      </select>
+      <span class="subLink white thin-font">Find out &raquo;</span>
+    </div>
+    <div class="small-2 columns">&nbsp;</div>
+    <div class="small-4 columns center">
+      <span class="question caps thick-font">what makes you come alive?</span>
+      <select class="question-select">
+      <% @inspirations.each do |i| %>
+        <option value="<%=i.id%>"><%= i.display %></option>
+      <% end %>
+      </select>
+      <span class="subLink white thin-font">Know thyself &raquo;</span>
         </div>
         <div class="small-1 columns">&nbsp;</div>
       </div>

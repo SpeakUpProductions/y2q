@@ -7,12 +7,12 @@
 
     <%= f.label :title, "Video Title:" %>
     <%= f.text_field :title %><br />
-    
+
     <%= f.label :heartbreak_id, "Related Heartbreak:" %>
-	<%= f.collection_select(:heartbreak_id, @heartbreaks, :id, :display) %>
-    
+    <%= f.collection_select(:heartbreak_id, @heartbreaks, :id, :display) %>
+
     <%= f.label :inspiration_id, "Related Inspiration:" %>
-	<%= f.collection_select(:inspiration_id, @inspirations, :id, :display) %>
+    <%= f.collection_select(:inspiration_id, @inspirations, :id, :display) %>
 
     <%= f.submit "Submit" %>
   <% end %>
