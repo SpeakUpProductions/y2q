@@ -7,6 +7,20 @@
 
     <%= f.label :title, "Video Title:" %>
     <%= f.text_field :title %><br />
+    
+    <%= f.label :heartbreak, "Related Heartbreak:" %>
+	<select id="video_heartbreak" class="question-select">
+	<% @heartbreaks.each do |hb| %>
+		<option value="<%=hb.id%>"><%= hb.display %></option>
+	<% end %>
+	</select>
+    
+    <%= f.label :inspiration, "Related Inspiration:" %>
+	<select id="video_inspiration" class="question-select">
+	<% @inspirations.each do |i| %>
+		<option value="<%=i.id%>"><%= i.display %></option>
+	<% end %>
+	</select>
 
     <%= f.submit "Submit" %>
   <% end %>

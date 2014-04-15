@@ -10,6 +10,8 @@ class VideosController < ApplicationController
     end
     
     @video = Video.new
+	@heartbreaks = Heartbreak.all
+	@inspirations = Inspiration.all
   end
 
   def create
