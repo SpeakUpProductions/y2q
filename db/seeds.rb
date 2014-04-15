@@ -6,8 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Heartbreak.delete_all
-
 Heartbreak.create(display: "Education")
 Heartbreak.create(display: "Human Rights")
 Heartbreak.create(display: "Nutrition & Water Crisis")
@@ -15,9 +13,6 @@ Heartbreak.create(display: "Physical/Mental Health")
 Heartbreak.create(display: "Poverty")
 Heartbreak.create(display: "Violence/Abuse")
 Heartbreak.create(display: "War/Genocide")
-
-
-Inspiration.delete_all
 
 Inspiration.create(display: "Activism")
 Inspiration.create(display: "Arts & Culture")
