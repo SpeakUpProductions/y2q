@@ -17,32 +17,23 @@
       <div class="row">
         <div class="small-1 columns">&nbsp;</div>
         <div class="small-4 columns center">
-          <span class="question caps thick-font">what breaks your heart?</span>
-          <select class="question-select">
-            <option>Animal/Environment Abuse</option>
-            <option>Education</option>
-            <option>Human Rights</option>
-            <option>Nutrition &amp; Water Crisis</option>
-            <option>Physical/Mental Health</option>
-            <option>Poverty</option>
-            <option>Violence/Abuse</option>
-            <option>War/Genocide</option>
-          </select>
-          <span class="subLink white thin-font">Find out &raquo;</span>
-        </div>
-        <div class="small-2 columns">&nbsp;</div>
-        <div class="small-4 columns center">
-          <span class="question caps thick-font">what makes you come alive?</span>
-          <select class="question-select">
-            <option>Activism</option>
-            <option>Arts &amp; Culture</option>
-            <option>Business</option>
-            <option>Education</option>
-            <option>Humanitarian</option>
-            <option>Politics</option>
-            <option>Science</option>
-          </select>
-          <span class="subLink white thin-font">Know thyself &raquo;</span>
+      <span class="question caps thick-font">what breaks your heart?</span>
+      <select class="question-select">
+      <% @heartbreaks.each do |hb| %>
+        <option value="<%=hb.id%>"><%= hb.display %></option>
+      <% end %>
+      </select>
+      <span class="subLink white thin-font">Find out &raquo;</span>
+    </div>
+    <div class="small-2 columns">&nbsp;</div>
+    <div class="small-4 columns center">
+      <span class="question caps thick-font">what makes you come alive?</span>
+      <select class="question-select">
+      <% @inspirations.each do |i| %>
+        <option value="<%=i.id%>"><%= i.display %></option>
+      <% end %>
+      </select>
+      <span class="subLink white thin-font">Know thyself &raquo;</span>
         </div>
         <div class="small-1 columns">&nbsp;</div>
       </div>
