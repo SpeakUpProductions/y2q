@@ -1,0 +1,13 @@
+<div class="row">
+  <h2>Upload a video</h2>
+
+  <%= form_for @video do |f| %>
+    <%= f.label :embed_url, "Url of your video:" %>
+    <%= f.url_field :embed_url %><br />
+
+    <%= f.label :title, "Video Title:" %>
+    <%= f.text_field :title %><br />
+
+    <%= f.submit "Submit" %>
+  <% end %>
+</div>
