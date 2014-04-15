@@ -12,23 +12,25 @@
   <div class="small-3 columns">
     <span class="med-gray large-number">1</span><span class="caps main-green">what breaks<br>your heart?</span>
     <ul class="what-lists">
-      <li><input id="checkbox1" type="checkbox"><label for="checkbox1">Education</label></li>
-      <li><input id="checkbox2" type="checkbox"><label for="checkbox2">Human Rights</label></li>
-      <li><input id="checkbox3" type="checkbox"><label for="checkbox3">Nutrition &amp; Water Crisis</label></li>
-      <li><input id="checkbox4" type="checkbox"><label for="checkbox4">Physical/Mental Health</label></li>
-      <li><input id="checkbox5" type="checkbox"><label for="checkbox5">Poverty</label></li>
-      <li><input id="checkbox6" type="checkbox"><label for="checkbox6">Violence/Abuse</label></li>
-      <li><input id="checkbox7" type="checkbox"><label for="checkbox7">War/Genocide</label></li>
+	<% @heartbreaks.each do |hb| %>
+		<li>
+			<input id="checkbox_<%=hb.id%>" type="checkbox">
+			<label for="checkbox_<%=hb.id%>">
+				<%= hb.display %>
+			</label>
+		</li>
+	<% end %>
     </ul>
     <span class="med-gray large-number">2</span><span class="caps main-green">what makes<br>you come alive?</span>
-      <ul class="what-lists">
-      <li><input id="checkbox11" type="checkbox"><label for="checkbox11">Activism</label></li>
-      <li><input id="checkbox12" type="checkbox"><label for="checkbox12">Arts &nbsp; Culture</label></li>
-      <li><input id="checkbox13" type="checkbox"><label for="checkbox13">Business</label></li>
-      <li><input id="checkbox14" type="checkbox"><label for="checkbox14">Education</label></li>
-      <li><input id="checkbox15" type="checkbox"><label for="checkbox15">Humanitarian</label></li>
-      <li><input id="checkbox16" type="checkbox"><label for="checkbox16">Politics</label></li>
-      <li><input id="checkbox17" type="checkbox"><label for="checkbox17">Science</label></li>
+	<ul class="what-lists">
+	<% @inspirations.each do |i| %>
+		<li>
+			<input id="checkbox_<%=i.id%>" type="checkbox">
+			<label for="checkbox_<%=i.id%>">
+				<%= i.display %>
+			</label>
+		</li>
+	<% end %>
     </ul>
   </div>
   <div class="small-8 columns">
