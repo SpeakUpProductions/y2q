@@ -2,18 +2,19 @@
   <h2>Upload a video</h2>
 
   <%= form_for @video do |f| %>
+    <%= f.label :heartbreak_id, "What breaks your heart?" %>
+    <%= f.collection_select(:heartbreak_id, @heartbreaks, :id, :display) %>
+
+    <%= f.label :inspiration_id, "What makes you come alive?" %>
+    <%= f.collection_select(:inspiration_id, @inspirations, :id, :display) %>
+
     <%= f.label :embed_url, "Url of your video:" %>
     <%= f.url_field :embed_url %><br />
 
     <%= f.label :title, "Video Title:" %>
     <%= f.text_field :title %><br />
 
-    <%= f.label :heartbreak_id, "Related Heartbreak:" %>
-    <%= f.collection_select(:heartbreak_id, @heartbreaks, :id, :display) %>
-
-    <%= f.label :inspiration_id, "Related Inspiration:" %>
-    <%= f.collection_select(:inspiration_id, @inspirations, :id, :display) %>
-
     <%= f.submit "Submit" %>
+    <p>Y2Q staff review all submissions for content and quality.  You will be notified via email when your video is approved.</p>
   <% end %>
 </div>
