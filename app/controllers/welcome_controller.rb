@@ -1,4 +1,6 @@
 class WelcomeController < ApplicationController
-  def Index
+  def index
+	@heartbreaks = Heartbreak.all
+	@inspirations = Inspiration.all
   end
 end
