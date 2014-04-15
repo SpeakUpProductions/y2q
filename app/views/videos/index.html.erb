@@ -14,8 +14,8 @@
     <ul class="what-lists">
 	<% @heartbreaks.each do |hb| %>
 		<li>
-			<input id="checkbox_<%=hb.id%>" type="checkbox">
-			<label for="checkbox_<%=hb.id%>">
+			<input id="heartbreak_chk_<%=hb.id%>" type="checkbox">
+			<label for="heartbreak_chk_<%=hb.id%>">
 				<%= hb.display %>
 			</label>
 		</li>
@@ -25,8 +25,8 @@
 	<ul class="what-lists">
 	<% @inspirations.each do |i| %>
 		<li>
-			<input id="checkbox_<%=i.id%>" type="checkbox">
-			<label for="checkbox_<%=i.id%>">
+			<input id="inspiration_chk_<%=i.id%>" type="checkbox">
+			<label for="inspiration_chk_<%=i.id%>">
 				<%= i.display %>
 			</label>
 		</li>
