@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 20140415053900) do
     t.datetime "updated_at"
   end
 
+  create_table "profiles", force: true do |t|
+    t.integer "user_id"
+    t.string  "name"
+    t.string  "bio"
+    t.string  "location"
+    t.string  "career"
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
