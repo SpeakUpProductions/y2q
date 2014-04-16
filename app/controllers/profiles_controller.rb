@@ -20,6 +20,6 @@ class ProfilesController < ApplicationController
       @profile = Profile.find(current_user.profile.id)
     end
     def profile_params
-      params.require(:profile).permit(:name, :location, :bio, :career)
+      params.require(:profile).permit(:name, :location, :bio, :career, :MBTI)
     end
 end
