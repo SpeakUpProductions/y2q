@@ -4,6 +4,8 @@ class VideosController < ApplicationController
   def index
     @heartbreaks = Heartbreak.all
     @inspirations = Inspiration.all
+    
+    @videos = Video.all
   end
 
   def new

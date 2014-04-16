@@ -33,16 +33,17 @@
   <% end %>
     </ul>
   </div>
-  <div class="small-8 columns">
+  <div class="small-9 columns">
     <span class="med-gray caps">videos</span>
-    <div class="isotope js-isotope" data-isotope-options='{ "itemSelector": ".item", "masonry": { "columnWidth": ".grid-sizer" } }'>
+    <div class="isotope js-isotope" data-isotope-options='{ "itemSelector": ".item", "masonry": { "columnWidth": 200, "gutter": 20 } }'>
       <div class="grid-sizer"></div>
-      <iframe class="item width2 height2" src="//player.vimeo.com/video/70411024"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      <iframe class="item" src="//player.vimeo.com/video/70411024"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      <iframe class="item" src="//player.vimeo.com/video/70411024"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      <iframe class="item height2 width2" src="//player.vimeo.com/video/70411024"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      <iframe class="item" src="//player.vimeo.com/video/70411024"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      <iframe class="item" src="//player.vimeo.com/video/70411024"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <% @videos.each do |v| %>
+    <div class="item <%= v.id % 4 == 0 ? 'width2 height2' : '' %>">
+      <iframe src="<%= v.embed_url %>"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <span class="main-green thick-font heartbreak"><%= v.heartbreak.display %></span>
+      <span class="main-green thick-font inspiration"><%= v.inspiration.display %></span>
+    </div>
+      <% end %>
     </div>
   </div>
 </div>
