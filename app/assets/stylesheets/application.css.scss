@@ -281,6 +281,7 @@ div.footer div.columns{
 
 .isotope {
   background: #DDD;
+  max-width: 1200px;
 }
 
 /* clear fix */
@@ -290,29 +291,24 @@ div.footer div.columns{
   clear: both;
 }
 
-/* ---- .element-item ---- */
-
-/* 3 columns, percentage width */
-.item,
-.grid-sizer {
-  width: 30%;
-}
+/* ---- .item ---- */
 
 .item {
   float: left;
-  height: 150px;
-  background: #CCC;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  background: #0D8;
   border: 2px solid #333;
   border-color: hsla(0, 0%, 0%, 0.7);
-  margin-right:10px;
 }
 
-.item iframe {
+.item iframe{
 	width:100%;
-	height:120px;
+	height: 100%;
 }
+/* 2 cols + 1 gutter = 200 + 20 + 200 */
+.item.width2 { width: 420px; }
+.item.height2 { height: 420px; }
 
-.item.width2 { width: 60%; }
-.item.height2 { height: 300px; }
-.item.height2 iframe { height: 270px; }
 

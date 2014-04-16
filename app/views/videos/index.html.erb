@@ -33,12 +33,12 @@
   <% end %>
     </ul>
   </div>
-  <div class="small-8 columns">
+  <div class="small-9 columns">
     <span class="med-gray caps">videos</span>
-    <div class="isotope js-isotope" data-isotope-options='{ "itemSelector": ".item", "masonry": { "columnWidth": ".grid-sizer" } }'>
+    <div class="isotope js-isotope" data-isotope-options='{ "itemSelector": ".item", "masonry": { "columnWidth": 200, "gutter": 20 } }'>
       <div class="grid-sizer"></div>
       <% @videos.each do |v| %>
-		<div class="item <%= v.id % 3 == 0 ? 'width2 height2' : '' %>">
+		<div class="item <%= v.id % 2 == 0 ? 'width2 height2' : '' %>">
 			<iframe src="<%= v.embed_url %>"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 			<span class="success round label heartbreak"><%= v.heartbreak.display %></span>
 			<span class="success round label inspiration"><%= v.inspiration.display %></span>
