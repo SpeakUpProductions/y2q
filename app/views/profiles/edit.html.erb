@@ -36,6 +36,12 @@
         <%= f.label :MBTI, "MBTI" %><br>
         <%= f.text_field :MBTI %>
       </div>
+
+      <%= f.fields_for :organizations do |builder| %>
+        <%= render 'organization_fields', f: builder %>
+      <% end %>
+      <%= link_to_add_fields "Add Organization", f, :organizations %>
+
       <%= f.submit %>
     <% end %>
   </div>

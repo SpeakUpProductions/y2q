@@ -20,6 +20,12 @@ class ProfilesController < ApplicationController
       @profile = Profile.find(current_user.profile.id)
     end
     def profile_params
-      params.require(:profile).permit(:name, :location, :bio, :career, :MBTI)
+      params.require(:profile).permit(
+        :name,
+        :location,
+        :bio,
+        :career,
+        :mbti,
+        organizations_attributes: [:id, :profile_id, :name, :website, :org_type, :_destroy])
     end
 end
