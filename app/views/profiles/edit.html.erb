@@ -37,10 +37,15 @@
         <%= f.text_field :MBTI %>
       </div>
 
-      <%= f.fields_for :organizations do |builder| %>
+      <%= f.fields_for :organizations, @profile.organizations.volunteer do |builder| %>
         <%= render 'organization_fields', f: builder %>
       <% end %>
-      <%= link_to_add_fields "Add Organization", f, :organizations %>
+      <%= link_to_add_fields "Add Organization", f, :organizations, :volunteer %>
+
+      <%= f.fields_for :organizations, @profile.organizations.cause do |builder| %>
+        <%= render 'organization_fields', f: builder %>
+      <% end %>
+      <%= link_to_add_fields "Add Cause", f, :organizations, :cause %>
 
       <%= f.submit %>
     <% end %>
