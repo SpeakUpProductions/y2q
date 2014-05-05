@@ -104,6 +104,10 @@ p.alert {
 
 .black-button{
 	background-color:black;
+	color: $white;
+}
+.black-button:visited{
+  color: $white;
 }
 
 .green-button{
@@ -189,8 +193,21 @@ div.choices{
 	display:inline;
 }
 
-.margin-top-thirty{
+.margin-top-30{
   margin-top:30px;
+}
+.margin-bottom-70{
+  margin-bottom:70px;
+}
+
+.talent-description{
+  background-color:#eee;
+  padding-top: 30px;
+  min-height:160px;
+}
+
+.talent > img{
+  margin-bottom: -40px;
 }
 
 /* RESULTS PAGE */
