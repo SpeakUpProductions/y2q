@@ -47,7 +47,7 @@ p.alert {
 }
 
 .subtext{
-	font-size:.75em;
+	font-size:1em;
 }
 
 /* COLORS */
@@ -274,8 +274,9 @@ div.footer{
 	margin-top:30px;
 }
 
-div.footer div.columns{
-	font-size:.50em;
+div.footer div.columns,
+div.footer div.columns a{
+	font-size:.875em;
 	text-align:left;
 	margin-top:30px;
 }
