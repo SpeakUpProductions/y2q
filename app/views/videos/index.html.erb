@@ -40,8 +40,8 @@
       <% @videos.each do |v| %>
     <div class="item <%= v.id % 4 == 0 ? 'width2 height2' : '' %>">
       <iframe src="<%= v.embed_url %>"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      <span class="main-green thick-font heartbreak"><%= v.heartbreak.display %></span>
-      <span class="main-green thick-font inspiration"><%= v.inspiration.display %></span>
+      <span class="main-green thick-font heartbreak"><%= v.heartbreak.display_text %></span>
+      <span class="main-green thick-font inspiration"><%= v.inspiration.display_text %></span>
     </div>
       <% end %>
     </div>
