@@ -3,10 +3,10 @@
 
   <%= form_for @video do |f| %>
     <%= f.label :heartbreak_id, "What breaks your heart?" %>
-    <%= f.collection_select(:heartbreak_id, @heartbreaks, :id, :display) %>
+    <%= f.collection_select(:heartbreak_id, @heartbreaks, :id, :display_text) %>
 
     <%= f.label :inspiration_id, "What makes you come alive?" %>
-    <%= f.collection_select(:inspiration_id, @inspirations, :id, :display) %>
+    <%= f.collection_select(:inspiration_id, @inspirations, :id, :display_text) %>
 
     <%= f.label :embed_url, "Url of your video:" %>
     <%= f.url_field :embed_url %><br />
