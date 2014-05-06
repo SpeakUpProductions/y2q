@@ -48,6 +48,11 @@
         <br>
       <% end %>
 
+      <h3>Issues</h3>
+      <%= f.fields_for :issues do |builder| %>
+        <%= render 'issue_fields', f: builder %>
+      <% end %>
+
       <%= f.submit %>
     <% end %>
   </div>
