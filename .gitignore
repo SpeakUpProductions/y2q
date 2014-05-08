@@ -21,3 +21,4 @@ database.yml
 # Ignore files with sensitive info
 .secret
 .env*
+.project

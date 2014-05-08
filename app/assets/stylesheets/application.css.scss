@@ -14,6 +14,12 @@
  *= require_tree .
  */
 
+
+@import "fonts";
+@import "colors";
+@import "menu";
+@import "home";
+
 /* temporary alert stuff */
 p.notice {
   background-color: lightgreen;
@@ -42,7 +48,7 @@ p.alert {
 }
 
 .subtext{
-	font-size:.75em;
+	font-size:1em;
 }
 
 /* COLORS */
@@ -74,15 +80,6 @@ p.alert {
 	color:#8cc63e;
 }
 
-/* MENU */
-.logo{
-	height:35px;
-}
-
-.top-bar-section ul li a{
-	text-transform:uppercase;
-}
-
 /* MISC */
 .external{
 	height:11px;
@@ -108,86 +105,14 @@ p.alert {
 
 .black-button{
 	background-color:black;
+	color: $white;
+}
+.black-button:visited{
+  color: $white;
 }
 
 .green-button{
 	background-color:#8cc63e;
-}
-
-/* HOME PAGE */
-.choices-header{
-	padding-bottom:20px;
-}
-
-.give-header{
-	margin-bottom:20px;
-	margin-top:20px;
-}
-
-.button-text{
-	font-size:.80em;
-}
-
-.submit-text{
-	margin-top:5px;
-}
-
-.large-number{
-	font-size:2em;
-	display:block;
-	float:left;
-}
-
-div.choices .button{
-	text-transform:uppercase;
-	box-shadow:2px 2px 1px #888888;
-	border:1px solid white;
-}
-
-div.choices{
-  background-color:#8cc63e;
-  margin-top:-16px;
-}
-
-.question-select{
-	margin-bottom: 5px;
-	margin-top: 10px;
-}
-
-.subLink{
-	font-size:.75em;
-}
-
-.quote-image{
-	text-align:center;
-	vertical-align:middle;
-	padding-top:80px;
-	background-image:image-url("city.jpg");
-	background-repeat:no-repeat;
-	background-position:center center;
-	height:250px;
-  	background-color:#000;
-}
-
-.quote{
-	font-size:1em;
-	font-style:italic;
-}
-
-.quote-signature{
-	font-size:.75em;
-	font-style:italic;
-	display:block;
-	margin-top:20px;
-}
-
-.question{
-	margin-bottom:10px;
-	font-size:1.30em;
-}
-
-.social img{
-	display:inline;
 }
 
 /* RESULTS PAGE */
@@ -271,8 +196,9 @@ div.footer{
 	margin-top:30px;
 }
 
-div.footer div.columns{
-	font-size:.50em;
+div.footer div.columns,
+div.footer div.columns a{
+	font-size:.875em;
 	text-align:left;
 	margin-top:30px;
 }
