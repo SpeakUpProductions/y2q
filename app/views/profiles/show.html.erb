@@ -18,7 +18,9 @@
     <table class="bio">
       <tr>
         <td class="bio-category"><span class="caps">cause:</span></td>
-        <td class="bio-details"><span>Teens for jeans<%= image_tag "externalsite-11x11.png", :class => "external" %></span></td>
+        <td class="bio-details"><span>
+            <%= render @profile.organizations.cause %>
+            </span></td>
       </tr>
       <tr>
           <td class="bio-category"><span class="caps">issues: </span></td>
@@ -34,15 +36,15 @@
       </tr>
       <tr>
           <td class="bio-category"><span class="caps">volunteer: </span></td>
-          <td class="bio-details"><span>Shelter volunteer at Stray Rescue St. Louis<%= image_tag "externalsite-11x11.png", :class => "external" %></span></td>
+          <td class="bio-details"><span><%= render @profile.organizations.volunteer %></span></td>
       </tr>
       <tr>
           <td class="bio-category"><span class="caps">give: </span></td>
-          <td class="bio-details"><span>Amazing Ministries feeding America<%= image_tag "externalsite-11x11.png", :class => "external" %></span></td>
+          <td class="bio-details"><span><%= render @profile.organizations.give %></span></td>
       </tr>
       <tr>
           <td class="bio-category"><span class="caps">campaign: </span></td>
-          <td class="bio-details"><span>Help Feed Students in Need<%= image_tag "externalsite-11x11.png", :class => "external" %></span></td>
+          <td class="bio-details"><span><%= render @profile.organizations.campaign %></span></td>
       </tr>
         </table>
         <a href="<%= new_video_path %>" class="button bio-button green-button white"><span class="caps submit-text">submit a video</span><br><span class="thick-font black button-text">What are you doing with Y2Q?</span></a>
