@@ -14,40 +14,9 @@
 
 <div class="row">
   <div class="small-4 columns">
-    <span class="caps med-gray caps">my2q</span>
-    <table class="bio">
-      <tr>
-        <td class="bio-category"><span class="caps">cause:</span></td>
-        <td class="bio-details"><span>
-            <%= render @profile.organizations.cause %>
-            </span></td>
-      </tr>
-      <tr>
-          <td class="bio-category"><span class="caps">issues: </span></td>
-          <td class="bio-details"><span>Causes of Poverty, Conflicts in Africa. Human Rights, world Hunger and Poverty</span></td>
-      </tr>
-      <tr>
-          <td class="bio-category"><span class="caps">myers-briggs: </span></td>
-          <td class="bio-details"><span><%= @profile.MBTI %></span></td>
-      </tr>
-      <tr>
-          <td class="bio-category"><span class="caps">career: </span></td>
-          <td class="bio-details"><span><%= @profile.career %></span></td>
-      </tr>
-      <tr>
-          <td class="bio-category"><span class="caps">volunteer: </span></td>
-          <td class="bio-details"><span><%= render @profile.organizations.volunteer %></span></td>
-      </tr>
-      <tr>
-          <td class="bio-category"><span class="caps">give: </span></td>
-          <td class="bio-details"><span><%= render @profile.organizations.give %></span></td>
-      </tr>
-      <tr>
-          <td class="bio-category"><span class="caps">campaign: </span></td>
-          <td class="bio-details"><span><%= render @profile.organizations.campaign %></span></td>
-      </tr>
-        </table>
-        <a href="<%= new_video_path %>" class="button bio-button green-button white"><span class="caps submit-text">submit a video</span><br><span class="thick-font black button-text">What are you doing with Y2Q?</span></a>
+    <%= render "profile_details" %>
+
+    <a href="<%= new_video_path %>" class="button bio-button green-button white"><span class="caps submit-text">submit a video</span><br><span class="thick-font black button-text">What are you doing with Y2Q?</span></a>
   </div>
   <div class="small-8 columns">
     <span class="med-gray caps">my videos</span>
