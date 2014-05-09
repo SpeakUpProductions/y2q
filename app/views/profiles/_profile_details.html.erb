@@ -1,31 +1,29 @@
 <span class="caps med-gray caps">my2q</span>
 <table class="bio">
-  <tr>
-    <td class="bio-category"><span class="caps">cause:</span></td>
-    <td class="bio-details"><span><%= render @profile.organizations.cause %></span></td>
-  </tr>
-  <tr>
-    <td class="bio-category"><span class="caps">issues: </span></td>
-    <td class="bio-details"><span><%= @profile.issues.map(&:display_text).join(", ") %></span></td>
-  </tr>
-  <tr>
-    <td class="bio-category"><span class="caps">myers-briggs: </span></td>
-    <td class="bio-details"><span><%= @profile.MBTI %></span></td>
-  </tr>
-  <tr>
-    <td class="bio-category"><span class="caps">career: </span></td>
-    <td class="bio-details"><span><%= @profile.career %></span></td>
-  </tr>
-  <tr>
-    <td class="bio-category"><span class="caps">volunteer: </span></td>
-    <td class="bio-details"><span><%= render @profile.organizations.volunteer %></span></td>
-  </tr>
-  <tr>
-    <td class="bio-category"><span class="caps">give: </span></td>
-    <td class="bio-details"><span><%= render @profile.organizations.give %></span></td>
-  </tr>
-  <tr>
-    <td class="bio-category"><span class="caps">campaign: </span></td>
-    <td class="bio-details"><span><%= render @profile.organizations.campaign %></span></td>
-  </tr>
+  <%= render "organization_detail", title: "cause", organizations: @profile.organizations.cause %>
+
+  <% if @profile.issues.count > 0 %>
+    <tr>
+      <td class="bio-category"><span class="caps">issues: </span></td>
+      <td class="bio-details"><span><%= @profile.issues.map(&:display_text).join(", ") %></span></td>
+    </tr>
+  <% end %>
+
+  <% if @profile.MBTI %>
+    <tr>
+      <td class="bio-category"><span class="caps">myers-briggs: </span></td>
+      <td class="bio-details"><span><%= @profile.MBTI %></span></td>
+    </tr>
+  <% end %>
+
+  <% if @profile.career %>
+    <tr>
+      <td class="bio-category"><span class="caps">career: </span></td>
+      <td class="bio-details"><span><%= @profile.career %></span></td>
+    </tr>
+  <% end %>
+
+  <%= render "organization_detail", title: "volunteer", organizations: @profile.organizations.volunteer %>
+  <%= render "organization_detail", title: "give", organizations: @profile.organizations.give %>
+  <%= render "organization_detail", title: "campaign", organizations: @profile.organizations.campaign %>
 </table>
