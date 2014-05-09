@@ -6,7 +6,7 @@
   </tr>
   <tr>
     <td class="bio-category"><span class="caps">issues: </span></td>
-    <td class="bio-details"><span>Causes of Poverty, Conflicts in Africa. Human Rights, world Hunger and Poverty</span></td>
+    <td class="bio-details"><span><%= @profile.issues.map(&:display_text).join(", ") %></span></td>
   </tr>
   <tr>
     <td class="bio-category"><span class="caps">myers-briggs: </span></td>
