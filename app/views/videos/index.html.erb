@@ -47,18 +47,9 @@
     </ul>
   </div>
   <div class="small-9 columns videos">
-    <span class="videos-title">videos</span>&nbsp;<span>(100)</span>
+    <span class="videos-title">videos</span>&nbsp;<span>(<%=@videos.length%>)</span>
     <div class="isotope js-isotope" data-isotope-options='{ "itemSelector": ".item", "masonry": { "columnWidth": 200, "gutter": 20 } }'>
       <div class="grid-sizer"></div>
-          
-    <div class="item width2 height2">
-      <iframe src=""  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      <%= image_tag "brokenheart-18x18.png" %>
-      <span class="main-green thick-font heartbreak">foo</span>
-      <%= image_tag "heartbeat-18x18.png" %>
-      <span class="main-green thick-font inspiration">bar</span>
-    </div>
-      
       <% @videos.each do |v| %>
     <div class="item <%= v.id % 4 == 0 ? 'width2 height2' : '' %>">
       <iframe src="<%= v.embed_url %>"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
