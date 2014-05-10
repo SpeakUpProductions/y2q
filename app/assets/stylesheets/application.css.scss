@@ -115,42 +115,6 @@ p.alert {
 	background-color:#8cc63e;
 }
 
-/* RESULTS PAGE */
-.message{
-	background-color:#ccc;
-	padding-top:30px;
-	padding-left:30px;
-	margin-bottom:20px;
-	box-shadow:2px 2px 1px #888888;
-}
-
-.message p{
-	font-size:.8em;
-}
-.results-button{
-	box-shadow:2px 2px 1px #888888;
-	border:1px solid white;
-}
-
-.header-shadow{
-	text-shadow:1px 2px #000;
-}
-
-.what-lists{
-	list-style:none;
-	margin-left:0px;
-	margin-top:15px;
-	margin-bottom:25px;
-}
-
-.what-lists li{
-	background-color:#dcecc4;
-	height:25px;
-}
-
-.video-grid{
-	margin-top:15px;
-}
 
 /* MY2Q PAGE */
 .bio{
@@ -209,6 +173,7 @@ div.footer div.columns a{
   background: white;
   max-width: 1200px;
   padding-left:30px;
+  margin-top: 25px
 }
 
 /* clear fix */

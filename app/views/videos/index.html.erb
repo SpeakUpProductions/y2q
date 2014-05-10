@@ -1,7 +1,7 @@
 <div class="row message">
   <div class="small-9 columns">
     <p class="thin-font">What breaks your heart? What makes you come alive? When you discover your answers, upload a video about it! your video will inspire others to do the same, and your impact will be multiplied.</p>
-    <p class="bold thin-font">See how others answered their 2 Questions in the videos below.</p>
+    <p class="bold thin-font">See how others answered <span>their</span> 2 Questions in the videos below.</p>
   </div>
   <div class="small-3 columns">
     <a href='<%= new_video_path %>' class="button results-button green-button white"><span class="thick-font black button-text">Ready to share your story...<br>and inspire someone else's</span><br><span class="caps submit-text">submit a video</span></a>
@@ -10,22 +10,35 @@
 
 <div class="row">
   <div class="small-3 columns">
-    <span class="med-gray large-number">1</span><span class="caps main-green">what breaks<br>your heart?</span>
+    <span class="med-gray large-number">1</span><span class="what-header">what breaks<br>your heart?</span>
     <ul class="what-lists">
+     <li class="selected">
+      <div><input id="heartbreak_chk_1" type="checkbox"></div>
+      <label for="heartbreak_chk_1">
+        foo bar
+      </label>
+    </li>   
+     <li>
+      <div><input id="heartbreak_chk_2" type="checkbox"></div>
+      <label for="heartbreak_chk_2">
+        baz buzz
+      </label>
+    </li>       	
+    	
   <% @heartbreaks.each do |hb| %>
     <li>
-      <input id="heartbreak_chk_<%=hb.id%>" type="checkbox">
+      <div><input id="heartbreak_chk_<%=hb.id%>" type="checkbox"></div>
       <label for="heartbreak_chk_<%=hb.id%>">
         <%= hb.display_text %>
       </label>
     </li>
   <% end %>
     </ul>
-    <span class="med-gray large-number">2</span><span class="caps main-green">what makes<br>you come alive?</span>
+    <span class="med-gray large-number">2</span><span class="what-header">what makes<br>you come alive?</span>
   <ul class="what-lists">
   <% @inspirations.each do |i| %>
     <li>
-      <input id="inspiration_chk_<%=i.id%>" type="checkbox">
+      <div><input id="inspiration_chk_<%=i.id%>" type="checkbox"></div>
       <label for="inspiration_chk_<%=i.id%>">
         <%= i.display_text %>
       </label>
@@ -33,14 +46,25 @@
   <% end %>
     </ul>
   </div>
-  <div class="small-9 columns">
-    <span class="med-gray caps">videos</span>
+  <div class="small-9 columns videos">
+    <span class="videos-title">videos</span>&nbsp;<span>(100)</span>
     <div class="isotope js-isotope" data-isotope-options='{ "itemSelector": ".item", "masonry": { "columnWidth": 200, "gutter": 20 } }'>
       <div class="grid-sizer"></div>
+          
+    <div class="item width2 height2">
+      <iframe src=""  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <%= image_tag "brokenheart-18x18.png" %>
+      <span class="main-green thick-font heartbreak">foo</span>
+      <%= image_tag "heartbeat-18x18.png" %>
+      <span class="main-green thick-font inspiration">bar</span>
+    </div>
+      
       <% @videos.each do |v| %>
     <div class="item <%= v.id % 4 == 0 ? 'width2 height2' : '' %>">
       <iframe src="<%= v.embed_url %>"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <%= image_tag "brokenheart-18x18.png" %>
       <span class="main-green thick-font heartbreak"><%= v.heartbreak.display_text %></span>
+      <%= image_tag "heartbeat-18x18.png" %>
       <span class="main-green thick-font inspiration"><%= v.inspiration.display_text %></span>
     </div>
       <% end %>
