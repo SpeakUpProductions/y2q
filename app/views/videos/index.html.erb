@@ -12,12 +12,18 @@
   <div class="small-3 columns">
     <span class="med-gray large-number">1</span><span class="what-header">what breaks<br>your heart?</span>
     <ul class="what-lists">
-     <li>
+     <li class="selected">
       <div><input id="heartbreak_chk_1" type="checkbox"></div>
       <label for="heartbreak_chk_1">
         foo bar
       </label>
-    </li>   	
+    </li>   
+     <li>
+      <div><input id="heartbreak_chk_2" type="checkbox"></div>
+      <label for="heartbreak_chk_2">
+        baz buzz
+      </label>
+    </li>       	
     	
   <% @heartbreaks.each do |hb| %>
     <li>
