@@ -7,11 +7,11 @@ gem 'pg', '0.15.1'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
-gem 'debugger'
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
   gem 'dotenv-rails'
+  gem 'debugger'
 end
 
 group :test do
