@@ -45,7 +45,7 @@
       <div class="grid-sizer"></div>
       <% @videos.each do |v| %>
     <div class="item <%= v.id % 4 == 0 ? 'width2 height2' : '' %>">
-      <%= image_tag "video-placeholder-large.jpg", class: "video-ss", data: { src: v.embed_url } %>
+      <%= image_tag v.thumbnail_url.nil? ? "video-placeholder-large.jpg" : v.thumbnail_url, class: "video-ss", data: { src: v.embed_url } %>
       <%= image_tag "brokenheart-18x18.png" %>
       <span class="heartbreak"><%= v.heartbreak.display_text %></span>
       <%= image_tag "heartbeat-18x18.png" %>
