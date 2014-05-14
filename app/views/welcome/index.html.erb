@@ -10,30 +10,30 @@
 
       <div class="row">
         <div class="small-12 small-centered columns">
-          <h2 class="header-shadow caps choices-header center">ask yourself 2 questions</h2>
+          <h2 class="header-shadow choices-header center">ask yourself 2 questions</h2>
         </div>
       </div>
 
       <div class="row">
         <div class="small-1 columns">&nbsp;</div>
         <div class="small-4 columns center">
-      <span class="question caps thick-font">what breaks your heart?</span>
+      <span class="question">what breaks your heart?</span>
       <select class="question-select">
       <% @heartbreaks.each do |hb| %>
         <option value="<%=hb.id%>"><%= hb.display_text %></option>
       <% end %>
       </select>
-      <span class="subLink white thin-font">Find out &raquo;</span>
+      <span class="subLink">Find out &raquo;</span>
     </div>
     <div class="small-2 columns">&nbsp;</div>
     <div class="small-4 columns center">
-      <span class="question caps thick-font">what makes you come alive?</span>
+      <span class="question">what makes you come alive?</span>
       <select class="question-select">
       <% @inspirations.each do |i| %>
         <option value="<%=i.id%>"><%= i.display_text %></option>
       <% end %>
       </select>
-      <span class="subLink white thin-font">Know thyself &raquo;</span>
+      <span class="subLink">Know thyself &raquo;</span>
         </div>
         <div class="small-1 columns">&nbsp;</div>
       </div>
@@ -49,17 +49,17 @@
 
 <div class="container quote-image">
   <div class="row">
-    <span class="quote thin-font white">Don't ask what the world needs. Ask what makes you<br>
+    <span class="quote">Don't ask what the world needs. Ask what makes you<br>
       come alive, and go do it. Because what the world needs<br>
       is people who have come alive.</span>
     <br>
-    <span class="quote-signature caps thick-font white">- howard thurman</span>
+    <span class="quote-signature">- howard thurman</span>
   </div>
 </div>
 
 <div class="row">
   <div class="small-12 small-centered columns">
-    <h2 class="caps give-header thick-font light-gray center">what will you give?</h3>
+    <h2 class="give-header center">what will you give?</h3>
   </div>
 </div>
 
@@ -67,8 +67,8 @@
   <div class="small-4 columns center">
     <%= image_tag "Time.png", class: "give-icons" %>
     <div class="talent-description">
-    	<span class="caps thick-font light-gray block">time</span><br>
-	    <span class="subtext thin-font light-gray">
+    	<span class="block span-header">time</span><br>
+	    <span class="subtext">
 	      How can you best allocate your scarcest resource?
 	      <a href="GivingLibrary.org" target="_blank">VolunteerMatch.org</a>
 	      <a href="VolunteerMatch.org" target="_blank">
@@ -80,8 +80,8 @@
   <div class="small-4 columns center">
     <%= image_tag "Time.png", class: "give-icons"%>
    	<div class="talent-description">
-   		<span class="caps thick-font light-gray block">talent</span><br>
-	    <span class="subtext thin-font light-gray">
+   		<span class="block span-header">talent</span><br>
+	    <span class="subtext">
 	      There are internships &amp; careers out there for people who wnat to make a differnece in the world.
 	      <a href="GivingLibrary.org" target="_blank">Idealist.org</a>
 	      <a href="Idealist.org" target="_blank">
@@ -94,8 +94,8 @@
     <%= image_tag "Time.png", class: "give-icons" %>
 	<div class="talent-description">
 
-	    <span class="caps thick-font light-gray block">treasure</span><br>
-	    <span class="subtext thin-font light-gray">
+	    <span class="block span-header">treasure</span><br>
+	    <span class="subtext">
 	      <a href="GivingLibrary.org" target="_blank">GivingLibrary.org</a>
 	      <a href="GivingLibrary.org" target="_blank">
 	        <%= image_tag "externalsite-11x11.png", class: "external" %>
