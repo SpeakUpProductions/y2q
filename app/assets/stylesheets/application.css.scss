@@ -29,57 +29,6 @@ p.alert {
   background-color: red;
 }
 
-
-/* FONTS */
-.thick-font{
-	font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
-}
-
-.thin-font{
-	font-family: 'Open Sans', Verdana, Arial, sans-serif;
-}
-
-.caps{
-	text-transform:uppercase;
-}
-
-.bold{
-	font-weight:bold;
-}
-
-.subtext{
-	font-size:1em;
-}
-
-/* COLORS */
-.white{
-	color:white;
-}
-
-.black{
-	color:black;
-}
-
-.light-gray{
-	color:#888;
-}
-
-.med-gray{
-	color:#666;
-}
-
-.main-gray{
-	color:#333;
-}
-
-.light-green{
-	color:#dcecc4;
-}
-
-.main-green{
-	color:#8cc63e;
-}
-
 /* MISC */
 .external{
 	height:11px;
@@ -157,7 +106,6 @@ p.alert {
 div.footer{
 	height:80px;
 	background-color:black;
-	margin-top:30px;
 }
 
 div.footer div.columns,
