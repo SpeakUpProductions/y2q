@@ -47,9 +47,9 @@
     <div class="item <%= v.id % 4 == 0 ? 'width2 height2' : '' %>">
       <iframe src="<%= v.embed_url %>"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       <%= image_tag "brokenheart-18x18.png" %>
-      <span class="main-green thick-font heartbreak"><%= v.heartbreak.display_text %></span>
+      <span class="heartbreak"><%= v.heartbreak.display_text %></span>
       <%= image_tag "heartbeat-18x18.png" %>
-      <span class="main-green thick-font inspiration"><%= v.inspiration.display_text %></span>
+      <span class="inspiration"><%= v.inspiration.display_text %></span>
     </div>
       <% end %>
     </div>
