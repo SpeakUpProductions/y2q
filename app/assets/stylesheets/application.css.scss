@@ -17,8 +17,6 @@
 
 @import "fonts";
 @import "colors";
-@import "menu";
-@import "home";
 
 /* temporary alert stuff */
 p.notice {
@@ -66,8 +64,12 @@ p.alert {
 
 .green-button{
 	background-color:#8cc63e;
+	color: $white;
 }
 
+.bold{
+  font-weight: bold;
+}
 
 /* MY2Q PAGE */
 .bio{
@@ -102,6 +104,28 @@ p.alert {
 	width:100%;
 	box-shadow:2px 2px 1px #888888;
 	border:1px solid white;
+	color: $white;
+}
+
+.button-text {
+  font-size: .80em;
+  color: $black;
+  font-family: $thick-font;
+} 
+
+.profile-name{
+  text-transform: uppercase;
+  color: black;
+}
+
+.my-videos{
+  color: $med-gray;
+  text-transform: uppercase;
+}
+  
+.submit-text{
+  margin-top: 5px;
+  text-transform: uppercase;
 }
 
 /* BIO FORM PAGE */
