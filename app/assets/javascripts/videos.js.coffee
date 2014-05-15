@@ -9,7 +9,7 @@ setSrc = (flex, src) ->
   flex.find('iframe').attr('src', src)
 
 $ ->
-  $('img.video-ss').on 'click', '.video-ss', () ->
+  $('#videos-area').on 'click', '.video-ss', () ->
     src = $(@).data('src')
     flex = cloneNewFlex()
     setSrc(flex, src)
@@ -18,6 +18,7 @@ $ ->
     modal.foundation('reveal', 'open')
 
   $('.what-lists li input').on 'click', () ->
+    $(this).parent().parent().toggleClass('selected');
     heartbreak_ary = [];
     inspiration_ary = [];
     $('#heartbreaks-filter input:checked').each (idx, item) ->
