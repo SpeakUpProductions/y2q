@@ -11,6 +11,8 @@ replaceVideos = (newVideos) ->
   $('#videos-area').html(newVideos)
   $('.js-isotope').isotope({ "itemSelector": ".item", "masonry": { "columnWidth": 200, "gutter": 20 } })
 
+filteredUrl = (heartbreaks, inspirations) ->
+  "videos/filtered?heartbreaks=[#{ heartbreaks.join(',') }]&inspirations=[#{ inspirations.join(',') }]"
 $ ->
   $('#videos-area').on 'click', '.video-ss', () ->
     src = $(@).data('src')
@@ -32,7 +34,7 @@ $ ->
       return
 
     ajaxParams =
-      url: 'videos/filtered?heartbreaks=[' + heartbreak_ary.join(',') + ']&inspirations=[' + inspiration_ary.join(',') + ']'
+      url: filteredUrl(heartbreak_ary, inspiration_ary)
       type: 'GET'
       success: (data) ->
         replaceVideos(data)
