@@ -21,4 +21,15 @@ module VideosHelper
 
     src = src << "?#{options.join('&')}" unless options.blank?
   end
+
+    def get_num_matches(i_id, hb_id, i_filter, hb_filter)
+      num_matches = 0
+      if hb_filter.include?(hb_id)
+        num_matches += 1
+      end
+      if i_filter.include?(i_id)
+        num_matches += 1
+      end
+      return num_matches
+    end
 end
