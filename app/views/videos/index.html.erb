@@ -16,7 +16,7 @@
     <% isSelected = false %>
     <li <%= isSelected ? 'class=selected' : "" %>>
       <div class="text-center">
-	<input id="heartbreak_chk_<%=hb.id%>" data-id="<%=hb.id%>" type="checkbox" <%= isSelected ? "checked=checked" : "" %>>
+	<input id="heartbreak_chk_<%=hb.id%>" data-id="<%=hb.id%>" type="checkbox" <%= isSelected ? "checked=checked" : "" %> autocomplete="off">
       </div>
       <label for="heartbreak_chk_<%=hb.id%>">
         <%= hb.display_text %>
@@ -30,7 +30,7 @@
     <% isSelected = false %>
     <li <%= isSelected ? 'class=selected' : "" %>>
       <div class="text-center">
-	<input id="inspiration_chk_<%=i.id%>" data-id="<%=i.id%>" type="checkbox" <%= isSelected ? "checked=checked" : "" %>>
+	<input id="inspiration_chk_<%=i.id%>" data-id="<%=i.id%>" type="checkbox" <%= isSelected ? "checked=checked" : "" %> autocomplete="off">
       </div>
       <label for="inspiration_chk_<%=i.id%>">
         <%= i.display_text %>
