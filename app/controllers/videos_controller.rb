@@ -1,4 +1,5 @@
 class VideosController < ApplicationController
+  include VideosHelper
   before_action :authenticate_user!, :only => [:new, :create]
 
   def index
@@ -16,6 +17,9 @@ class VideosController < ApplicationController
 
   def create
     @video = Video.new(video_params)
+    @video.thumbnail_url = get_thumb_url(video_params[:embed_url])
+    @heartbreaks = Heartbreak.all
+    @inspirations = Inspiration.all
     if @video.save
       redirect_to profile_path
     else
