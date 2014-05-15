@@ -23,12 +23,11 @@ $ ->
     inspiration_ary = []
     $('#heartbreaks-filter input:checked').each (idx, item) ->
       heartbreak_ary.push($(item).data('id'))
-      true
+      return
     $('#inspirations-filter input:checked').each (idx, item) ->
       inspiration_ary.push($(item).data('id'))
-      true
+      return
     ajaxParams = url: 'videos/filtered?heartbreaks=[' + heartbreak_ary.join(',') + ']&inspirations=[' + inspiration_ary.join(',') + ']', type: 'GET', success: (data) ->
       $('#videos-area').html(data)
       $('.js-isotope').isotope({ "itemSelector": ".item", "masonry": { "columnWidth": 200, "gutter": 20 } })
-      true
     $.ajax(ajaxParams)
