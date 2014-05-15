@@ -15,7 +15,7 @@
   <% @heartbreaks.each do |hb| %>
     <% isSelected = hb.id == @heartbreaks.first.id %>
     <li <%= isSelected ? 'class=selected' : "" %>>
-      <div>
+      <div class="text-center">
 	<input id="heartbreak_chk_<%=hb.id%>" type="checkbox" <%= isSelected ? "checked=checked" : "" %>>
       </div>
       <label for="heartbreak_chk_<%=hb.id%>">
@@ -29,7 +29,7 @@
   <% @inspirations.each do |i| %>
     <% isSelected = i.id == @inspirations.first.id %>
     <li <%= isSelected ? 'class=selected' : "" %>>
-      <div>
+      <div class="text-center">
 	<input id="inspiration_chk_<%=i.id%>" type="checkbox" <%= isSelected ? "checked=checked" : "" %>>
       </div>
       <label for="inspiration_chk_<%=i.id%>">
