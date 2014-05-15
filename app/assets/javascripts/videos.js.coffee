@@ -7,6 +7,10 @@ cloneNewFlex = ->
 setSrc = (flex, src) ->
   flex.find('iframe').attr('src', src)
 
+replaceVideos = (newVideos) ->
+  $('#videos-area').html(newVideos)
+  $('.js-isotope').isotope({ "itemSelector": ".item", "masonry": { "columnWidth": 200, "gutter": 20 } })
+
 $ ->
   $('#videos-area').on 'click', '.video-ss', () ->
     src = $(@).data('src')
@@ -26,7 +30,11 @@ $ ->
     $('#inspirations-filter input:checked').each (idx, item) ->
       inspiration_ary.push($(item).data('id'))
       return
-    ajaxParams = url: 'videos/filtered?heartbreaks=[' + heartbreak_ary.join(',') + ']&inspirations=[' + inspiration_ary.join(',') + ']', type: 'GET', success: (data) ->
-      $('#videos-area').html(data)
-      $('.js-isotope').isotope({ "itemSelector": ".item", "masonry": { "columnWidth": 200, "gutter": 20 } })
+
+    ajaxParams =
+      url: 'videos/filtered?heartbreaks=[' + heartbreak_ary.join(',') + ']&inspirations=[' + inspiration_ary.join(',') + ']'
+      type: 'GET'
+      success: (data) ->
+        replaceVideos(data)
+
     $.ajax(ajaxParams)
