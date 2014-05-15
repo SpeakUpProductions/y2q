@@ -17,7 +17,7 @@ $ ->
     modal.foundation('reveal', 'open')
 
   $('.what-lists li input').on 'click', () ->
-    $(this).parent().parent().toggleClass('selected')
+    $(@).parent().parent().toggleClass('selected')
     heartbreak_ary = []
     inspiration_ary = []
     $('#heartbreaks-filter input:checked').each (idx, item) ->
