@@ -3,7 +3,9 @@ class VideosController < ApplicationController
   before_action :authenticate_user!, :only => [:new, :create]
 
   def filtered
-    @videos = Video.all
+    hb_ary = JSON.parse(filter_params[:heartbreaks])
+    i_ary = JSON.parse(filter_params[:inspirations])
+    @videos = Video.select{|v| hb_ary.include?(v.heartbreak_id) || i_ary.include?(v.inspiration_id)}
     render :filtered, layout:false
   end
 
@@ -32,6 +34,9 @@ class VideosController < ApplicationController
     end
   end
 
+  def filter_params
+    params.permit(:heartbreaks,:inspirations)
+  end
   def video_params
     params.require(:video).permit(:title, :embed_url, :heartbreak_id, :inspiration_id)
   end
