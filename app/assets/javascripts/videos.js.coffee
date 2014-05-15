@@ -3,8 +3,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 video_template = $('#video_template')
 modal = $('#video_modal')
+
 cloneNewFlex = ->
   video_template.children('.flex-video').clone()
+
 setSrc = (flex, src) ->
   flex.find('iframe').attr('src', src)
 
