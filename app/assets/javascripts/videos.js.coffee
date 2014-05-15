@@ -18,17 +18,17 @@ $ ->
     modal.foundation('reveal', 'open')
 
   $('.what-lists li input').on 'click', () ->
-    $(this).parent().parent().toggleClass('selected');
-    heartbreak_ary = [];
-    inspiration_ary = [];
+    $(this).parent().parent().toggleClass('selected')
+    heartbreak_ary = []
+    inspiration_ary = []
     $('#heartbreaks-filter input:checked').each (idx, item) ->
-      heartbreak_ary.push($(item).data('id'));
+      heartbreak_ary.push($(item).data('id'))
       true
     $('#inspirations-filter input:checked').each (idx, item) ->
-      inspiration_ary.push($(item).data('id'));
+      inspiration_ary.push($(item).data('id'))
       true
     ajaxParams = url: 'videos/filtered?heartbreaks=[' + heartbreak_ary.join(',') + ']&inspirations=[' + inspiration_ary.join(',') + ']', type: 'GET', success: (data) ->
-      $('#videos-area').html(data);
-      $('.js-isotope').isotope({ "itemSelector": ".item", "masonry": { "columnWidth": 200, "gutter": 20 } });
+      $('#videos-area').html(data)
+      $('.js-isotope').isotope({ "itemSelector": ".item", "masonry": { "columnWidth": 200, "gutter": 20 } })
       true
-    $.ajax(ajaxParams);
+    $.ajax(ajaxParams)
