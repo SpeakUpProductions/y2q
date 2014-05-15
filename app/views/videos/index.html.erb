@@ -11,12 +11,12 @@
 <div class="row">
   <div class="small-3 columns">
     <span class="large-number">1</span><span class="what-header">what breaks<br>your heart?</span>
-    <ul class="what-lists">
+    <ul id="heartbreaks-filter" class="what-lists">
   <% @heartbreaks.each do |hb| %>
     <% isSelected = hb.id == @heartbreaks.first.id %>
     <li <%= isSelected ? 'class=selected' : "" %>>
       <div class="text-center">
-	<input id="heartbreak_chk_<%=hb.id%>" type="checkbox" <%= isSelected ? "checked=checked" : "" %>>
+	<input id="heartbreak_chk_<%=hb.id%>" data-id="<%=hb.id%>" type="checkbox" <%= isSelected ? "checked=checked" : "" %>>
       </div>
       <label for="heartbreak_chk_<%=hb.id%>">
         <%= hb.display_text %>
@@ -25,12 +25,12 @@
   <% end %>
     </ul>
     <span class="large-number">2</span><span class="what-header">what makes<br>you come alive?</span>
-  <ul class="what-lists">
+  <ul id="inspirations-filter" class="what-lists">
   <% @inspirations.each do |i| %>
     <% isSelected = i.id == @inspirations.first.id %>
     <li <%= isSelected ? 'class=selected' : "" %>>
       <div class="text-center">
-	<input id="inspiration_chk_<%=i.id%>" type="checkbox" <%= isSelected ? "checked=checked" : "" %>>
+	<input id="inspiration_chk_<%=i.id%>" data-id="<%=i.id%>" type="checkbox" <%= isSelected ? "checked=checked" : "" %>>
       </div>
       <label for="inspiration_chk_<%=i.id%>">
         <%= i.display_text %>
@@ -39,7 +39,7 @@
   <% end %>
     </ul>
   </div>
-  <div class="small-9 columns videos">
+  <div id="videos-area" class="small-9 columns videos">
     <span class="videos-title">videos</span>&nbsp;<span>(<%=@videos.length%>)</span>
     <div class="isotope js-isotope" data-isotope-options='{ "itemSelector": ".item", "masonry": { "columnWidth": 200, "gutter": 20 } }'>
       <div class="grid-sizer"></div>
