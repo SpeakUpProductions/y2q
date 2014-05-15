@@ -28,10 +28,6 @@ p.alert {
 }
 
 /* MISC */
-.header-shadow{
-  text-shadow: 1px 2px #000;
-}
-
 .external{
 	height:11px;
 	width:11px;
@@ -46,21 +42,9 @@ p.alert {
 	margin-top: -20px;
 }
 
-.black-button{
-	background-color:black;
-	color: $white;
-}
-.black-button:visited{
-  color: $white;
-}
-
 .green-button{
 	background-color:#8cc63e;
 	color: $white;
-}
-
-.bold{
-  font-weight: bold;
 }
 
 /* MY2Q PAGE */
