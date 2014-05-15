@@ -2,6 +2,11 @@ class VideosController < ApplicationController
   include VideosHelper
   before_action :authenticate_user!, :only => [:new, :create]
 
+  def filtered
+    @videos = Video.all
+    render :filtered, layout:false
+  end
+
   def index
     @heartbreaks = Heartbreak.all
     @inspirations = Inspiration.all
