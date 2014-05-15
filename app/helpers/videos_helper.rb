@@ -14,4 +14,11 @@ module VideosHelper
 
     just_url
   end
+
+  def get_embed_src(embed_url)
+    options = %w{autoplay=1 autohide=1}
+    src = embed_url.sub('watch?v=', 'embed/')
+
+    src = src << "?#{options.join('&')}" unless options.blank?
+  end
 end
