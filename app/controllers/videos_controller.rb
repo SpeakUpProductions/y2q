@@ -5,7 +5,11 @@ class VideosController < ApplicationController
   def filtered
     hb_ary = JSON.parse(filter_params[:heartbreaks])
     i_ary = JSON.parse(filter_params[:inspirations])
-    @videos = Video.select{|v| hb_ary.include?(v.heartbreak_id) || i_ary.include?(v.inspiration_id)}
+    if hb_ary.length == 0 && i_ary.length == 0
+      @videos = Video.all
+    else
+      @videos = Video.select{|v| hb_ary.include?(v.heartbreak_id) || i_ary.include?(v.inspiration_id)}
+    end 
     @hb_filter = hb_ary
     @i_filter = i_ary
     render :filtered, layout:false
