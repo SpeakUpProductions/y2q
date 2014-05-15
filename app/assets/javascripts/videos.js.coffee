@@ -3,5 +3,5 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   $('.video-ss').on 'click', () ->
-    $('#video_modal iframe').attr('src', $(this).data('src'));
+    $('#video_modal iframe').attr('src', $(@).data('src'))
     $('#video_modal').foundation('reveal', 'open')
