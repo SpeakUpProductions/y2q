@@ -23,26 +23,24 @@ replaceVideos = (newVideos) ->
 filteredUrl = (heartbreaks, inspirations) ->
   "videos/filtered?heartbreaks=[#{ heartbreaks.join(',') }]&inspirations=[#{ inspirations.join(',') }]"
 
+filterVideos = ->
+  $.ajax({
+    url: $(@).attr('action')
+    data: $(@).serialize()
+    type: 'GET'
+  }).success (data) ->
+    replaceVideos(data)
+
+  return false # prevent normal behavior
+
 checkboxChecked = ->
   $(@).parent().parent().toggleClass('selected')
-  heartbreak_ary = []
-  inspiration_ary = []
-  $('#heartbreaks-filter input:checked').each (idx, item) ->
-    heartbreak_ary.push($(item).data('id'))
-    return
-  $('#inspirations-filter input:checked').each (idx, item) ->
-    inspiration_ary.push($(item).data('id'))
-    return
 
-  ajaxParams =
-    url: filteredUrl(heartbreak_ary, inspiration_ary)
-    type: 'GET'
-    success: (data) ->
-      replaceVideos(data)
 
-  $.ajax(ajaxParams)
+
 
 $ ->
   $('#videos-area').on 'click', '.video-ss', openVideo
   # $('.what-lists li input').on 'click', checkboxChecked
+  $('#filter_form').on 'submit', filterVideos
   return

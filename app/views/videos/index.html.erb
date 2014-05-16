@@ -10,7 +10,7 @@
 
 <div class="row">
   <div class="small-3 columns">
-  <%= form_tag filtered_videos_path, :method => :get do |f| %>
+    <%= form_tag filtered_videos_path, :method => :get, :id => 'filter_form' do |f| %>
     <span class="large-number">1</span><span class="what-header">what breaks<br>your heart?</span>
     <ul id="heartbreaks-filter" class="what-lists">
   <% @heartbreaks.each do |hb| %>

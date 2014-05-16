@@ -3,22 +3,25 @@ class VideosController < ApplicationController
   before_action :authenticate_user!, :only => [:new, :create]
 
   def filtered
-    hb_ary = JSON.parse(filter_params[:heartbreaks])
-    i_ary = JSON.parse(filter_params[:inspirations])
-    if hb_ary.length == 0 && i_ary.length == 0
+    heartbreak_ids = filter_params[:heartbreak_ids] || {}
+    inspiration_ids = filter_params[:inspiration_ids] || {}
+    heartbreak_ids.map!(&:to_i)
+    inspiration_ids.map!(&:to_i)
+
+    if heartbreak_ids.blank? && inspiration_ids.blank?
       @videos = Video.all
     else
-      @videos = Video.select{|v| hb_ary.include?(v.heartbreak_id) || i_ary.include?(v.inspiration_id)}
-    end 
-    @hb_filter = hb_ary
-    @i_filter = i_ary
+      @videos = Video.select{|v| heartbreak_ids.include?(v.heartbreak_id) || inspiration_ids.include?(v.inspiration_id)}
+    end
+    @hb_filter = heartbreak_ids
+    @i_filter = inspiration_ids
     render :filtered, layout:false
   end
 
   def index
     @heartbreaks = Heartbreak.all
     @inspirations = Inspiration.all
-    
+
     @videos = Video.all
   end
 
@@ -41,7 +44,7 @@ class VideosController < ApplicationController
   end
 
   def filter_params
-    params.permit(:heartbreaks,:inspirations)
+    params.permit(:heartbreak_ids => [], :inspiration_ids => [])
   end
   def video_params
     params.require(:video).permit(:title, :embed_url, :heartbreak_id, :inspiration_id)
