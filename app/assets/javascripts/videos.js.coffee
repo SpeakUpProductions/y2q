@@ -44,5 +44,5 @@ checkboxChecked = ->
 
 $ ->
   $('#videos-area').on 'click', '.video-ss', openVideo
-  $('.what-lists li input').on 'click', checkboxChecked
+  # $('.what-lists li input').on 'click', checkboxChecked
   return
