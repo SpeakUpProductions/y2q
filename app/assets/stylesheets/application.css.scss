@@ -39,65 +39,6 @@ p.alert {
 	color: $white;
 }
 
-/* MY2Q PAGE */
-.bio{
-	list-style:none;
-	margin-left:0px;
-	margin-top:15px;
-	margin-bottom:25px;
-	background-color:#ccc;
-	height:100%;
-	width:100%;
-}
-
-.bio-category{
-	font-size:.75em;
-	background-color:#ccc;
-	height:100%;
-	width:50%;
-	text-align:right;
-	font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
-	border-bottom: 1px solid white;
-}
-
-.bio-details{
-	font-size:.75em;
-	background-color:#ddd;
-	height:100%;
-	width:50%;
-	font-family: 'Open Sans', Verdana, Arial, sans-serif;
-}
-
-.bio-button{
-	width:100%;
-	box-shadow:2px 2px 1px #888888;
-	border:1px solid white;
-	color: $white;
-}
-
-.button-text {
-  font-size: .80em;
-  color: $black;
-  font-family: $thick-font;
-} 
-
-.profile-name{
-  text-transform: uppercase;
-  color: black;
-}
-
-.my-videos{
-  color: $med-gray;
-  text-transform: uppercase;
-}
-  
-.submit-text{
-  margin-top: 5px;
-  text-transform: uppercase;
-}
-
-/* BIO FORM PAGE */
-
 /* FOOTER */
 div.footer{
 	height:80px;
