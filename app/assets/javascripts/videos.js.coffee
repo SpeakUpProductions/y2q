@@ -2,16 +2,10 @@ video_template = $('#video_template')
 modal = $('#video_modal')
 filter_form = $('#filter_form')
 
-cloneNewFlex = ->
-  video_template.children('.flex-video').clone()
-
-setSrc = (flex, src) ->
-  flex.find('iframe').attr('src', src)
-
 openVideo = ->
   src = $(@).data('src')
-  flex = cloneNewFlex()
-  setSrc(flex, src)
+  flex = video_template.children('.flex-video').clone()
+  flex.find('iframe').attr('src', src)
 
   modal.html(flex)
   modal.foundation('reveal', 'open')
@@ -33,7 +27,6 @@ filterVideos = ->
 checkboxChecked = ->
   $(@).parent().parent().toggleClass('selected')
   $('#filter_form').submit()
-
 
 $ ->
   $('#videos-area').on 'click', '.video-ss', openVideo
