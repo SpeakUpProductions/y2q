@@ -37,7 +37,6 @@
   </div>
   <div class="small-12 medium-9 columns videos">
      <%= render "filtered_videos", videos: @videos, i_filter: [], hb_filter: []%>
-  <div class="small-12 medium-9 columns videos">
     <span class="videos-title">videos</span>&nbsp;<span>(<%=@videos.length%>)</span>
     <div class="isotope js-isotope" data-isotope-options='{ "itemSelector": ".item", "masonry": { "columnWidth": 200, "gutter": 20 } }'>
       <div class="grid-sizer"></div>
