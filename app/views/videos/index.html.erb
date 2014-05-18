@@ -1,15 +1,15 @@
 <div class="row message">
-  <div class="small-9 columns">
+  <div class="small-12 medium-9 columns">
     <p>What breaks your heart? What makes you come alive? When you discover your answers, upload a video about it! your video will inspire others to do the same, and your impact will be multiplied.</p>
     <p class="bold">See how others answered <span>their</span> 2 Questions in the videos below.</p>
   </div>
-  <div class="small-3 columns">
+  <div class="small-12 medium-3 columns">
     <a href='<%= new_video_path %>' class="button results-button green-button"><span class="thick-font black button-text">Ready to share your story...<br>and inspire someone else's</span><br><span class="caps submit-text">submit a video</span></a>
   </div>
 </div>
 
 <div class="row">
-  <div class="small-3 columns">
+<div class="small-12 medium-3 columns">
     <%= form_tag filtered_videos_path, :method => :get, :id => 'filter_form' do |f| %>
     <span class="large-number">1</span><span class="what-header">what breaks<br>your heart?</span>
     <ul id="heartbreaks-filter" class="what-lists">
@@ -35,8 +35,22 @@
     </ul>
   <% end %>
   </div>
-  <div id="videos-area" class="small-9 columns videos">
+  <div class="small-12 medium-9 columns videos">
      <%= render "filtered_videos", videos: @videos, i_filter: [], hb_filter: []%>
+  <div class="small-12 medium-9 columns videos">
+    <span class="videos-title">videos</span>&nbsp;<span>(<%=@videos.length%>)</span>
+    <div class="isotope js-isotope" data-isotope-options='{ "itemSelector": ".item", "masonry": { "columnWidth": 200, "gutter": 20 } }'>
+      <div class="grid-sizer"></div>
+      <% @videos.each do |v| %>
+    <div class="item <%= v.id % 4 == 0 ? 'width2 height2' : '' %>">
+      <%= image_tag v.thumbnail_url.blank? ? "video-placeholder-large.jpg" : v.thumbnail_url, class: "video-ss", data: { src: get_embed_src(v.embed_url) } %>
+      <%= image_tag "brokenheart-18x18.png" %>
+      <span class="heartbreak"><%= v.heartbreak.display_text %></span>
+      <%= image_tag "heartbeat-18x18.png" %>
+      <span class="inspiration"><%= v.inspiration.display_text %></span>
+    </div>
+      <% end %>
+    </div>
   </div>
 </div>
 <div id="video_modal" class="reveal-modal medium text-center" data-reveal>
