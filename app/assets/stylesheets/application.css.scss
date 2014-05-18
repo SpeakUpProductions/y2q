@@ -39,6 +39,16 @@ p.alert {
 	color: $white;
 }
 
+h2{
+  text-transform: uppercase;
+  font-family: $thick-font;
+  color: $light-gray;
+}
+
+h3{
+  font-family: $thick-font;
+}
+
 /* FOOTER */
 div.footer{
 	height:80px;
