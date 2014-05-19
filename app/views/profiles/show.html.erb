@@ -23,13 +23,7 @@
   </div>
   <div class="small-12 medium-8 columns">
     <span class="my-videos">my videos</span>
-    <ul class="small-block-grid-3 video-grid">
-      <li>
-        <iframe src="//player.vimeo.com/video/70411024"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      </li>
-      <li>
-        <iframe src="//player.vimeo.com/video/70411024"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      </li>
-    </ul>
+    <%= render "videos/filtered_videos", videos: @videos, i_filter: [], hb_filter: []%>
+
   </div>
 </div>

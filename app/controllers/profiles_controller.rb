@@ -7,6 +7,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @videos = current_user.videos
   end
 
   def update
