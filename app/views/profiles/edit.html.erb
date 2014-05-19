@@ -1,61 +1,91 @@
-<div class="row">
-  <div class="small-12 columns">
-
-    <h1>Edit your profile</h1>
-
-    <%= form_for(@profile) do |f| %>
-      <% if @profile.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@foo_model.errors.count, "error") %> prohibited this foo_model from being saved:</h2>
-
-          <ul>
-          <% @foo_model.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
-
-      <div class="field">
-        <%= f.label :name %><br>
-        <%= f.text_field :name %>
-      </div>
-      <div class="field">
-        <%= f.label :location %><br>
-        <%= f.text_field :location %>
-      </div>
-      <div class="field">
-        <%= f.label :bio %><br>
-        <%= f.text_field :bio %>
-      </div>
-      <div class="field">
-        <%= f.label :career %><br>
-        <%= f.text_field :career %>
-      </div>
-      <div class="field">
-        <%= f.label :MBTI, "MBTI" %><br>
-        <%= f.text_field :MBTI %>
-      </div>
-
-      <% %w[volunteer cause give campaign].each do |org_type| %>
-
-        <h3><%= org_type.titlecase %></h3>
-        <%= f.fields_for :organizations, @profile.organizations.send(org_type) do |builder| %>
-          <%= render 'organization_fields', f: builder %>
-        <% end %>
-        <%= link_to_add_fields "Add #{org_type.titlecase}", f, :organizations, :org_type => org_type %>
-
-        <br>
-      <% end %>
-
-      <h3>Issues</h3>
-      <%= f.fields_for :issues do |builder| %>
-        <%= render 'issue_fields', f: builder %>
-      <% end %>
-      <%= link_to_add_fields "Add Issue", f, :issues %>
-
-      <br>
-      <%= f.submit %>
-    <% end %>
-  </div>
+<div class="row bio-form">
+  	<div class="small-1 medium-2 columns">&nbsp;</div>
+	<div class="small-10 medium-8 columns">
+		<div class="row">
+			<div class="small-12 columns">
+			
+			    <h2>Edit your profile</h2>
+			
+			    <%= form_for(@profile) do |f| %>
+			      <% if @profile.errors.any? %>
+			        <div id="error_explanation">
+			          <h2><%= pluralize(@foo_model.errors.count, "error") %> prohibited this foo_model from being saved:</h2>
+			
+			          <ul>
+			          <% @foo_model.errors.full_messages.each do |msg| %>
+			            <li><%= msg %></li>
+			          <% end %>
+			          </ul>
+			        </div>
+			      <% end %>
+			</div>	
+		</div>
+		<div class="row">
+			<div class="small-3 columns">	
+				 <%= f.label :name %>
+			</div>
+			<div class="small-9 columns">
+				<%= f.text_field :name %>
+			</div>
+		</div>		
+		<div class="row">
+			<div class="small-3 columns">	
+				 <%= f.label :location %>
+			</div>
+			<div class="small-9 columns">
+				<%= f.text_field :location %>
+			</div>
+		</div>		
+		<div class="row">
+			<div class="small-3 columns">	
+				 <%= f.label :career %>
+			</div>
+			<div class="small-9 columns">
+				<%= f.text_field :career %>
+			</div>
+		</div>		
+		<div class="row">
+			<div class="small-3 columns">	
+				 <%= f.label :MBTI %>
+			</div>
+			<div class="small-9 columns">
+				<%= f.text_field :MBTI %>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="small-12 columns">	
+				 <%= f.label :bio %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 columns">
+				<%= f.text_area :bio %>
+			</div>
+		</div>										
+		<div class="row">
+			<div class="small-12 columns">
+			      <% %w[volunteer cause give campaign].each do |org_type| %>
+			
+			        <h3><%= org_type.titlecase %></h3>
+			        <%= f.fields_for :organizations, @profile.organizations.send(org_type) do |builder| %>
+			          <%= render 'organization_fields', f: builder %>
+			        <% end %>
+			        <%= link_to_add_fields "Add #{org_type.titlecase}", f, :organizations, :org_type => org_type %>
+			
+			        <br>
+			      <% end %>
+			
+			      <h3>Issues</h3>
+			      <%= f.fields_for :issues do |builder| %>
+			        <%= render 'issue_fields', f: builder %>
+			      <% end %>
+			      <%= link_to_add_fields "Add Issue", f, :issues %>
+			
+			      <br>
+			      <%= f.submit %>
+			    <% end %>
+			</div>  
+		</div>
+	</div>	    
+    <div class="small-1 medium-2 columns">&nbsp;</div>
 </div>
