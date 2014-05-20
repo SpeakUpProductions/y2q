@@ -7,10 +7,10 @@
 <div class="row">
 	<div class="small-11  medium-10 medium-offset-2 columns">
 		<div class="row">
-			<div class="small-12 medium-5 columns">
-				<%= f.label :heartbreak_id, "What breaks your heart?" %>		
+			<div class="small-12 medium-4 columns">
+				<%= f.label :heartbreak_id, "What breaks your heart?", :class=>"form-label" %>		
 			</div>
-			<div class="small-12 medium-7 columns left">	
+			<div class="small-12 medium-5 columns left">	
 				<%= f.collection_select(:heartbreak_id, @heartbreaks, :id, :display_text) %>	
 			</div>			
 		</div>
@@ -19,10 +19,10 @@
 <div class="row">
 	<div class="small-11  medium-10 medium-offset-2 columns">
 		<div class="row">
-			<div class="small-12 medium-5 columns">
-				<%= f.label :inspiration_id, "What makes you come alive?" %>	
+			<div class="small-12 medium-4 columns">
+				<%= f.label :inspiration_id, "What makes you come alive?", :class=>"form-label" %>	
 			</div>
-			<div class="small-12 medium-7 columns left">	
+			<div class="small-12 medium-5 columns left">	
 				<%= f.collection_select(:inspiration_id, @inspirations, :id, :display_text) %>	
 			</div>			
 		</div>
@@ -31,10 +31,10 @@
 <div class="row">
 	<div class="small-11  medium-10 medium-offset-2 columns">
 		<div class="row">
-			<div class="small-12 medium-5 columns">
-				<%= f.label :embed_url, "Url of your video:" %>	
+			<div class="small-12 medium-4 columns">
+				<%= f.label :embed_url, "Url of your video:", :class=>"form-label" %>	
 			</div>
-			<div class="small-12 medium-7 columns left">	
+			<div class="small-12 medium-5 columns left">	
 				<%= f.url_field :embed_url %>
 			</div>			
 		</div>
@@ -43,22 +43,22 @@
 <div class="row">
 	<div class="small-11  medium-10 medium-offset-2 columns">
 		<div class="row">
-			<div class="small-12 medium-5 columns">
-				<%= f.label :title, "Video Title:" %>
+			<div class="small-12 medium-4 columns">
+				<%= f.label :title, "Video Title:", :class=>"form-label" %>
 			</div>
-			<div class="small-12 medium-7 columns left">	
+			<div class="small-12 medium-5 columns left">	
 				<%= f.text_field :title %>
 			</div>			
 		</div>
 	</div>						
 </div>	
 <div class="row">
-	<div class="small-12 small-centered  medium-9 medium-offset-2 medium-uncentered columns">
+	<div class="small-7 small-centered  medium-9 medium-offset-2 medium-uncentered columns center">
 		<%= f.submit "Submit", class:'button green-button' %>
 	</div>						
 </div>	
 <div class="row">
-	<div class="small-10  medium-8 medium-offset-2 columns">
+	<div class="small-10  medium-5 medium-offset-2 columns">
 		<p>Y2Q staff review all submissions for content and quality.  You will be notified via email when your video is approved.</p>
 	</div>						
 </div>	
