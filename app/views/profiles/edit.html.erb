@@ -1,67 +1,94 @@
-<div class="row bio-form">
-  	<div class="small-1 medium-2 columns">&nbsp;</div>
-	<div class="small-10 medium-8 columns">
+<div class="row">
+	<div class="small-11  medium-10 medium-offset-2 columns">
+		<h2>Edit your profile</h2>
+	</div>
+</div>	
+<div class="row">
+	<div class="small-11  medium-10 medium-offset-2 columns">
+    <%= form_for(@profile) do |f| %>
+      <% if @profile.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@foo_model.errors.count, "error") %> prohibited this foo_model from being saved:</h2>
+
+          <ul>
+          <% @foo_model.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+	</div>
+</div>	
+
+<div class="row">
+	<div class="small-11  medium-10 medium-offset-2 columns">
 		<div class="row">
-			<div class="small-12 columns">
-			
-			    <h2>Edit your profile</h2>
-			
-			    <%= form_for(@profile) do |f| %>
-			      <% if @profile.errors.any? %>
-			        <div id="error_explanation">
-			          <h2><%= pluralize(@foo_model.errors.count, "error") %> prohibited this foo_model from being saved:</h2>
-			
-			          <ul>
-			          <% @foo_model.errors.full_messages.each do |msg| %>
-			            <li><%= msg %></li>
-			          <% end %>
-			          </ul>
-			        </div>
-			      <% end %>
-			</div>	
-		</div>
-		<div class="row">
-			<div class="small-3 columns">	
-				 <%= f.label :name, :class=>"form-label" %>
+			<div class="small-12 medium-4 columns">
+				<%= f.label :name, :class=>"form-label" %>	
 			</div>
-			<div class="small-9 columns">
+			<div class="small-12 medium-5 columns left">
 				<%= f.text_field :name %>
-			</div>
-		</div>		
-		<div class="row">
-			<div class="small-3 columns">	
-				 <%= f.label :location, :class=>"form-label" %>
-			</div>
-			<div class="small-9 columns">
-				<%= f.text_field :location %>
-			</div>
-		</div>		
-		<div class="row">
-			<div class="small-3 columns">	
-				 <%= f.label :career, :class=>"form-label" %>
-			</div>
-			<div class="small-9 columns">
-				<%= f.text_field :career %>
-			</div>
-		</div>		
-		<div class="row">
-			<div class="small-3 columns">	
-				 <%= f.label :MBTI, :class=>"form-label" %>
-			</div>
-			<div class="small-9 columns">
-				<%= f.text_field :MBTI %>
-			</div>
-		</div>	
-		<div class="row">
-			<div class="small-12 columns">	
-				 <%= f.label :bio, :class=>"form-label" %>
-			</div>
+			</div>			
 		</div>
+	</div>						
+</div>	
+<div class="row">
+	<div class="small-11  medium-10 medium-offset-2 columns">
 		<div class="row">
-			<div class="small-12 columns">
-				<%= f.text_area :bio %>
+			<div class="small-12 medium-4 columns">
+				<%= f.label :location, :class=>"form-label" %>
 			</div>
-		</div>										
+			<div class="small-12 medium-5 columns left">
+				<%= f.text_field :location %>
+			</div>			
+		</div>
+	</div>						
+</div>	
+<div class="row">
+	<div class="small-11  medium-10 medium-offset-2 columns">
+		<div class="row">
+			<div class="small-12 medium-4 columns">
+				<%= f.label :career, :class=>"form-label" %>
+			</div>
+			<div class="small-12 medium-5 columns left">
+				<%= f.text_field :career %>
+			</div>			
+		</div>
+	</div>						
+</div>	
+<div class="row">
+	<div class="small-11  medium-10 medium-offset-2 columns">
+		<div class="row">
+			<div class="small-12 medium-4 columns">
+				<%= f.label :MBTI, :class=>"form-label" %>
+			</div>
+			<div class="small-12 medium-5 columns left">
+				<%= f.text_field :MBTI %>
+			</div>			
+		</div>
+	</div>						
+</div>	
+<div class="row">
+	<div class="small-11  medium-10 medium-offset-2 columns">
+		<div class="row">
+			<div class="small-12 medium-4 columns">
+				<%= f.label :bio, :class=>"form-label" %>
+			</div>
+	</div>						
+</div>	
+<div class="row">
+	<div class="small-11  medium-10 medium-offset-2 columns">
+		<div class="row">			
+			<div class="small-12 medium-9 columns">
+				<%= f.text_area :bio %>
+			</div>			
+		</div>
+	</div>						
+</div>	
+		
+<div class="row bio-form">
+	<div class="small-11  medium-10 medium-offset-2 columns">		
+							
 		<div class="row">
 			<div class="small-12 columns">
 			      <% %w[volunteer cause give campaign].each do |org_type| %>
@@ -87,6 +114,5 @@
 			    <% end %>
 			</div>  
 		</div>
-	</div>	    
-    <div class="small-1 medium-2 columns">&nbsp;</div>
+	</div>
 </div>
