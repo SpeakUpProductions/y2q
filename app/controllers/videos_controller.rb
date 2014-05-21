@@ -22,7 +22,7 @@ class VideosController < ApplicationController
   end
 
   def new
-    @video = Video.new
+    @video = current_user.videos.new
     @heartbreaks = Heartbreak.all
     @inspirations = Inspiration.all
   end
@@ -52,6 +52,6 @@ class VideosController < ApplicationController
     params.permit(:hb => [], :i => [])
   end
   def video_params
-    params.require(:video).permit(:title, :embed_url, :heartbreak_id, :inspiration_id)
+    params.require(:video).permit(:user_id, :title, :embed_url, :heartbreak_id, :inspiration_id)
   end
 end

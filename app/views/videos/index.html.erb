@@ -36,15 +36,9 @@
   <% end %>
   </div>
   <div id="videos-area" class="small-12 medium-9 columns videos">
-    <%= render "filtered_videos", videos: @videos, i_filter: [], hb_filter: []%>
+    <%= render "filtered_videos", videos: @videos, i_filter: [], hb_filter: [], section_title: "Videos" %>
   </div>
   </div>
 </div>
-<div id="video_modal" class="reveal-modal medium text-center" data-reveal>
 
-</div>
-<div id="video_template">
-  <div class="flex-video widescreen">
-    <iframe width="560" height="315" src="" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
-  </div>
 </div>
