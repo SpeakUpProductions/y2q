@@ -16,20 +16,20 @@ replaceVideos = (newVideos) ->
 
 filterVideos = ->
   $.ajax({
-    url: $(@).attr('action')
-    data: $(@).serialize()
+    url: filter_form.attr('action')
+    data: filter_form.serialize()
     type: 'GET'
   }).success (data) ->
     replaceVideos(data)
 
-  return false # prevent normal behavior
+  return
 
 checkboxChecked = ->
   $(@).parent().parent().toggleClass('selected')
-  $('#filter_form').submit()
+  filterVideos()
+  return
 
 $ ->
   $('#videos-area').on 'click', '.video-ss', openVideo
   $('.what-lists li input').on 'click', checkboxChecked
-  $('#filter_form').on 'submit', filterVideos
   return
