@@ -4,6 +4,7 @@
   </div>
 </div>
 <%= form_for @video do |f| %>
+  <%= f.hidden_field :user_id, { :value => @video.user_id } %>
 <div class="row">
   <div class="small-11  medium-10 medium-offset-2 columns">
     <div class="row">
