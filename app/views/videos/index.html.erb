@@ -16,7 +16,7 @@
   <% @heartbreaks.each do |hb| %>
     <li>
       <div class="text-center">
-        <%= check_box_tag "hb[]", hb.id, false, :id => "hb_#{hb.id}" %>
+        <%= check_box_tag "hb[]", hb.id, false, :id => "hb_#{hb.id}", :autocomplete => "off" %>
       </div>
       <%= label_tag "hb_#{hb.id}", hb.display_text %>
     </li>
@@ -27,7 +27,7 @@
   <% @inspirations.each do |i| %>
     <li>
       <div class="text-center">
-        <%= check_box_tag "i[]", i.id, false, :id => "i_#{i.id}" %>
+        <%= check_box_tag "i[]", i.id, false, :id => "i_#{i.id}", :autocomplete => "off" %>
       </div>
       <%= label_tag "i_#{i.id}", i.display_text %>
     </li>
