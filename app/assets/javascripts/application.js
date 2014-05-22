@@ -14,5 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require_tree .
+//= require fonts
+//= require isotope
 
 $(function(){ $(document).foundation(); });
