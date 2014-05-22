@@ -58,15 +58,16 @@ p.alert {
   background-color:$black;
 }
 
+.green-button:hover .button-text{
+  color: $white;
+}
+
 .button-text{
   font-size:.80em;
   color:$main-gray;
   font-family:$thick-font;
 }
 
-.button-text:hover{
-  color:$white;
-}
 
 /* MISC */
 .external{
