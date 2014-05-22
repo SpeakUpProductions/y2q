@@ -27,6 +27,47 @@ p.alert {
   background-color: red;
 }
 
+/* BUTTONS */
+.black-button{
+  background-color: $med-gray;
+  color: $white;
+  text-transform: uppercase
+}
+
+.black-button:hover{
+  background-color: $black;
+}
+
+.black-button:visited{
+  color: $white;
+}
+
+.green-button{
+  background-color: $main-green;
+  color: $white;
+  box-shadow: 2px 2px 1px $light-gray;
+  border: 1px solid $white;
+  text-transform: uppercase
+}
+
+.green-button:visited{
+  color: $white;
+}
+
+.green-button:hover{
+  background-color:$black;
+}
+
+.button-text{
+  font-size:.80em;
+  color:$main-gray;
+  font-family:$thick-font;
+}
+
+.button-text:hover{
+  color:$white;
+}
+
 /* MISC */
 .external{
 	height:11px;
@@ -34,9 +75,10 @@ p.alert {
 	margin-left:3px;
 }
 
-.green-button{
-	background-color:#8cc63e;
-	color: $white;
+.submit-text{
+  margin-top: 5px;
+  text-transform: uppercase;
+  color: $white;
 }
 
 h2{
