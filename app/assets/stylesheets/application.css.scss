@@ -10,13 +10,13 @@
  *
  *= require foundation_and_overrides
  *= require_self
-
  *= require_tree .
  */
 
 
 @import "fonts";
 @import "colors";
+@import "font-awesome";
 
 /* temporary alert stuff */
 p.notice {
@@ -70,6 +70,14 @@ p.alert {
 
 
 /* MISC */
+.social-links, .social-links:visited{
+  color: $med-gray;
+}
+.social-links:hover{
+  color: $white;
+}
+
+
 .external{
 	height:11px;
 	width:11px;
