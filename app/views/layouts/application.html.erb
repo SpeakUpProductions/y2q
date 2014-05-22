@@ -13,10 +13,16 @@
   </head>
 
   <body>
-    <%= render "/layouts/header" %>
-    <%= yield %>
-    <%= render "/layouts/footer" %>
-    <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "isotope" %>
+    <div id="wrap">
+      <div id="main">
+        <%= render "/layouts/header" %>
+        <%= yield %>
+      </div>
+    </div>
+    <div id="footer">
+      <%= render "/layouts/footer" %>
+      <%= javascript_include_tag "application" %>
+      <%= javascript_include_tag "isotope" %>
+    </div> 
   </body>
 </html>
