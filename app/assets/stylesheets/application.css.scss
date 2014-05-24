@@ -159,6 +159,14 @@ div.footer div.columns a{
 	margin-top:30px;
 }
 
+.copyright, .copyright a:visited{
+  color: $med-gray;
+}
+
+.copyright a:hover{
+  color: $main-green;
+}
+
 /* ---- isotope ---- */
 
 .isotope {
