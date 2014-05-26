@@ -1,4 +1,14 @@
+<h3><%=@video.title%></h3>
 <div class="flex-video widescreen">
   <iframe width="560" height="315" src="<%=get_embed_src(@video.embed_url)%>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
 </div>
-
+<div class="row">
+  <div class="medium-6 columns">
+    <img src="/assets/brokenheart-18x18.png" alt="Brokenheart 18x18"></img>
+    <span class="heartbreak"><%=@video.heartbreak.display_text%></span>
+  </div> 
+  <div class="medium-6 columns">
+    <img src="/assets/heartbeat-18x18.png" alt="Heartbeat 18x18"></img>
+    <span class="inspiration"><%=@video.inspiration.display_text%></span> 
+  </div>
+</div>
