@@ -1,21 +1,25 @@
 <fieldset>
   <div class="row">
-    <div class="row">
-      <div class="small-1 columns">
-        <%= f.label :name, "Name", class: "right inline" %>
+    <div class="row">    
+      <div class="small-12 medium-2 columns">
+        <%= f.label :name, "Name", class: "center inline" %>
       </div>
-      <div class="small-5 columns">
+      <div class="small-12 medium-4 columns">
         <%= f.text_field :name %>
       </div>
-      <div class="small-1 columns">
-        <%= f.label :website, "Website", class: "right inline" %>
+      <div class="small-12 medium-2 columns">
+        <%= f.label :website, "Website", class: "center inline" %>
       </div>
-      <div class="small-5 columns">
+      <div class="small-12 medium-4 columns">
         <%= f.text_field :website %>
       </div>
-    </div>
-    <%= f.hidden_field :org_type %>
-    <%= f.hidden_field :_destroy %>
-    <%= link_to "remove", '#', class: "remove_fields" %>
+    </div>     
+    <div class="row">   
+      <div class="small-12 columns left"> 
+        <%= f.hidden_field :org_type %>
+        <%= f.hidden_field :_destroy %>
+        <%= link_to "remove", '#', class: "remove_fields" %>
+      </div>          
+    </div>        
   </div>
 </fieldset>
