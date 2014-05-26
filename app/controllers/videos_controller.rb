@@ -14,6 +14,11 @@ class VideosController < ApplicationController
     render :filtered, layout:false
   end
 
+  def show
+    @video = Video.find(params[:id])
+    render :show, layout:false
+  end
+
   def index
     @heartbreaks = Heartbreak.all
     @inspirations = Inspiration.all
