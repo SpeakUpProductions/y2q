@@ -1,4 +1,3 @@
-video_template = $('#video_template')
 modal = $('#video_modal')
 filter_form = $('#filter_form')
 
