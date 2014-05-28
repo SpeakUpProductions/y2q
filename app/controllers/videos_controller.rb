@@ -16,7 +16,17 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find(params[:id])
-    render :show, layout:false
+    @heartbreaks = Heartbreak.all
+    @inspirations = Inspiration.all
+    if (!current_user.nil? && current_user.id == @video.user_id)
+      render :edit, layout:false    
+    else
+      render :show, layout:false
+    end
+  end
+
+  def update
+     render :edit, layout:false
   end
 
   def index
