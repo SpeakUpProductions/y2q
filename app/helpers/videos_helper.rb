@@ -15,11 +15,10 @@ module VideosHelper
     just_url
   end
 
-  def get_embed_src(embed_url)
-    options = %w{autoplay=1 autohide=1}
+  def get_embed_src(embed_url, options = %w{autoplay=1 autohide=1})
     src = embed_url.sub('watch?v=', 'embed/')
-
     src = src << "?#{options.join('&')}" unless options.blank?
+    src
   end
 
     def get_num_matches(i_id, hb_id, i_filter, hb_filter)
