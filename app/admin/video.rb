@@ -15,20 +15,20 @@ ActiveAdmin.register Video do
   # end
 
   form do |f|
-      f.inputs "Video" do
-        f.input :title, :input_html => { :disabled => true }
-        f.input :heartbreak,
-                :label => "What breaks your heart?",
-                :member_label => :display_text,
-                :input_html => { :disabled => true }
-        f.input :inspiration,
-                :label => "What makes you come alive?",
-                :member_label => :display_text,
-                :input_html => { :disabled => true }
+    f.inputs "Video" do
+      f.input :title, :input_html => { :disabled => true }
+      f.input :heartbreak,
+              :label => "What breaks your heart?",
+              :member_label => :display_text,
+              :input_html => { :disabled => true }
+      f.input :inspiration,
+              :label => "What makes you come alive?",
+              :member_label => :display_text,
+              :input_html => { :disabled => true }
 
-      end
-      f.actions
     end
+    f.actions
+  end
 
   member_action :approve, :method => :post do
     video = Video.find params[:id]
