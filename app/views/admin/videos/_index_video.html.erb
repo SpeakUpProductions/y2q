@@ -1,14 +1,16 @@
-<h2><%= video.title %></h2>
-<h3><%= video.user.profile.name %></h3>
+<iframe src='<%= get_embed_src(video.embed_url, options = {}) %>'></iframe>
 
+<div class="video-info">
+  <h2><%= video.title %></h2>
+  <h3>by <%= video.user.profile.name %></h3>
 
-<div data-heartbreak-id="<%= video.heartbreak.id %>" data-inspiration-id="<%= video.inspiration.id %>">
-  <%= image_tag video.thumbnail_url.blank? ? "video-placeholder-large.jpg" : video.thumbnail_url, class: "video-ss", data: { src: get_embed_src(video.embed_url) } %>
   <%= image_tag "brokenheart-18x18.png" %>
   <span class="heartbreak"><%= video.heartbreak.display_text %></span>
   <%= image_tag "heartbeat-18x18.png" %>
   <span class="inspiration"><%= video.inspiration.display_text %></span>
-</div>
 <% unless video.approved %>
-  <div><%= link_to "Approve", {:action => 'approve', :id => video }, :method => :post %></div>
+  <div>
+    <%= link_to "Approve", {:action => 'approve', :id => video }, :method => :post %>
+  </div>
 <% end %>
+</div>
