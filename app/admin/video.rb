@@ -29,4 +29,12 @@ ActiveAdmin.register Video do
       end
       f.actions
     end
+
+  index :as => :block do |video|
+    div :for => video do
+      render "index_video", video: video
+      div do
+      end
+    end
+  end
 end
