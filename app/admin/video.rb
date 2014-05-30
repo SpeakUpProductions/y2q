@@ -1,5 +1,7 @@
 ActiveAdmin.register Video do
-
+  scope :unapproved
+  scope :approved
+  scope :all
 
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -33,7 +35,7 @@ ActiveAdmin.register Video do
   member_action :approve, :method => :post do
     video = Video.find params[:id]
     video.approve!
-    redirect_to admin_videos_path
+    redirect_to admin_videos_path(scope: 'unapproved')
   end
 
   index :as => :block do |video|

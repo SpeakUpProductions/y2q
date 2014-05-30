@@ -10,4 +10,8 @@ class Video < ActiveRecord::Base
   def self.unapproved
     where(approved: false)
   end
+
+  def self.approved
+    where(approved: true)
+  end
 end
