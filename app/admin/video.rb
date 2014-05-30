@@ -30,6 +30,13 @@ ActiveAdmin.register Video do
       f.actions
     end
 
+  member_action :approve, :method => :post do
+    # Just a regular controller method in here
+    video = Video.find params[:id]
+    #video.approve!
+    redirect_to admin_videos_path
+  end
+
   index :as => :block do |video|
     div :for => video do
       render "index_video", video: video
