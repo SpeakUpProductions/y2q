@@ -9,4 +9,6 @@
   <%= image_tag "heartbeat-18x18.png" %>
   <span class="inspiration"><%= video.inspiration.display_text %></span>
 </div>
-<div><%= link_to "Approve", {:action => 'approve', :id => video }, :method => :post %></div>
+<% unless video.approved %>
+  <div><%= link_to "Approve", {:action => 'approve', :id => video }, :method => :post %></div>
+<% end %>
