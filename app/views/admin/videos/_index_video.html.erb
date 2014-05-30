@@ -1,5 +1,6 @@
-<iframe src='<%= get_embed_src(video.embed_url, options = {}) %>'></iframe>
-
+<a href="<%= video.embed_url %>" target="new">
+<%= image_tag video.thumbnail_url.blank? ? "video-placeholder-large.jpg" : video.thumbnail_url, class: "small-thumb" %>
+</a>
 <div class="video-info">
   <h2><%= video.title %></h2>
   <h3>by <%= video.user.profile.name %></h3>
