@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 20140530034522) do
     t.integer "inspiration_id"
     t.string  "thumbnail_url"
     t.integer "user_id"
-    t.boolean "approved"
+    t.boolean "approved",       default: false, null: false
   end
 
 end

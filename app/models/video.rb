@@ -6,4 +6,8 @@ class Video < ActiveRecord::Base
   def approve!
     update_attribute(:approved, true)
   end
+
+  def self.unapproved
+    where(approved: false)
+  end
 end
