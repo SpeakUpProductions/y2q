@@ -7,9 +7,9 @@ class VideosController < ApplicationController
     @i_filter = inspiration_ids
 
     if @hb_filter.blank? && @i_filter.blank?
-      @videos = Video.all
+      @videos = approved_videos
     else
-      @videos = Video.select{|v| @hb_filter.include?(v.heartbreak_id) || @i_filter.include?(v.inspiration_id)}
+      @videos = approved_videos.select{|v| @hb_filter.include?(v.heartbreak_id) || @i_filter.include?(v.inspiration_id)}
     end
     render :filtered, layout:false
   end
@@ -18,7 +18,7 @@ class VideosController < ApplicationController
     @heartbreaks = Heartbreak.all
     @inspirations = Inspiration.all
 
-    @videos = Video.all
+    @videos = approved_videos
   end
 
   def new
@@ -53,5 +53,9 @@ class VideosController < ApplicationController
   end
   def video_params
     params.require(:video).permit(:user_id, :title, :embed_url, :heartbreak_id, :inspiration_id)
+  end
+
+  def approved_videos
+    Video.where(approved: true)
   end
 end

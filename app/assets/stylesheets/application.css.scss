@@ -10,8 +10,15 @@
  *
  *= require foundation_and_overrides
  *= require_self
- *= require_tree .
- */
+ *= require about
+ *= require home
+ *= require login
+ *= require menu
+ *= require profiles
+ *= require sandbox
+ *= require scaffolds
+ *= require videos
+*/
 
 
 @import "fonts";
@@ -30,14 +37,14 @@ html, body {
 #main {
   overflow:auto;
   padding-bottom: 80px;
-} 
+}
 
 #footer {
   position: relative;
-  margin-top: -110px; 
+  margin-top: -110px;
   height: 80px;
   clear:both;
-} 
+}
 
 body:before {
   content:"";
