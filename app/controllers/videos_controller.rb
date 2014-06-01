@@ -18,7 +18,16 @@ class VideosController < ApplicationController
     @heartbreaks = Heartbreak.all
     @inspirations = Inspiration.all
 
+    idlist = Struct.new(:id)
+    @hb = idlist.new(heartbreak_ids())
+    @i = idlist.new(inspiration_ids())
+
     @videos = approved_videos
+    if @hb.blank? && @i.blank?
+      @videos = approved_videos
+    else
+      @videos = approved_videos.select{|v| @hb.include?(v.heartbreak_id) || @i.include?(v.inspiration_id)}
+    end
   end
 
   def new
@@ -40,17 +49,17 @@ class VideosController < ApplicationController
   end
 
   private
-
   def heartbreak_ids
-    (filter_params[:hb] || {}).map(&:to_i)
+    [ (filter_params[:hb] || {:id => []} )  [:id] ].flatten.reject(&:empty?).map(&:to_i)
   end
   def inspiration_ids
-    (filter_params[:i] || {}).map(&:to_i)
+    [ (filter_params[:i]  || {:id => []} )  [:id] ].flatten.reject(&:empty?).map(&:to_i)
   end
 
   def filter_params
-    params.permit(:hb => [], :i => [])
+    params.slice(:hb, :i)
   end
+
   def video_params
     params.require(:video).permit(:user_id, :title, :embed_url, :heartbreak_id, :inspiration_id)
   end
