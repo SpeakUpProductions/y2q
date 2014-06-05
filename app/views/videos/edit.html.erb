@@ -1,31 +1,34 @@
 <%= form_for(@video, url: {action: "update"}, html: {id:"video-edit"}) do |v| %>
 <div class="row">
-  <div class="medium-2 columns">
-    <%= v.label :title, "Title:" %> 
-  </div>
-  <div class="medium-10 columns">
-    <%= v.text_field :title %>
-  </div>
-</div>
-<div class="">
-  <iframe width="400" height="300" src="<%=get_embed_src_no_options(@video.embed_url)%>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
-</div>
-<div class="row">
-  <div class="medium-2 text-right columns">
-    <img src="/assets/brokenheart-18x18.png" alt="Brokenheart 18x18"></img>
-  </div> 
-  <div class="medium-4 columns">
-    <%= v.collection_select(:heartbreak_id, @heartbreaks, :id, :display_text) %>
-  </div> 
-  <div class="medium-2 text-right columns">
-    <img src="/assets/heartbeat-18x18.png" alt="Heartbeat 18x18"></img>
-  </div> 
-  <div class="medium-4 columns">
-    <%= v.collection_select(:inspiration_id, @inspirations, :id, :display_text) %>
+  <div class="large-12 columns">
+      <label class="text-left">Title:
+        <%= v.text_field :title %>
+      </label>
   </div>
 </div>
 <div class="row">
-  <div class="medium-12 text-right columns">
+  <div class="large-12 columns">
+    <iframe src="<%=get_embed_src_no_options(@video.embed_url)%>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
+  </div>
+</div>
+<div class="row">
+  <div class="large-6 columns">
+    <label class="text-left">
+      <img src="/assets/brokenheart-18x18.png" alt="Brokenheart 18x18"></img>
+      what breaks your heart?  
+      <%= v.collection_select(:heartbreak_id, @heartbreaks, :id, :display_text) %>
+    </label>
+  </div> 
+  <div class="large-6 columns">
+    <label class="text-left">
+      <img src="/assets/heartbeat-18x18.png" alt="Heartbeat 18x18"/>
+      what makes you come alive? 
+      <%= v.collection_select(:inspiration_id, @inspirations, :id, :display_text) %>
+    </label>
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 text-right columns">
     <a href="javascript:void(0)" class="save-btn button tiny">Save</a>
     <a href="javascript:void(0)" class="cancel-btn button tiny secondary">Cancel</a>
   </div>
