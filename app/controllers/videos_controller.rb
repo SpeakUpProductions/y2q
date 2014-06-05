@@ -21,12 +21,12 @@ class VideosController < ApplicationController
     idlist = Struct.new(:id)
     @hb = idlist.new(heartbreak_ids())
     @i = idlist.new(inspiration_ids())
-
+    
     @videos = approved_videos
-    if @hb.blank? && @i.blank?
+    if @hb[:id].blank? && @i[:id].blank?
       @videos = approved_videos
     else
-      @videos = approved_videos.select{|v| @hb.include?(v.heartbreak_id) || @i.include?(v.inspiration_id)}
+      @videos = approved_videos.select{|v| @hb[:id].include?(v.heartbreak_id) || @i[:id].include?(v.inspiration_id)}
     end
   end
 

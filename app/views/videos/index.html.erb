@@ -45,7 +45,7 @@
   <% end %>
   </div>
   <div id="videos-area" class="small-12 medium-9 columns videos">
-    <%= render "filtered_videos", videos: @videos, i_filter: [], hb_filter: [], section_title: "Videos" %>
+    <%= render "filtered_videos", videos: @videos, i_filter: @i[:id], hb_filter: @hb[:id], section_title: "Videos" %>
   </div>
   </div>
 </div>
