@@ -3,11 +3,26 @@
 
 /* MENU */
 .top-bar-section 
-  ul.left li a
+  ul.left li a, ul.right li a
     padding-left: 10px !important
     padding-right: 10px !important
   
 .title-area
   a:hover
     background-color: $black
+    
+    
+@media only screen and (max-width: 800px)
+  .top-bar-section 
+    ul 
+      li 
+        a
+          font-size: 1rem
+  .title-area
+    .name
+      .logo
+        width: 150px
+      a
+        width: 150px
+       
         
