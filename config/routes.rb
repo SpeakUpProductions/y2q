@@ -3,7 +3,7 @@ Y2q::Application.routes.draw do
   ActiveAdmin.routes(self)
   get "about/index"
   get "videos/filtered", as: 'filtered_videos'
-  resources :videos, only: [:show, :index, :new, :create]
+  resources :videos, only: [:show, :index, :new, :create, :update]
   resource :profile, only: ['edit', 'show', 'update']
 
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }

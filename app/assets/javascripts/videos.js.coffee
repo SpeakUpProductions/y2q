@@ -3,7 +3,17 @@ filter_form = $('#filter_form')
 
 updateVideo = ->
   data = $('#video-edit').serialize()
-  alert('updating ' +  data)
+  url = $('#video-edit').attr('action')
+  $.ajax({
+    url: url,
+    data: data,
+    type: 'PUT'
+  }).complete ->
+    modal.foundation('reveal', 'close')
+    filterVideos()
+    return
+
+
   return
 
 cancelVideoUpdate = ->

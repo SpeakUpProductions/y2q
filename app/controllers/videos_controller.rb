@@ -26,6 +26,8 @@ class VideosController < ApplicationController
   end
 
   def update
+     @video = Video.find(params[:id])
+     @video.update(video_params)
      render :edit, layout:false
   end
 
@@ -78,7 +80,6 @@ class VideosController < ApplicationController
   def video_params
     params.require(:video).permit(:user_id, :title, :embed_url, :heartbreak_id, :inspiration_id)
   end
-
   def approved_videos
     Video.where(approved: true)
   end

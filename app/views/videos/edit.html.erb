@@ -1,4 +1,4 @@
-<%= form_for(@video, html: {id:"video-edit"}) do |v| %>
+<%= form_for(@video, url: {action: "update"}, html: {id:"video-edit"}) do |v| %>
 <div class="row">
   <div class="medium-2 columns">
     <%= v.label :title, "Title:" %> 
