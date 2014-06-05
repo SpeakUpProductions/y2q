@@ -24,12 +24,19 @@ filterVideos = ->
 
   return
 
+doHighlights = ($scope) ->
+  highlightLiIfChecked = (index) ->
+    $this = $(this)
+    $this.closest('li').toggleClass('selected', $this.prop('checked'))
+  $('input[type="checkbox"]', $scope).each(highlightLiIfChecked)
+
 checkboxChecked = ->
-  $(@).parent().parent().toggleClass('selected')
+  doHighlights($(@).closest("li"));
   filterVideos()
   return
 
 $ ->
   $('#videos-area').on 'click', '.video-ss', openVideo
   $('.what-lists li input').on 'click', checkboxChecked
+  doHighlights($("form#filter_form"))
   return
