@@ -2,11 +2,10 @@ modal = $('#video_modal')
 filter_form = $('#filter_form')
 
 updateVideo = ->
-  data = $('#video-edit').serialize()
-  url = $('#video-edit').attr('action')
+  editForm = $('#video-edit') 
   $.ajax({
-    url: url,
-    data: data,
+    url: editForm.attr('action'),
+    data: editForm.serialize(),
     type: 'PUT'
   }).complete ->
     modal.foundation('reveal', 'close')
