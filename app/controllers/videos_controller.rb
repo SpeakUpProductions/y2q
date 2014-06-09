@@ -28,7 +28,7 @@ class VideosController < ApplicationController
   def update
      @video = Video.find(params[:id])
      @video.update(video_params)
-     render :edit, layout:false
+     head :ok
   end
 
   def index
