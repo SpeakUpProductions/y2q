@@ -1,24 +1,6 @@
 modal = $('#video_modal')
 filter_form = $('#filter_form')
 
-updateVideo = ->
-  editForm = $('#video-edit') 
-  $.ajax({
-    url: editForm.attr('action'),
-    data: editForm.serialize(),
-    type: 'PUT'
-  }).complete ->
-    modal.foundation('reveal', 'close')
-    filterVideos()
-    return
-
-
-  return
-
-cancelVideoUpdate = ->
-  modal.foundation('reveal', 'close')
-  return
-
 openVideo = ->
   id = $(@).data('id')
   url = '/videos/'+id
@@ -58,6 +40,4 @@ $ ->
   $('#videos-area').on 'click', '.video-ss', openVideo
   $('.what-lists li input').on 'click', checkboxChecked
   doHighlights($("form#filter_form"))
-  modal.on 'click', '.save-btn', updateVideo
-  modal.on 'click', '.cancel-btn', cancelVideoUpdate
   return
