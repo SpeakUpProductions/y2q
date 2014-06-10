@@ -25,6 +25,13 @@ class VideosController < ApplicationController
     end
   end
 
+  def edit
+    @video = Video.find(params[:id])
+    @heartbreaks = Heartbreak.all
+    @inspirations = Inspiration.all
+    render :edit, layout:false
+  end
+
   def update
      @video = Video.find(params[:id])
      @video.update(video_params)
