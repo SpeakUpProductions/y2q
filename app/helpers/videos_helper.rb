@@ -20,6 +20,10 @@ module VideosHelper
     src = src << "?#{options.join('&')}" unless options.blank?
     src
   end
+  def get_embed_src_no_options(embed_url)
+    options = %w{autoplay=1 autohide=1}
+    src = embed_url.sub('watch?v=', 'embed/')
+  end
 
     def get_num_matches(i_id, hb_id, i_filter, hb_filter)
       num_matches = 0

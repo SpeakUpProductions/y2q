@@ -1,14 +1,15 @@
-video_template = $('#video_template')
 modal = $('#video_modal')
 filter_form = $('#filter_form')
 
 openVideo = ->
-  src = $(@).data('src')
-  flex = video_template.children('.flex-video').clone()
-  flex.find('iframe').attr('src', src)
-
-  modal.html(flex)
-  modal.foundation('reveal', 'open')
+  id = $(@).data('id')
+  url = '/videos/'+id
+  $.ajax({
+    url: url,
+    type: 'GET'
+  }).success (data) ->
+      modal.html(data)
+      modal.foundation('reveal', 'open')
 
 replaceVideos = (newVideos) ->
   $('#videos-area').html(newVideos)

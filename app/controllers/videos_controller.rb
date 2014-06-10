@@ -14,6 +14,26 @@ class VideosController < ApplicationController
     render :filtered, layout:false
   end
 
+  def show
+    @video = Video.find(params[:id])
+    @heartbreaks = Heartbreak.all
+    @inspirations = Inspiration.all
+    render :show, layout:false
+  end
+
+  def edit
+    @video = Video.find(params[:id])
+    @heartbreaks = Heartbreak.all
+    @inspirations = Inspiration.all
+    render :edit, layout:false
+  end
+
+  def update
+     @video = Video.find(params[:id])
+     @video.update(video_params)
+     head :ok
+  end
+
   def index
     @heartbreaks = Heartbreak.all
     @inspirations = Inspiration.all
@@ -63,7 +83,6 @@ class VideosController < ApplicationController
   def video_params
     params.require(:video).permit(:user_id, :title, :embed_url, :heartbreak_id, :inspiration_id)
   end
-
   def approved_videos
     Video.where(approved: true)
   end
