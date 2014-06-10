@@ -18,7 +18,7 @@ updateVideo = ->
     type: 'PUT'
   }).complete ->
     modal.foundation('reveal', 'close')
-    filterVideos()
+    getVideos()
     return
   return
 
@@ -26,8 +26,15 @@ cancelVideoUpdate = ->
   modal.foundation('reveal', 'close')
   return
 
+getVideos = ->
+  $.ajax({
+    url: 'profile/videos',
+    type: 'GET'
+  }).success (data) ->
+    replaceVideos(data)
+
 replaceVideos = (newVideos) ->
-  $('#videos-area').html(newVideos)
+  $('#profile-videos-area').html(newVideos)
   $('.js-isotope').isotope({ "itemSelector": ".item", "masonry": { "columnWidth": 200, "gutter": 20 } })
 
 $ ->
