@@ -18,7 +18,7 @@
 //= require isotope
 
 $(function(){
-  var f = $('iframe');
+  var f = $('iframe#home_video');
   var url = f.attr('src').split('?')[0];
 
   // Listen for messages from the player
