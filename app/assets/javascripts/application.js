@@ -58,22 +58,15 @@ $(function(){
     });
   }
 
-  // Play & Pause
-  $('.js-container a').click(function() {
-    if ($("#videoheader").length > 0){
-      post('pause');
-      $("#videoheader").remove();
-    }
-  });
-
-
   function onReady() {
     post('addEventListener', 'finish');
   }
 
   function onFinish() {
-    $("#videoheader").slideUp(1500, function() {
-      $("#videoheader").remove();
+
+    var flexVideo = $('.flex-video.vimeo')
+    flexVideo.slideUp(1500, function() {
+      flexVideo.remove();
     });
   }
   $(document).foundation();
