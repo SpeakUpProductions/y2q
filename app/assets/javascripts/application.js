@@ -16,5 +16,8 @@
 //= require_tree .
 //= require fonts
 //= require isotope
+//= require vimeo_controls
 
-$(function(){ $(document).foundation(); });
+$(function(){
+  $(document).foundation();
+});
