@@ -35,18 +35,16 @@ class VideosController < ApplicationController
   end
 
   def index
-    @heartbreaks = Heartbreak.all
-    @inspirations = Inspiration.all
+    @hb_filter = heartbreak_ids
+    @i_filter = inspiration_ids
 
-    idlist = Struct.new(:id)
-    @hb = idlist.new(heartbreak_ids())
-    @i = idlist.new(inspiration_ids())
-    
-    @videos = approved_videos
-    if @hb[:id].blank? && @i[:id].blank?
+    @heartbreaks = Heartbreak.all.map { |h| {id: h.id, display_text: h.display_text, checked: @hb_filter.include?(h.id) } }
+    @inspirations = Inspiration.all.map { |i| {id: i.id, display_text: i.display_text, checked: @i_filter.include?(i.id) } }
+
+    if @hb_filter.blank? && @i_filter.blank?
       @videos = approved_videos
     else
-      @videos = approved_videos.select{|v| @hb[:id].include?(v.heartbreak_id) || @i[:id].include?(v.inspiration_id)}
+      @videos = approved_videos.select{|v| @hb_filter.include?(v.heartbreak_id) || @i_filter.include?(v.inspiration_id)}
     end
   end
 
@@ -70,10 +68,19 @@ class VideosController < ApplicationController
 
   private
   def heartbreak_ids
-    [ (filter_params[:hb] || {:id => []} )  [:id] ].flatten.reject(&:empty?).map(&:to_i)
+    selected_hb.map(&:to_i)
   end
+
   def inspiration_ids
-    [ (filter_params[:i]  || {:id => []} )  [:id] ].flatten.reject(&:empty?).map(&:to_i)
+    selected_i.map(&:to_i)
+  end
+
+  def selected_hb
+    Array(filter_params[:hb])
+  end
+
+  def selected_i
+    Array(filter_params[:i])
   end
 
   def filter_params
