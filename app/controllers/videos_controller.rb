@@ -1,6 +1,7 @@
 class VideosController < ApplicationController
   include VideosHelper
   before_action :authenticate_user!, :only => [:new, :create]
+  expose(:videos) { get_videos }
   expose(:heartbreaks) { Heartbreak.all }
   expose(:inspirations) { Inspiration.all }
   expose(:hb_viewmodels) { checkbox_viewmodel(Heartbreak.all, hb_filter) }
@@ -9,11 +10,6 @@ class VideosController < ApplicationController
   expose(:i_filter) { inspiration_ids }
 
   def filtered
-    if hb_filter.blank? && i_filter.blank?
-      @videos = approved_videos
-    else
-      @videos = approved_videos.select{|v| hb_filter.include?(v.heartbreak_id) || i_filter.include?(v.inspiration_id)}
-    end
     render :filtered, layout:false
   end
 
@@ -31,14 +27,6 @@ class VideosController < ApplicationController
      @video = Video.find(params[:id])
      @video.update(video_params)
      head :ok
-  end
-
-  def index
-    if hb_filter.blank? && i_filter.blank?
-      @videos = approved_videos
-    else
-      @videos = approved_videos.select{|v| hb_filter.include?(v.heartbreak_id) || i_filter.include?(v.inspiration_id)}
-    end
   end
 
   def new
@@ -82,6 +70,14 @@ class VideosController < ApplicationController
 
   def approved_videos
     Video.where(approved: true)
+  end
+
+  def get_videos
+    if hb_filter.blank? && i_filter.blank?
+      approved_videos
+    else
+      approved_videos.select{|v| hb_filter.include?(v.heartbreak_id) || i_filter.include?(v.inspiration_id)}
+    end
   end
 
   def checkbox_viewmodel(collection, filter)
