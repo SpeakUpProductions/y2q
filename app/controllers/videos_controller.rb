@@ -16,8 +16,6 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find(params[:id])
-    @heartbreaks = Heartbreak.all
-    @inspirations = Inspiration.all
     render :show, layout:false
   end
 
