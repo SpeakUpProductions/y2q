@@ -3,17 +3,16 @@ class VideosController < ApplicationController
   before_action :authenticate_user!, :only => [:new, :create]
   expose(:heartbreaks) { Heartbreak.all }
   expose(:inspirations) { Inspiration.all }
-  expose(:hb_viewmodels) { checkbox_viewmodel(Heartbreak.all, @hb_filter) }
-  expose(:i_viewmodels) { checkbox_viewmodel(Inspiration.all, @i_filter) }
+  expose(:hb_viewmodels) { checkbox_viewmodel(Heartbreak.all, hb_filter) }
+  expose(:i_viewmodels) { checkbox_viewmodel(Inspiration.all, i_filter) }
+  expose(:hb_filter) { heartbreak_ids }
+  expose(:i_filter) { inspiration_ids }
 
   def filtered
-    @hb_filter = heartbreak_ids
-    @i_filter = inspiration_ids
-
-    if @hb_filter.blank? && @i_filter.blank?
+    if hb_filter.blank? && i_filter.blank?
       @videos = approved_videos
     else
-      @videos = approved_videos.select{|v| @hb_filter.include?(v.heartbreak_id) || @i_filter.include?(v.inspiration_id)}
+      @videos = approved_videos.select{|v| hb_filter.include?(v.heartbreak_id) || i_filter.include?(v.inspiration_id)}
     end
     render :filtered, layout:false
   end
@@ -35,13 +34,10 @@ class VideosController < ApplicationController
   end
 
   def index
-    @hb_filter = heartbreak_ids
-    @i_filter = inspiration_ids
-
-    if @hb_filter.blank? && @i_filter.blank?
+    if hb_filter.blank? && i_filter.blank?
       @videos = approved_videos
     else
-      @videos = approved_videos.select{|v| @hb_filter.include?(v.heartbreak_id) || @i_filter.include?(v.inspiration_id)}
+      @videos = approved_videos.select{|v| hb_filter.include?(v.heartbreak_id) || i_filter.include?(v.inspiration_id)}
     end
   end
 
