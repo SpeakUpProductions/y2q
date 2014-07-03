@@ -15,15 +15,15 @@
   <div class="large-6 columns">
     <label class="text-left">
       <%= image_tag "brokenheart-18x18.png" %>
-      what breaks your heart?  
-      <%= v.collection_select(:heartbreak_id, @heartbreaks, :id, :display_text) %>
+      what breaks your heart?
+      <%= v.collection_select(:heartbreak_id, heartbreaks, :id, :display_text) %>
     </label>
-  </div> 
+  </div>
   <div class="large-6 columns">
     <label class="text-left">
       <%= image_tag "heartbeat-18x18.png" %>
-      what makes you come alive? 
-      <%= v.collection_select(:inspiration_id, @inspirations, :id, :display_text) %>
+      what makes you come alive?
+      <%= v.collection_select(:inspiration_id, inspirations, :id, :display_text) %>
     </label>
   </div>
 </div>
