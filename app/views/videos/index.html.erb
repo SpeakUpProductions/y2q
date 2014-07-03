@@ -19,7 +19,7 @@
     <span class="large-number">1</span><span class="what-header">what breaks<br>your heart?</span>
     <ul id="heartbreaks-filter" class="what-lists">
 
-    <% @heartbreaks.each do |hb| %>
+    <% hb_viewmodels.each do |hb| %>
       <li class="<%= 'selected' if hb[:checked] %>">
         <div class="text-center">
           <%= check_box_tag "hb[]", hb[:id], false, :id => "hb_#{hb[:id]}", :checked => hb[:checked] ? "checked" : nil, :autocomplete => "off" %>
@@ -31,7 +31,7 @@
     </ul>
     <span class="large-number">2</span><span class="what-header">what makes<br>you come alive?</span>
     <ul id="inspirations-filter" class="what-lists">
-      <% @inspirations.each do |i| %>
+      <% i_viewmodels.each do |i| %>
         <li class="<%= 'selected' if i[:checked] %>">
           <div class="text-center">
             <%= check_box_tag "i[]", i[:id], false, :id => "i_#{i[:id]}", :checked => i[:checked] ? "checked" : nil, :autocomplete => "off" %>

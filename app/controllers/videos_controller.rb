@@ -3,6 +3,8 @@ class VideosController < ApplicationController
   before_action :authenticate_user!, :only => [:new, :create]
   expose(:heartbreaks) { Heartbreak.all }
   expose(:inspirations) { Inspiration.all }
+  expose(:hb_viewmodels) { checkbox_viewmodel(Heartbreak.all, @hb_filter) }
+  expose(:i_viewmodels) { checkbox_viewmodel(Inspiration.all, @i_filter) }
 
   def filtered
     @hb_filter = heartbreak_ids
@@ -35,9 +37,6 @@ class VideosController < ApplicationController
   def index
     @hb_filter = heartbreak_ids
     @i_filter = inspiration_ids
-
-    @heartbreaks = Heartbreak.all.map { |h| {id: h.id, display_text: h.display_text, checked: @hb_filter.include?(h.id) } }
-    @inspirations = Inspiration.all.map { |i| {id: i.id, display_text: i.display_text, checked: @i_filter.include?(i.id) } }
 
     if @hb_filter.blank? && @i_filter.blank?
       @videos = approved_videos
@@ -84,7 +83,12 @@ class VideosController < ApplicationController
   def video_params
     params.require(:video).permit(:user_id, :title, :embed_url, :heartbreak_id, :inspiration_id)
   end
+
   def approved_videos
     Video.where(approved: true)
+  end
+
+  def checkbox_viewmodel(collection, filter)
+    collection.map { |item| {id: item.id, display_text: item.display_text, checked: filter.include?(item.id) } }
   end
 end
