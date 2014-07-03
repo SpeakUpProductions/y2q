@@ -1,6 +1,4 @@
 class WelcomeController < ApplicationController
-  def index
-    @heartbreaks = Heartbreak.all
-    @inspirations = Inspiration.all
-  end
+  expose(:heartbreaks) { Heartbreak.all }
+  expose(:inspirations) { Inspiration.all }
 end

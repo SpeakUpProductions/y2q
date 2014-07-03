@@ -8,6 +8,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'decent_exposure', '~>2.3'
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
