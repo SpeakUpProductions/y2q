@@ -1,14 +1,14 @@
-<h3><%=@video.title%></h3>
+<h3><%=video.title%></h3>
 <div class="flex-video widescreen">
-  <iframe width="560" height="315" src="<%=get_embed_src(@video.embed_url)%>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe width="560" height="315" src="<%=get_embed_src(video.embed_url)%>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 <div class="row">
   <div class="medium-6 columns">
     <%= image_tag "brokenheart-18x18.png" %>
-    <span class="heartbreak"><%=@video.heartbreak.display_text%></span>
-  </div> 
+    <span class="heartbreak"><%=video.heartbreak.display_text%></span>
+  </div>
   <div class="medium-6 columns">
     <%= image_tag "heartbeat-18x18.png" %>
-    <span class="inspiration"><%=@video.inspiration.display_text%></span> 
+    <span class="inspiration"><%=video.inspiration.display_text%></span>
   </div>
 </div>

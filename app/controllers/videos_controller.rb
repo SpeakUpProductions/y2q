@@ -8,35 +8,28 @@ class VideosController < ApplicationController
   expose(:i_viewmodels) { checkbox_viewmodel(Inspiration.all, i_filter) }
   expose(:hb_filter) { heartbreak_ids }
   expose(:i_filter) { inspiration_ids }
+  expose(:video) { find_or_instantiate_video }
 
   def filtered
     render :filtered, layout:false
   end
 
   def show
-    @video = Video.find(params[:id])
     render :show, layout:false
   end
 
   def edit
-    @video = Video.find(params[:id])
     render :edit, layout:false
   end
 
   def update
-     @video = Video.find(params[:id])
-     @video.update(video_params)
+     video.update(video_params)
      head :ok
   end
 
-  def new
-    @video = current_user.videos.new
-  end
-
   def create
-    @video = Video.new(video_params)
-    @video.thumbnail_url = get_thumb_url(video_params[:embed_url])
-    if @video.save
+    video.thumbnail_url = get_thumb_url(video_params[:embed_url])
+    if video.save
       redirect_to profile_path
     else
       render :new
@@ -82,5 +75,9 @@ class VideosController < ApplicationController
 
   def checkbox_viewmodel(collection, filter)
     collection.map { |item| {id: item.id, display_text: item.display_text, checked: filter.include?(item.id) } }
+  end
+
+  def find_or_instantiate_video
+    params[:id] ? Video.find(params[:id]) : current_user.videos.new(video_params)
   end
 end
