@@ -5,12 +5,6 @@ class ProfilesController < ApplicationController
   expose(:profile) { get_profile }
   expose(:viewing_own_profile)
 
-  def edit
-  end
-
-  def show
-  end
-
   def update
     if profile.update(profile_params)
       redirect_to profile_url, notice: 'Profile successfully updated.'
