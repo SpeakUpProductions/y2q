@@ -22,6 +22,10 @@ class VideosController < ApplicationController
     render :edit, layout:false
   end
 
+  def new
+    self.video = Video.new
+  end
+
   def update
      video.update(video_params)
      head :ok
