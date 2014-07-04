@@ -33,7 +33,7 @@ class VideosController < ApplicationController
 
   def current_user_index
     self.videos = current_user.videos
-    render partial: "videos/filtered_videos", locals: { videos: videos, i_filter: [], hb_filter: [], section_title: "My Videos" }, layout:false
+    render partial: "videos/filtered_videos", locals: { section_title: "My Videos" }, layout:false
   end
 
   def create
