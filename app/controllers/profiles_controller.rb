@@ -17,17 +17,19 @@ class ProfilesController < ApplicationController
   end
 
   private
-    def set_profile
-      @profile = Profile.find(current_user.profile.id)
-    end
-    def profile_params
-      params.require(:profile).permit(
-        :name,
-        :location,
-        :bio,
-        :career,
-        :MBTI,
-        organizations_attributes: [:id, :profile_id, :name, :website, :org_type, :_destroy],
-        issues_attributes: [:id, :profile_id, :display_text, :_destroy])
-    end
+
+  def set_profile
+    @profile = Profile.find(current_user.profile.id)
+  end
+
+  def profile_params
+    params.require(:profile).permit(
+      :name,
+      :location,
+      :bio,
+      :career,
+      :MBTI,
+      organizations_attributes: [:id, :profile_id, :name, :website, :org_type, :_destroy],
+      issues_attributes: [:id, :profile_id, :display_text, :_destroy])
+  end
 end
