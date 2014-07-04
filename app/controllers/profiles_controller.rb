@@ -1,7 +1,8 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
-  expose(:videos) { current_user.videos }
-  expose(:profile) { current_user.profile }
+  expose(:videos) { get_videos }
+  expose(:profile) { get_profile }
+  expose(:viewing_own_profile)
 
   def edit
   end
@@ -16,6 +17,21 @@ class ProfilesController < ApplicationController
   end
 
   private
+  def get_videos
+    profile.user.videos
+  end
+
+  def get_profile
+    Profile.find(profile_id)
+  end
+
+  def viewing_own_profile
+    !params[:id] || current_user.profile.id.to_s == params[:id]
+  end
+
+  def profile_id
+    params[:id] || current_user.profile.id
+  end
 
   def profile_params
     params.require(:profile).permit(

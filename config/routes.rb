@@ -7,6 +7,7 @@ Y2q::Application.routes.draw do
   resource :profile, only: ['edit', 'show', 'update'] do
     get "videos", to: "videos#current_user_index", as: "current_user_videos"
   end
+  resources :profiles, only: [:show]
 
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   root 'welcome#index'
