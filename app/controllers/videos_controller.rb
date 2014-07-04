@@ -31,6 +31,11 @@ class VideosController < ApplicationController
      head :ok
   end
 
+  def current_user_index
+    self.videos = current_user.videos
+    render partial: "videos/filtered_videos", locals: { videos: videos, i_filter: [], hb_filter: [], section_title: "My Videos" }, layout:false
+  end
+
   def create
     video.thumbnail_url = get_thumb_url(video_params[:embed_url])
     if video.save

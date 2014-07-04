@@ -16,11 +16,6 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def videos
-    @videos = current_user.videos
-    render partial: "videos/filtered_videos", locals: { videos: @videos, i_filter: [], hb_filter: [], section_title: "My Videos" }, layout:false
-  end
-
   private
     def set_profile
       @profile = Profile.find(current_user.profile.id)
