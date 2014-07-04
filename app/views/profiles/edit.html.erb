@@ -3,10 +3,10 @@
     <h2>Edit your profile</h2>
   </div>
 </div>
-<%= form_for(@profile) do |f| %>
+<%= form_for(profile) do |f| %>
   <div class="row">
     <div class="small-11  medium-10 medium-offset-2 columns">
-      <% if @profile.errors.any? %>
+      <% if profile.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@foo_model.errors.count, "error") %> prohibited this foo_model from being saved:</h2>
 
@@ -74,7 +74,7 @@
           <% %w[volunteer cause give campaign].each do |org_type| %>
 
             <h3><%= org_type.titlecase %></h3>
-            <%= f.fields_for :organizations, @profile.organizations.send(org_type) do |builder| %>
+            <%= f.fields_for :organizations, profile.organizations.send(org_type) do |builder| %>
               <%= render 'organization_fields', f: builder %>
             <% end %>
             <p><%= link_to_add_fields "Add #{org_type.titlecase}", f, :organizations, :org_type => org_type %></p>

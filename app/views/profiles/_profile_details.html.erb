@@ -1,12 +1,12 @@
 <span class="my-videos">my2q</span>
 <table class="bio">
-  <%= render "organization_detail", title: "cause", organizations: @profile.organizations.cause %>
+  <%= render "organization_detail", title: "cause", organizations: profile.organizations.cause %>
 
-  <%= render "basic_detail", title: "issues", detail: @profile.issues.map(&:display_text).join(", ") %>
-  <%= render "basic_detail", title: "myers-briggs", detail: @profile.MBTI %>
-  <%= render "basic_detail", title: "career", detail: @profile.career %>
+  <%= render "basic_detail", title: "issues", detail: profile.issues.map(&:display_text).join(", ") %>
+  <%= render "basic_detail", title: "myers-briggs", detail: profile.MBTI %>
+  <%= render "basic_detail", title: "career", detail: profile.career %>
 
-  <%= render "organization_detail", title: "volunteer", organizations: @profile.organizations.volunteer %>
-  <%= render "organization_detail", title: "give", organizations: @profile.organizations.give %>
-  <%= render "organization_detail", title: "campaign", organizations: @profile.organizations.campaign %>
+  <%= render "organization_detail", title: "volunteer", organizations: profile.organizations.volunteer %>
+  <%= render "organization_detail", title: "give", organizations: profile.organizations.give %>
+  <%= render "organization_detail", title: "campaign", organizations: profile.organizations.campaign %>
 </table>
