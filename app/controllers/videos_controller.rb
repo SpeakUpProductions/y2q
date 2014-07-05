@@ -9,6 +9,7 @@ class VideosController < ApplicationController
   expose(:hb_filter) { heartbreak_ids }
   expose(:i_filter) { inspiration_ids }
   expose(:video) { find_or_instantiate_video }
+  expose(:video_base_action) { lambda { |id| video_path(id) } }
 
   def filtered
     render :filtered, layout:false
