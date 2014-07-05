@@ -1,4 +1,5 @@
 <h3><%=video.title%></h3>
+<h4><%= link_to video.user.profile.name, profile_path(video.user.id) %></h4>
 <div class="flex-video widescreen">
   <iframe width="560" height="315" src="<%=get_embed_src(video.embed_url)%>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
 </div>
