@@ -3,11 +3,13 @@
       <div class="grid-sizer"></div>
       <% videos.each do |v| %>
     <div class="item <%= get_num_matches(v.inspiration.id, v.heartbreak.id, i_filter, hb_filter) > 1 ? 'width2 height2' : '' %>" data-heartbreak-id="<%= v.heartbreak.id %>" data-inspiration-id="<%= v.inspiration.id %>">
-      <%= image_tag v.thumbnail_url.blank? ? "video-placeholder-large.jpg" : v.thumbnail_url, class: "video-ss", data: { id: v.id } %>
-      <%= image_tag "brokenheart-18x18.png" %>
-      <span class="heartbreak"><%= v.heartbreak.display_text %></span>
-      <%= image_tag "heartbeat-18x18.png" %>
-      <span class="inspiration"><%= v.inspiration.display_text %></span>
+      <%= link_to video_base_action.call(v.id) do %>
+        <%= image_tag v.thumbnail_url.blank? ? "video-placeholder-large.jpg" : v.thumbnail_url, class: "video-ss", data: { id: v.id } %>
+        <%= image_tag "brokenheart-18x18.png" %>
+        <span class="heartbreak"><%= v.heartbreak.display_text %></span>
+        <%= image_tag "heartbeat-18x18.png" %>
+        <span class="inspiration"><%= v.inspiration.display_text %></span>
+      <% end %>
     </div>
       <% end %>
     </div>
