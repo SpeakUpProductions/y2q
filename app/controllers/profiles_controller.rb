@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!, except: :show
   before_action :authenticate_if_viewing_private_route, only: :show
-  expose(:videos) { profile.user.videos }
+  expose(:videos) { get_videos }
   expose(:profile) { get_profile }
   expose(:viewing_own_profile)
   expose(:video_base_action) { viewing_own_profile ? edit_video_lambda : show_video_lambda }
@@ -13,6 +13,10 @@ class ProfilesController < ApplicationController
   end
 
   private
+
+  def get_videos
+    viewing_own_profile ? profile.user.videos : profile.user.videos.where(approved: true)
+  end
 
   def get_profile
     viewing_own_profile ? current_user.profile : Profile.find(params[:id])
