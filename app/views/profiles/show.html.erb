@@ -9,7 +9,7 @@
           <p class="profile-name"><%= profile.name %></p>
           <p class="profile-location"><%=profile.location %></p>
           <p class="profile-bio"><%=profile.bio %></p>
-          <%= link_to "Edit Profile", edit_profile_path, class: "button green-button" if viewing_own_profile %>
+          <%= link_to "Edit Profile", edit_current_profile_path, class: "button green-button" if viewing_own_profile %>
         </div>
       </div>
     </div>

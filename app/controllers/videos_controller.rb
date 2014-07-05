@@ -40,7 +40,7 @@ class VideosController < ApplicationController
   def create
     video.thumbnail_url = get_thumb_url(video_params[:embed_url])
     if video.save
-      redirect_to profile_path
+      redirect_to current_profile_path
     else
       render :new
     end
