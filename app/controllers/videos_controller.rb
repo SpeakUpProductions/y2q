@@ -69,7 +69,7 @@ class VideosController < ApplicationController
   end
 
   def video_params
-    params.require(:video).permit(:user_id, :title, :embed_url, :heartbreak_id, :inspiration_id, :_destroy)
+    params.require(:video).permit(:user_id, :title, :embed_url, :heartbreak_id, :inspiration_id)
   end
 
   def approved_videos
