@@ -9,7 +9,7 @@ class VideosController < ApplicationController
   expose(:hb_filter) { heartbreak_ids }
   expose(:i_filter) { inspiration_ids }
   expose(:video) { find_or_instantiate_video }
-  expose(:video_base_action) { lambda { |id| video_path(id) } }
+  expose(:video_base_action) { show_video_lambda }
 
   def filtered
     render :filtered, layout:false
@@ -34,6 +34,7 @@ class VideosController < ApplicationController
 
   def current_user_index
     self.videos = current_user.videos
+    self.video_base_action = edit_video_lambda
     render partial: "videos/filtered_videos", locals: { section_title: "My Videos" }, layout:false
   end
 
@@ -89,5 +90,13 @@ class VideosController < ApplicationController
 
   def find_or_instantiate_video
     params[:id] ? Video.find(params[:id]) : current_user.videos.new(video_params)
+  end
+
+  def edit_video_lambda
+    lambda { |id| edit_video_path(id) }
+  end
+
+  def show_video_lambda
+    lambda { |id| video_path(id) }
   end
 end
