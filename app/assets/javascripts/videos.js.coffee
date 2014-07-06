@@ -53,9 +53,13 @@ replaceVideos = (newVideos) ->
   $('#videos-area').html(newVideos)
   $('.js-isotope').isotope({ "itemSelector": ".item", "masonry": { "columnWidth": 200, "gutter": 20 } })
 
+deleteVideo = ->
+  $(this).prev('input[type=hidden].deletion-placeholder').val('1')
+
 $ ->
   $('.what-lists li input').on 'click', checkboxChecked
   $('#videos-area').on 'click', 'a', videoAction
+  $('#video-edit').on 'click', 'a.delete-video', -> alert("delete")
   modal.on 'click', '.save-btn', updateVideo
   modal.on 'click', '.cancel-btn', cancelVideoUpdate
   return

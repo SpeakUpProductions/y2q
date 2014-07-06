@@ -29,6 +29,8 @@
 </div>
 <div class="row">
   <div class="large-12 text-right columns">
+    <%= v.hidden_field :_destroy, { class: "deletion-placeholder" } %>
+    <%= link_to "Remove video from Y2Q", "javascript:void(0)", class: "delete-video" %>
     <a href="javascript:void(0)" class="save-btn button tiny">Save</a>
     <a href="javascript:void(0)" class="cancel-btn button tiny secondary">Cancel</a>
   </div>
