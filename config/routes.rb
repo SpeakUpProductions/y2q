@@ -4,8 +4,10 @@ Y2q::Application.routes.draw do
   get "about/index"
   get "videos/filtered", as: 'filtered_videos'
   resources :videos, only: [:show, :index, :new, :create, :update, :edit]
-  resource :profile, only: ['edit', 'show', 'update']
-  get 'profile/videos', to: 'profiles#videos', :as => :profile_videos
+  resource :profile, only: ['edit', 'show', 'update'], as: 'current_profile' do
+    get "videos", to: "videos#current_user_index", as: "current_user_videos"
+  end
+  resources :profiles, only: [:show]
 
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   root 'welcome#index'

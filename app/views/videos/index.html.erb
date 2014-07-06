@@ -19,33 +19,31 @@
     <span class="large-number">1</span><span class="what-header">what breaks<br>your heart?</span>
     <ul id="heartbreaks-filter" class="what-lists">
 
-       <%= collection_check_boxes(:hb, :id, @heartbreaks, :id, :display_text) do |hb| %>
-         <li>
-            <div class="text-center">
-               <%= hb.check_box(autocomplete: 'off') %>
-            </div>
-            <%= hb.label %>
-         </li>
-       <% end %>
+    <% hb_viewmodels.each do |hb| %>
+      <li class="<%= 'selected' if hb[:checked] %>">
+        <div class="text-center">
+          <%= check_box_tag "hb[]", hb[:id], false, :id => "hb_#{hb[:id]}", :checked => hb[:checked] ? "checked" : nil, :autocomplete => "off" %>
+        </div>
+        <%= label_tag "hb_#{hb[:id]}", hb[:display_text] %>
+      </li>
+    <% end %>
 
     </ul>
     <span class="large-number">2</span><span class="what-header">what makes<br>you come alive?</span>
     <ul id="inspirations-filter" class="what-lists">
-
-       <%= collection_check_boxes(:i, :id, @inspirations, :id, :display_text) do |i| %>
-         <li>
-            <div class="text-center">
-               <%= i.check_box(autocomplete: 'off') %>
-            </div>
-            <%= i.label %>
-         </li>
-       <% end %>
-
+      <% i_viewmodels.each do |i| %>
+        <li class="<%= 'selected' if i[:checked] %>">
+          <div class="text-center">
+            <%= check_box_tag "i[]", i[:id], false, :id => "i_#{i[:id]}", :checked => i[:checked] ? "checked" : nil, :autocomplete => "off" %>
+          </div>
+          <%= label_tag "i_#{i[:id]}", i[:display_text] %>
+        </li>
+      <% end %>
     </ul>
   <% end %>
   </div>
   <div id="videos-area" class="small-12 medium-9 columns videos">
-    <%= render "filtered_videos", videos: @videos, i_filter: @i[:id], hb_filter: @hb[:id], section_title: "Videos" %>
+    <%= render "filtered_videos", videos: videos, i_filter: i_filter, hb_filter: hb_filter, section_title: "Videos" %>
   </div>
   </div>
 </div>

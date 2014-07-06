@@ -1,4 +1,4 @@
-<%= form_for(@video, url: {action: "update"}, html: {id:"video-edit"}) do |v| %>
+<%= form_for(video, url: {action: "update"}, html: {id:"video-edit"}) do |v| %>
 <div class="row">
   <div class="large-12 columns">
       <label class="text-left">Title:
@@ -8,22 +8,22 @@
 </div>
 <div class="row">
   <div class="large-12 columns">
-    <iframe src="<%=get_embed_src_no_options(@video.embed_url)%>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
+    <iframe src="<%=get_embed_src_no_options(video.embed_url)%>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
   </div>
 </div>
 <div class="row">
   <div class="large-6 columns">
     <label class="text-left">
       <%= image_tag "brokenheart-18x18.png" %>
-      what breaks your heart?  
-      <%= v.collection_select(:heartbreak_id, @heartbreaks, :id, :display_text) %>
+      what breaks your heart?
+      <%= v.collection_select(:heartbreak_id, heartbreaks, :id, :display_text) %>
     </label>
-  </div> 
+  </div>
   <div class="large-6 columns">
     <label class="text-left">
       <%= image_tag "heartbeat-18x18.png" %>
-      what makes you come alive? 
-      <%= v.collection_select(:inspiration_id, @inspirations, :id, :display_text) %>
+      what makes you come alive?
+      <%= v.collection_select(:inspiration_id, inspirations, :id, :display_text) %>
     </label>
   </div>
 </div>

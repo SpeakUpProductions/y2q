@@ -1,68 +1,46 @@
 class VideosController < ApplicationController
   include VideosHelper
   before_action :authenticate_user!, :only => [:new, :create]
+  expose(:videos) { get_videos }
+  expose(:heartbreaks) { Heartbreak.all }
+  expose(:inspirations) { Inspiration.all }
+  expose(:hb_viewmodels) { checkbox_viewmodel(Heartbreak.all, hb_filter) }
+  expose(:i_viewmodels) { checkbox_viewmodel(Inspiration.all, i_filter) }
+  expose(:hb_filter) { heartbreak_ids }
+  expose(:i_filter) { inspiration_ids }
+  expose(:video) { find_or_instantiate_video }
+  expose(:video_base_action) { lambda { |id| video_path(id) } }
 
   def filtered
-    @hb_filter = heartbreak_ids
-    @i_filter = inspiration_ids
-
-    if @hb_filter.blank? && @i_filter.blank?
-      @videos = approved_videos
-    else
-      @videos = approved_videos.select{|v| @hb_filter.include?(v.heartbreak_id) || @i_filter.include?(v.inspiration_id)}
-    end
     render :filtered, layout:false
   end
 
   def show
-    @video = Video.find(params[:id])
-    @heartbreaks = Heartbreak.all
-    @inspirations = Inspiration.all
     render :show, layout:false
   end
 
   def edit
-    @video = Video.find(params[:id])
-    @heartbreaks = Heartbreak.all
-    @inspirations = Inspiration.all
     render :edit, layout:false
   end
 
+  def new
+    self.video = Video.new
+  end
+
   def update
-     @video = Video.find(params[:id])
-     @video.update(video_params)
+     video.update(video_params)
      head :ok
   end
 
-  def index
-    @heartbreaks = Heartbreak.all
-    @inspirations = Inspiration.all
-
-    idlist = Struct.new(:id)
-    @hb = idlist.new(heartbreak_ids())
-    @i = idlist.new(inspiration_ids())
-    
-    @videos = approved_videos
-    if @hb[:id].blank? && @i[:id].blank?
-      @videos = approved_videos
-    else
-      @videos = approved_videos.select{|v| @hb[:id].include?(v.heartbreak_id) || @i[:id].include?(v.inspiration_id)}
-    end
-  end
-
-  def new
-    @video = current_user.videos.new
-    @heartbreaks = Heartbreak.all
-    @inspirations = Inspiration.all
+  def current_user_index
+    self.videos = current_user.videos
+    render partial: "videos/filtered_videos", locals: { section_title: "My Videos" }, layout:false
   end
 
   def create
-    @video = Video.new(video_params)
-    @video.thumbnail_url = get_thumb_url(video_params[:embed_url])
-    @heartbreaks = Heartbreak.all
-    @inspirations = Inspiration.all
-    if @video.save
-      redirect_to profile_path
+    video.thumbnail_url = get_thumb_url(video_params[:embed_url])
+    if video.save
+      redirect_to current_profile_path
     else
       render :new
     end
@@ -70,10 +48,19 @@ class VideosController < ApplicationController
 
   private
   def heartbreak_ids
-    [ (filter_params[:hb] || {:id => []} )  [:id] ].flatten.reject(&:empty?).map(&:to_i)
+    selected_hb.map(&:to_i)
   end
+
   def inspiration_ids
-    [ (filter_params[:i]  || {:id => []} )  [:id] ].flatten.reject(&:empty?).map(&:to_i)
+    selected_i.map(&:to_i)
+  end
+
+  def selected_hb
+    Array(filter_params[:hb])
+  end
+
+  def selected_i
+    Array(filter_params[:i])
   end
 
   def filter_params
@@ -83,7 +70,24 @@ class VideosController < ApplicationController
   def video_params
     params.require(:video).permit(:user_id, :title, :embed_url, :heartbreak_id, :inspiration_id)
   end
+
   def approved_videos
     Video.where(approved: true)
+  end
+
+  def get_videos
+    if hb_filter.blank? && i_filter.blank?
+      approved_videos
+    else
+      approved_videos.select{|v| hb_filter.include?(v.heartbreak_id) || i_filter.include?(v.inspiration_id)}
+    end
+  end
+
+  def checkbox_viewmodel(collection, filter)
+    collection.map { |item| {id: item.id, display_text: item.display_text, checked: filter.include?(item.id) } }
+  end
+
+  def find_or_instantiate_video
+    params[:id] ? Video.find(params[:id]) : current_user.videos.new(video_params)
   end
 end
