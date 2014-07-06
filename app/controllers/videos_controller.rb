@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
   include VideosHelper
-  before_action :authenticate_user!, :only => [:new, :create]
+  before_action :authenticate_user!, except: [:index, :show]
   expose(:videos) { get_videos }
   expose(:heartbreaks) { Heartbreak.all }
   expose(:inspirations) { Inspiration.all }
@@ -45,6 +45,11 @@ class VideosController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    Video.destroy(params[:id])
+    redirect_to current_profile_path
   end
 
   private
