@@ -10,6 +10,7 @@ videoAction = (e) ->
   }).success (data) ->
       modal.html(data)
       modal.foundation('reveal', 'open')
+      modal.foundation()
 
 updateVideo = ->
   editForm = $('#video-edit')
@@ -55,7 +56,7 @@ replaceVideos = (newVideos) ->
 
 $ ->
   $('.what-lists li input').on 'click', checkboxChecked
-  $('#videos-area').on 'click', 'a', videoAction
   modal.on 'click', '.save-btn', updateVideo
   modal.on 'click', '.cancel-btn', cancelVideoUpdate
+  $('#videos-area').on 'click', 'a.video-link', videoAction
   return

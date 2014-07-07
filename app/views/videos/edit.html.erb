@@ -29,9 +29,13 @@
 </div>
 <div class="row">
   <div class="large-12 text-right columns">
-    <%= link_to 'Delete', video, :method => 'delete', data: { confirm: 'Are you sure?' } %>
     <a href="javascript:void(0)" class="save-btn button tiny">Save</a>
     <a href="javascript:void(0)" class="cancel-btn button tiny secondary">Cancel</a>
+    <div data-alert class="alert-box warning radius">
+      Are you sure you want to delete?
+      <%= link_to 'Delete', video, method: 'delete', class: 'button alert tiny'%>
+      <%= link_to 'Cancel', '#', class: 'button secondary tiny close' %>
+    </div>
   </div>
 </div>
 <% end %>
