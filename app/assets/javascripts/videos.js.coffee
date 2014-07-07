@@ -10,7 +10,6 @@ videoAction = (e) ->
   }).success (data) ->
       modal.html(data)
       modal.foundation('reveal', 'open')
-      modal.foundation()
 
 updateVideo = ->
   editForm = $('#video-edit')
@@ -54,9 +53,20 @@ replaceVideos = (newVideos) ->
   $('#videos-area').html(newVideos)
   $('.js-isotope').isotope({ "itemSelector": ".item", "masonry": { "columnWidth": 200, "gutter": 20 } })
 
+confirmDelete = ->
+  confirmationAlert = modal.find('div.hidden-delete-confirmation').html()
+  modal.append(confirmationAlert)
+  modal.foundation('alert')
+  modal.on 'close.fndtn.alert', '[data-alert]', cancelDelete
+  modal.find('a.action-button').hide()
+
+cancelDelete = ->
+  modal.find('a.action-button').show()
+
 $ ->
   $('.what-lists li input').on 'click', checkboxChecked
-  modal.on 'click', '.save-btn', updateVideo
-  modal.on 'click', '.cancel-btn', cancelVideoUpdate
   $('#videos-area').on 'click', 'a.video-link', videoAction
+  modal.on 'click', '#video-edit .save-btn', updateVideo
+  modal.on 'click', '#video-edit .cancel-btn', cancelVideoUpdate
+  modal.on 'click', '#video-edit .delete-btn', confirmDelete
   return
