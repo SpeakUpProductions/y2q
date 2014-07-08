@@ -18,7 +18,8 @@
         <%= yield %>
       </div>
     </div>
-    <div id="footer">
+    <div id="footer" class=<%= "secondary-footer" if :secondary_footer %>>
+      <%= yield(:secondary_footer) %>
       <%= render "/layouts/footer" %>
       <%= javascript_include_tag "application" %>
     </div>
