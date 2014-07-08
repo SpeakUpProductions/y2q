@@ -3,9 +3,9 @@
   <ul class="title-area">
     <li class="name">
       <h1>
-        <a href="#">
-        <%= image_tag "logo.png", class: "logo" %>
-        </a>
+        <%= link_to root_path do %>
+          <%= image_tag "logo.png", class: "logo" %>
+        <% end %>
       </h1>
     </li>
     <li class="toggle-topbar menu-icon">
@@ -15,21 +15,15 @@
 
   <section class="top-bar-section">
     <ul class="left">
-    <li>
-      <%= link_to 'Home', root_path %>
-    </li>
-    <li>
-      <%= link_to 'About', about_index_path %>
-    </li>
-    <li>
-      <a href="#">resources</a>
-    </li>
-    <li>
-      <%= link_to 'videos', videos_path %>
-    </li>
-    <li>
-      <%= link_to 'my2q', current_profile_path %>
-    </li>
+      <li>
+        <%= link_to 'videos', videos_path %>
+      </li>
+      <li>
+        <%= link_to 'my2q', current_profile_path %>
+      </li>
+      <li>
+        <%= link_to 'About', about_index_path %>
+      </li>
     </ul>
     <ul class="right">
     <li>
