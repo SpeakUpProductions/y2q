@@ -5,51 +5,6 @@
   </div>
 </div>
 
-<div class="container choices">
-  <div class="row">
-    <div class="small-12 columns">
-
-      <div class="row">
-        <div class="small-12 small-centered columns">
-          <h2 class="header-shadow choices-header text-center">ask yourself 2 questions</h2>
-        </div>
-      </div>
-
-      <%= form_tag({controller: 'videos', action: 'index'}, method: 'get', class: 'front-page-form') do %>
-        <div class="row">
-          <div class="medium-1 columns">&nbsp;</div>
-          <div class="small-centered medium-4 medium-uncentered columns text-center">
-            <span class="question">what breaks your heart?</span>
-            <%= collection_select('hb', '', heartbreaks, :id, :display_text, {}, {class: 'question-select'}) %>
-            <span class="subLink">Find out &raquo;</span>
-          </div>
-          <div class="medium-2 columns">&nbsp;</div>
-          <div class="small-centered medium-4 medium-uncentered columns text-center">
-            <span class="question">what makes you come alive?</span>
-            <%= collection_select('i', '', inspirations, :id, :display_text, {}, {class: 'question-select'}) %>
-            <span class="subLink">Know thyself &raquo;</span>
-          </div>
-          <div class="small-1 columns">&nbsp;</div>
-        </div>
-        <div class="row">
-          <div class="small-12 small-centered columns text-center">
-            <%= submit_tag 'now put them together!', {class: 'button black-button margin-top-30 margin-bottom-70' } %>
-          </div>
-        </div>
-      <% end %>
-
-    </div>
-  </div>
-</div>
-
-<div class="container quote-image text-center">
-  <div class="row">
-    <span class="quote">Don't ask what the world needs. Ask what makes you<br>
-      come alive, and go do it. Because what the world needs<br>
-      is people who have come alive.</span>
-    <br>
-    <span class="quote-signature">- howard thurman</span>
-  </div>
-</div>
-
-
+<%= render "choices" %>
+<%= render "quotes" %>
+<%= render "give_categories" %>
