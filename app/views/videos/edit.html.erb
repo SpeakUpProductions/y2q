@@ -29,8 +29,16 @@
 </div>
 <div class="row">
   <div class="large-12 text-right columns">
-    <a href="javascript:void(0)" class="save-btn button tiny">Save</a>
-    <a href="javascript:void(0)" class="cancel-btn button tiny secondary">Cancel</a>
+    <a href="javascript:void(0)" class="delete-btn button alert tiny action-button">Remove</a>
+    <a href="javascript:void(0)" class="save-btn button tiny action-button">Save</a>
+    <a href="javascript:void(0)" class="cancel-btn button tiny secondary action-button">Cancel</a>
+    <div class="hidden-delete-confirmation">
+      <div data-alert class="alert-box warning delete-confirmation">
+        Are you sure you want to remove this video from Y2Q?
+        <%= link_to 'Delete', video, method: 'delete', class: 'button alert tiny'%>
+        <%= link_to 'Cancel', '#', class: 'button secondary tiny close' %>
+      </div>
+    </div>
   </div>
 </div>
 <% end %>
