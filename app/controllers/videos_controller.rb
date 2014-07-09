@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
   include VideosHelper
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :filtered]
   expose(:videos) { get_videos }
   expose(:heartbreaks) { Heartbreak.all }
   expose(:inspirations) { Inspiration.all }
