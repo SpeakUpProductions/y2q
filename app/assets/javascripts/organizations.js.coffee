@@ -1,7 +1,7 @@
 ready = ->
   $('form').on 'click', '.remove_fields', (event) ->
     $(this).siblings('input[type=hidden][id*=_destroy]').val('1')
-    $(this).closest('fieldset').hide()
+    $(this).closest('div.organization-fields').hide()
     event.preventDefault()
 
   $('form').on 'click', '.add_fields', (event) ->

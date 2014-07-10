@@ -73,19 +73,28 @@
         <div class="small-12 medium-9 columns">
           <h3 class="section-label">Issues:<span>What issues break your heart?</span></h3>
           <%= f.text_field :issue_tokens, value: profile.issue_tokens.join(",") %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-12 medium-9 columns">
           <h3 class="section-label">Talents:<span>What makes you come alive?  What do you love doing?</span></h3>
           <%= f.text_field :talent_tokens, value: profile.talent_tokens.join(",") %>
+        </div>
+      </div>
 
-          <% %w[time treasure campaign].each do |org_type| %>
-
-            <h3><%= org_type.titlecase %></h3>
-            <%= f.fields_for :organizations, profile.organizations.send(org_type) do |builder| %>
-              <%= render 'organization_fields', f: builder %>
-            <% end %>
-            <p><%= link_to_add_fields f, :organizations, :org_type => org_type %></p>
-
-            <br>
+      <% %w[time treasure campaign].each do |org_type| %>
+      <div class="row">
+        <div class="small-12 medium-9 columns">
+          <h3><%= org_type.titlecase %></h3>
+          <%= f.fields_for :organizations, profile.organizations.send(org_type) do |builder| %>
+            <%= render 'organization_fields', f: builder %>
           <% end %>
+          <p><%= link_to_add_fields f, :organizations, :org_type => org_type %></p>
+
+        </div>
+      </div>
+      <% end %>
 
         </div>
       </div>
