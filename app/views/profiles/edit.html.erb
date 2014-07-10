@@ -68,7 +68,7 @@
 
   <div class="row">
     <div class="small-12 medium-1 columns">
-      <%= f.text_field :issue_tokens, "data-pre" => profile.issues.map{|i| {name: i.display_text} }.to_json %>
+      <%= f.text_field :issue_tokens, "data-pre" => profile.issue_tokens.to_json %>
     </div>
   </div>
 

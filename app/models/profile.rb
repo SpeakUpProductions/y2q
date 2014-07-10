@@ -14,6 +14,6 @@ class Profile < ActiveRecord::Base
   end
 
   def issue_tokens
-
+    issues.map{|i| {name: i.display_text} }
   end
 end
