@@ -8,4 +8,12 @@ class Profile < ActiveRecord::Base
   accepts_nested_attributes_for :organizations, allow_destroy: true
   accepts_nested_attributes_for :issues, allow_destroy: true
   accepts_nested_attributes_for :talents, allow_destroy: true
+
+  def issue_tokens=(issues)
+
+  end
+
+  def issue_tokens
+
+  end
 end
