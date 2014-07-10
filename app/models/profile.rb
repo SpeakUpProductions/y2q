@@ -11,10 +11,10 @@ class Profile < ActiveRecord::Base
 
   def issue_tokens=(new_issues)
     issues.each{|i| i.mark_for_destruction }
-    new_issues.split(',').each{ |i| issues.build(display_text: i) }
+    new_issues.split(",").each{ |i| issues.build(display_text: i) }
   end
 
   def issue_tokens
-    issues.map{|i| {name: i.display_text} }
+    issues.map(&:display_text)
   end
 end
