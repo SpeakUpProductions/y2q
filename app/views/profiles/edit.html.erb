@@ -72,14 +72,14 @@
       <div class="row">
         <div class="small-12 medium-9 columns">
           <h3 class="section-label">Issues:<span>What issues break your heart?</span></h3>
-          <%= f.text_field :issue_tokens, value: profile.issue_tokens.join(",") %>
+          <%= f.text_field :issue_tokens, value: profile.issue_tokens.join(","), placeholder: "e.g. Poverty, Education Inequality, etc." %>
         </div>
       </div>
 
       <div class="row">
         <div class="small-12 medium-9 columns">
           <h3 class="section-label">Talents:<span>What makes you come alive?  What do you love doing?</span></h3>
-          <%= f.text_field :talent_tokens, value: profile.talent_tokens.join(",") %>
+          <%= f.text_field :talent_tokens, value: profile.talent_tokens.join(","), placeholder: "e.g. Playing Music, Public Speaking, etc." %>
         </div>
       </div>
 
