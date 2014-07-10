@@ -46,7 +46,8 @@ class ProfilesController < ApplicationController
       :career,
       :MBTI,
       organizations_attributes: [:id, :profile_id, :name, :website, :org_type, :_destroy],
-      issues_attributes: [:id, :profile_id, :display_text, :_destroy])
+      issues_attributes: [:id, :profile_id, :display_text, :_destroy],
+      talents_attributes: [:id, :profile_id, :display_text, :_destroy])
   end
 
   def edit_video_lambda
