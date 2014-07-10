@@ -91,19 +91,16 @@
             <%= render 'organization_fields', f: builder %>
           <% end %>
           <p><%= link_to_add_fields f, :organizations, :org_type => org_type %></p>
-
         </div>
       </div>
       <% end %>
 
-        </div>
-      </div>
-      <div class="row">
-        <div class="small-12 medium-9 columns">
-          <br/><br/>
-          <%= f.submit 'save', :class => 'button green-button'  %>
-        </div>
-      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-11 medium-10 medium-offset-2 columns">
+      <br/><br/>
+      <%= f.submit 'save', :class => 'button green-button'  %>
     </div>
   </div>
 <% end %>
