@@ -80,12 +80,16 @@ p.alert {
   color: $white;
 }
 
+.button {
+  color: white;
+  box-shadow: 2px 2px 1px #888888;
+  border: 1px solid white;
+  text-transform: uppercase;
+}
+
 .green-button{
+  @extend button;
   background-color: $main-green;
-  color: $white;
-  box-shadow: 2px 2px 1px $light-gray;
-  border: 1px solid $white;
-  text-transform: uppercase
 }
 
 .green-button:visited{
