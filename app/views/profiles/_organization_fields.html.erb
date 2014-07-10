@@ -13,7 +13,9 @@
             <%= f.text_field :website, placeholder: "(optional)" %>
           </div>
           <div class="small-1 medium-1 columns">
-            <%= link_to "x", '#', class: "remove_fields" %>
+            <%= link_to '#', class: "remove_fields" do %>
+              <i class="fa fa-trash-o fa-lg"></i>
+            <% end %>
             <%= f.hidden_field :org_type %>
             <%= f.hidden_field :_destroy %>
           </div>
