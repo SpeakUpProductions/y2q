@@ -1,9 +1,14 @@
-<div class="row">
-  <div class="small-11  medium-10 medium-offset-2 columns">
-    <h2>Edit your profile</h2>
-  </div>
-</div>
 <%= form_for profile, url: current_profile_path do |f| %>
+  <div class="contain-to-grid sticky">
+    <div data-topbar>
+      <div class="small-11 medium-10 medium-offset-2 columns">
+        <div class="small-12 medium-9 columns">
+            <%= link_to 'cancel', current_profile_path, class: "button tiny secondary-button" %>
+            <%= f.submit 'save', :class => 'button tiny green-button'  %>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="small-11  medium-10 medium-offset-2 columns">
       <% if profile.errors.any? %>
@@ -110,12 +115,6 @@
           <p><%= link_to_add_fields f, :organizations, :org_type => :campaign %></p>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-11 medium-10 medium-offset-2 columns">
-      <br/><br/>
-      <%= f.submit 'save', :class => 'button green-button'  %>
     </div>
   </div>
 <% end %>
