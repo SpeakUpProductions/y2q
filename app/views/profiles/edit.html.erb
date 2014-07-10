@@ -67,21 +67,12 @@
   </div>
 
   <div class="row">
-    <div class="small-12 medium-1 columns">
-      <%= f.text_field :issue_tokens, "data-pre" => profile.issue_tokens.to_json %>
-    </div>
-  </div>
-
-  <div class="row">
     <div class="small-11  medium-10 medium-offset-2 columns">
 
       <div class="row">
         <div class="small-12 medium-9 columns">
           <h3>Issues</h3>
-          <%= f.fields_for :issues do |builder| %>
-            <%= render 'issue_fields', f: builder %>
-          <% end %>
-          <%= link_to_add_fields f, :issues %>
+          <%= f.text_field :issue_tokens, "data-pre" => profile.issue_tokens.to_json %>
           <h3>Talents</h3>
           <%= f.fields_for :talents do |builder| %>
             <%= render 'issue_fields', f: builder %>
