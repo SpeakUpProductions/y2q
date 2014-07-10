@@ -6,8 +6,6 @@ class Profile < ActiveRecord::Base
   validates :user_id, presence: true
 
   accepts_nested_attributes_for :organizations, allow_destroy: true
-  accepts_nested_attributes_for :issues, allow_destroy: true
-  accepts_nested_attributes_for :talents, allow_destroy: true
 
   def issue_tokens=(new_tokens)
     replace_tokens issues, new_tokens
