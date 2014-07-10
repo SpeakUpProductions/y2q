@@ -47,10 +47,10 @@
       </div>
       <div class="row">
         <div class="small-12 medium-4 columns">
-          <%= f.label :MBTI, :class=>"form-label" %>
+          <%= f.label :personality, :class=>"form-label" %>
         </div>
         <div class="small-12 medium-5 columns left">
-          <%= f.text_field :MBTI %>
+          <%= f.text_field :personality %>
         </div>
       </div>
       <div class="row">
@@ -77,7 +77,7 @@
 
       <div class="row">
         <div class="small-12 medium-9 columns">
-          <% %w[volunteer cause give campaign].each do |org_type| %>
+          <% %w[time treasure campaign].each do |org_type| %>
 
             <h3><%= org_type.titlecase %></h3>
             <%= f.fields_for :organizations, profile.organizations.send(org_type) do |builder| %>
