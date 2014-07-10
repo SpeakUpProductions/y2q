@@ -74,10 +74,7 @@
           <h3>Issues</h3>
           <%= f.text_field :issue_tokens, value: profile.issue_tokens.join(",") %>
           <h3>Talents</h3>
-          <%= f.fields_for :talents do |builder| %>
-            <%= render 'issue_fields', f: builder %>
-          <% end %>
-          <%= link_to_add_fields f, :talents %>
+          <%= f.text_field :talent_tokens, value: profile.talent_tokens.join(",") %>
 
           <% %w[time treasure campaign].each do |org_type| %>
 
