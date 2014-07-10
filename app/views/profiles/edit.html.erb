@@ -81,12 +81,12 @@
           <%= f.fields_for :issues do |builder| %>
             <%= render 'issue_fields', f: builder %>
           <% end %>
-          <%= link_to_add_fields "Add Issue", f, :issues %>
+          <%= link_to_add_fields f, :issues %>
           <h3>Talents</h3>
           <%= f.fields_for :talents do |builder| %>
             <%= render 'issue_fields', f: builder %>
           <% end %>
-          <%= link_to_add_fields "Add Talent", f, :talents %>
+          <%= link_to_add_fields f, :talents %>
 
           <% %w[time treasure campaign].each do |org_type| %>
 
@@ -94,7 +94,7 @@
             <%= f.fields_for :organizations, profile.organizations.send(org_type) do |builder| %>
               <%= render 'organization_fields', f: builder %>
             <% end %>
-            <p><%= link_to_add_fields "Add #{org_type.titlecase}", f, :organizations, :org_type => org_type %></p>
+            <p><%= link_to_add_fields f, :organizations, :org_type => org_type %></p>
 
             <br>
           <% end %>
