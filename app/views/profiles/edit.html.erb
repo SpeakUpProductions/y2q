@@ -71,9 +71,9 @@
 
       <div class="row">
         <div class="small-12 medium-9 columns">
-          <h3>Issues</h3>
+          <h3 class="section-label">Issues:<span>What issues break your heart?</span></h3>
           <%= f.text_field :issue_tokens, value: profile.issue_tokens.join(",") %>
-          <h3>Talents</h3>
+          <h3 class="section-label">Talents:<span>What makes you come alive?  What do you love doing?</span></h3>
           <%= f.text_field :talent_tokens, value: profile.talent_tokens.join(",") %>
 
           <% %w[time treasure campaign].each do |org_type| %>

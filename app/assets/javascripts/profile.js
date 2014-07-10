@@ -5,6 +5,7 @@
     delimiter: ',',
     persist: false,
     highlight: false,
+    openOnFocus: false,
     create: function(input) {
         return {
             value: input,
@@ -17,6 +18,7 @@
     delimiter: ',',
     persist: false,
     highlight: false,
+    openOnFocus: false,
     create: function(input) {
         return {
             value: input,
