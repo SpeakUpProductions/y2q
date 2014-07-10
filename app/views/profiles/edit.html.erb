@@ -83,18 +83,33 @@
         </div>
       </div>
 
-      <% %w[time treasure campaign].each do |org_type| %>
       <div class="row">
         <div class="small-12 medium-9 columns">
-          <h3><%= org_type.titlecase %></h3>
-          <%= f.fields_for :organizations, profile.organizations.send(org_type) do |builder| %>
+          <h3 class="section-label">Time:<span>Where do you volunteer?</span></h3>
+          <%= f.fields_for :organizations, profile.organizations.time do |builder| %>
             <%= render 'organization_fields', f: builder %>
           <% end %>
-          <p><%= link_to_add_fields f, :organizations, :org_type => org_type %></p>
+          <p><%= link_to_add_fields f, :organizations, :org_type => :time %></p>
         </div>
       </div>
-      <% end %>
-
+      <div class="row">
+        <div class="small-12 medium-9 columns">
+          <h3 class="section-label">Treasure:<span>Who do you support financially?</span></h3>
+          <%= f.fields_for :organizations, profile.organizations.treasure do |builder| %>
+            <%= render 'organization_fields', f: builder %>
+          <% end %>
+          <p><%= link_to_add_fields f, :organizations, :org_type => :treasure %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 medium-9 columns">
+          <h3 class="section-label">Campaigns:<span>What have you crowdfunded?</span></h3>
+          <%= f.fields_for :organizations, profile.organizations.campaign do |builder| %>
+            <%= render 'organization_fields', f: builder %>
+          <% end %>
+          <p><%= link_to_add_fields f, :organizations, :org_type => :campaign %></p>
+        </div>
+      </div>
     </div>
   </div>
   <div class="row">
