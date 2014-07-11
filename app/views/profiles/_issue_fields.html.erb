@@ -1,17 +1,1 @@
-<fieldset>
-  <div class="row">
-    <div class="row">
-      <div class="small-12 medium-1 columns">
-        <%= f.label :display_text, "Issue:", class: "inline" %>
-      </div>
-      <div class="small-12 medium-11 columns">
-        <%= f.text_field :display_text %>
-      </div>
-    </div>
-    <div class="row">   
-      <div class="small-12 columns left">   
-      <%= f.hidden_field :_destroy %>
-      <%= link_to "remove", '#', class: "remove_fields" %>
-    </div>
-  </div>    
-</fieldset>
+<%= render 'motivation_fields', f:f %>

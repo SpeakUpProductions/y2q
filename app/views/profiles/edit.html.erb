@@ -1,9 +1,14 @@
-<div class="row">
-  <div class="small-11  medium-10 medium-offset-2 columns">
-    <h2>Edit your profile</h2>
+<%= form_for profile, url: current_profile_path do |f| %>
+  <div class="contain-to-grid sticky">
+    <div data-topbar>
+      <div class="small-11 medium-10 medium-offset-2 columns">
+        <div class="small-12 medium-9 columns">
+            <%= link_to 'cancel', current_profile_path, class: "button tiny secondary" %>
+            <%= f.submit 'save', :class => 'button tiny green-button'  %>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-<%= form_for(profile) do |f| %>
   <div class="row">
     <div class="small-11  medium-10 medium-offset-2 columns">
       <% if profile.errors.any? %>
@@ -34,7 +39,7 @@
           <%= f.label :location, :class=>"form-label" %>
         </div>
         <div class="small-12 medium-5 columns left">
-          <%= f.text_field :location %>
+          <%= f.text_field :location, placeholder: "Enter your city" %>
         </div>
       </div>
       <div class="row">
@@ -42,15 +47,15 @@
           <%= f.label :career, :class=>"form-label" %>
         </div>
         <div class="small-12 medium-5 columns left">
-          <%= f.text_field :career %>
+          <%= f.text_field :career, placeholder: "What do you do for a living?" %>
         </div>
       </div>
       <div class="row">
         <div class="small-12 medium-4 columns">
-          <%= f.label :MBTI, :class=>"form-label" %>
+          <%= f.label :personality, :class=>"form-label" %>
         </div>
         <div class="small-12 medium-5 columns left">
-          <%= f.text_field :MBTI %>
+          <%= f.text_field :personality, placeholder: "What are you like?  Know your MBTI?" %>
         </div>
       </div>
       <div class="row">
@@ -60,7 +65,7 @@
       </div>
       <div class="row">
         <div class="small-12 medium-9 columns">
-          <%= f.text_area :bio %>
+          <%= f.text_area :bio, placeholder: "Briefly tell us about yourself." %>
         </div>
       </div>
     </div>
@@ -71,28 +76,43 @@
 
       <div class="row">
         <div class="small-12 medium-9 columns">
-          <% %w[volunteer cause give campaign].each do |org_type| %>
+          <h3 class="section-label">Issues:<span>What issues break your heart?</span></h3>
+          <%= f.text_field :issue_tokens, value: profile.issue_tokens.join(","), placeholder: "e.g. Poverty, Education Inequality, etc." %>
+        </div>
+      </div>
 
-            <h3><%= org_type.titlecase %></h3>
-            <%= f.fields_for :organizations, profile.organizations.send(org_type) do |builder| %>
-              <%= render 'organization_fields', f: builder %>
-            <% end %>
-            <p><%= link_to_add_fields "Add #{org_type.titlecase}", f, :organizations, :org_type => org_type %></p>
+      <div class="row">
+        <div class="small-12 medium-9 columns">
+          <h3 class="section-label">Talents:<span>What makes you come alive?  What do you love doing?</span></h3>
+          <%= f.text_field :talent_tokens, value: profile.talent_tokens.join(","), placeholder: "e.g. Playing Music, Public Speaking, etc." %>
+        </div>
+      </div>
 
-            <br>
+      <div class="row">
+        <div class="small-12 medium-9 columns">
+          <h3 class="section-label">Time:<span>Where do you volunteer?</span></h3>
+          <%= f.fields_for :organizations, profile.organizations.time do |builder| %>
+            <%= render 'organization_fields', f: builder %>
           <% end %>
-
-          <h3>Issues</h3>
-          <%= f.fields_for :issues do |builder| %>
-            <%= render 'issue_fields', f: builder %>
-          <% end %>
-          <%= link_to_add_fields "Add Issue", f, :issues %>
+          <p><%= link_to_add_fields f, :organizations, :org_type => :time %></p>
         </div>
       </div>
       <div class="row">
         <div class="small-12 medium-9 columns">
-          <br/><br/>
-          <%= f.submit 'save', :class => 'button green-button'  %>
+          <h3 class="section-label">Treasure:<span>Who do you support financially?</span></h3>
+          <%= f.fields_for :organizations, profile.organizations.treasure do |builder| %>
+            <%= render 'organization_fields', f: builder %>
+          <% end %>
+          <p><%= link_to_add_fields f, :organizations, :org_type => :treasure %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 medium-9 columns">
+          <h3 class="section-label">Campaigns:<span>What have you crowdfunded?</span></h3>
+          <%= f.fields_for :organizations, profile.organizations.campaign do |builder| %>
+            <%= render 'organization_fields', f: builder %>
+          <% end %>
+          <p><%= link_to_add_fields f, :organizations, :org_type => :campaign %></p>
         </div>
       </div>
     </div>

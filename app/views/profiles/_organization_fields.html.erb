@@ -1,25 +1,22 @@
-<fieldset>
-  <div class="row">
-    <div class="row">    
-      <div class="small-12 medium-2 columns">
-        <%= f.label :name, "Name", class: "center inline" %>
+<div class="row organization-fields">
+  <div class="small-12 medium-6 columns">
+    <%= f.text_field :name, placeholder: "Name" %>
+  </div>
+  <div class="small-12 medium-6 columns">
+    <div class="row collapse">
+      <div class="small-3 medium-2 columns">
+        <span class="prefix">http://</span>
       </div>
-      <div class="small-12 medium-4 columns">
-        <%= f.text_field :name %>
+      <div class="small-9 medium-9 columns">
+        <%= f.text_field :website, placeholder: "(optional)" %>
       </div>
-      <div class="small-12 medium-2 columns">
-        <%= f.label :website, "Website", class: "center inline" %>
-      </div>
-      <div class="small-12 medium-4 columns">
-        <%= f.text_field :website %>
-      </div>
-    </div>     
-    <div class="row">   
-      <div class="small-12 columns left"> 
+      <div class="small-12 medium-1 columns">
+        <%= link_to '#', class: "remove_fields" do %>
+          <i class="fa fa-trash-o fa-lg"></i>
+        <% end %>
         <%= f.hidden_field :org_type %>
         <%= f.hidden_field :_destroy %>
-        <%= link_to "remove", '#', class: "remove_fields" %>
-      </div>          
-    </div>        
+      </div>
+    </div>
   </div>
-</fieldset>
+</div>

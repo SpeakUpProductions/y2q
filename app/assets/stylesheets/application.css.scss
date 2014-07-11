@@ -18,6 +18,8 @@
  *= require sandbox
  *= require scaffolds
  *= require videos
+ *= require selectize
+ *= require selectize.default
 */
 
 
@@ -78,12 +80,16 @@ p.alert {
   color: $white;
 }
 
+.button {
+  color: white;
+  box-shadow: 2px 2px 1px #888888;
+  border: 1px solid white;
+  text-transform: uppercase;
+}
+
 .green-button{
+  @extend button;
   background-color: $main-green;
-  color: $white;
-  box-shadow: 2px 2px 1px $light-gray;
-  border: 1px solid $white;
-  text-transform: uppercase
 }
 
 .green-button:visited{
@@ -193,7 +199,7 @@ div.footer div.columns a{
 
 /* ---- .item ---- */
 
-.item {
+.video-item {
   float: left;
   width: 200px;
   height: 113px;
@@ -203,12 +209,11 @@ div.footer div.columns a{
   border-color: hsla(0, 0%, 0%, 0.7);
 }
 
-.item .video-ss{
+.video-item .video-ss{
 	cursor: pointer;
 	width:100%;
 	height: 100%;
 }
 /* 2 cols + 1 gutter = 200 + 20 + 200 */
-.item.width2 { width: 401px; }
-.item.height2 { height: 226px; }
-
+.video-item.width2 { width: 401px; }
+.video-item.height2 { height: 226px; }

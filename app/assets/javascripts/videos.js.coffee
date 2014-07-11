@@ -51,7 +51,7 @@ filterVideos = ->
 
 replaceVideos = (newVideos) ->
   $('#videos-area').html(newVideos)
-  $('.js-isotope').isotope({ "itemSelector": ".item", "masonry": { "columnWidth": 200, "gutter": 20 } })
+  $('.js-isotope').isotope({ "itemSelector": ".video-item", "masonry": { "columnWidth": 200, "gutter": 20 } })
 
 confirmDelete = ->
   confirmationAlert = modal.find('div.hidden-delete-confirmation').html()

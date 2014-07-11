@@ -1,3 +1,5 @@
+@import "colors";
+
 body {
   background-color: #fff;
   color: #333;
@@ -24,8 +26,8 @@ a {
     color: #666;
   }
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: $main-green;
+    background-color: none;
   }
 }
 
