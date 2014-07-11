@@ -2,10 +2,9 @@
 <table class="bio">
 
   <%= render "basic_detail", title: "issues", detail: profile.issues.map(&:display_text).join(", ") %>
-  <%= render "basic_detail", title: "personality", detail: profile.personality %>
-  <%= render "basic_detail", title: "career", detail: profile.career %>
-
   <%= render "organization_detail", title: "time", organizations: profile.organizations.time %>
+  <%= render "basic_detail", title: "talents", detail: profile.talents.map(&:display_text).join(", ") %>
   <%= render "organization_detail", title: "treasure", organizations: profile.organizations.treasure %>
-  <%= render "organization_detail", title: "campaign", organizations: profile.organizations.campaign %>
+  <%= render "organization_detail", title: "campaigns", organizations: profile.organizations.campaign %>
+  <%= render "basic_detail", title: "personality", detail: profile.personality %>
 </table>
