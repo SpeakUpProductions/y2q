@@ -44,7 +44,7 @@ class ProfilesController < ApplicationController
       :location,
       :bio,
       :career,
-      :MBTI,
+      :personality,
       :issue_tokens,
       :talent_tokens,
       organizations_attributes: [:id, :profile_id, :name, :website, :org_type, :_destroy])
