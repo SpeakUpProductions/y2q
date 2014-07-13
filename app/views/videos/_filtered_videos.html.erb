@@ -1,8 +1,9 @@
 <span class="videos-title"><%= section_title %></span>&nbsp;<span>(<%=videos.length%>)</span>
+  <% if videos.length > 0 %>
     <div class="isotope js-isotope" data-isotope-options='{ "itemSelector": ".video-item", "masonry": { "columnWidth": 200, "gutter": 20 } }'>
       <div class="grid-sizer"></div>
       <% videos.each do |v| %>
-    <div class="video-item <%= get_num_matches(v.inspiration.id, v.heartbreak.id, i_filter, hb_filter) > 1 ? 'width2 height2' : '' %>" data-heartbreak-id="<%= v.heartbreak.id %>" data-inspiration-id="<%= v.inspiration.id %>">
+        <div class="video-item <%= get_num_matches(v.inspiration.id, v.heartbreak.id, i_filter, hb_filter) > 1 ? 'width2 height2' : '' %>" data-heartbreak-id="<%= v.heartbreak.id %>" data-inspiration-id="<%= v.inspiration.id %>">
       <%= link_to video_base_action.call(v.id), { class: 'video-link' } do %>
         <%= image_tag v.thumbnail_url.blank? ? "video-placeholder-large.jpg" : v.thumbnail_url, class: "video-ss", data: { id: v.id } %>
         <%= image_tag "brokenheart-18x18.png" %>
@@ -10,10 +11,16 @@
         <%= image_tag "heartbeat-18x18.png" %>
         <span class="inspiration"><%= v.inspiration.display_text %></span>
       <% end %>
-    </div>
+        </div>
       <% end %>
+      </div>
     </div>
-  </div>
-
+  <% else %>
+    <div class="panel empty-video-message">
+        <p>
+          No one has uploaded any videos that match your criteria.
+        </p>
+    </div>
+  <% end %>
 <div id="video_modal" class="reveal-modal medium text-center" data-reveal>
 </div>
