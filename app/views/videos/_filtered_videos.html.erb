@@ -1,7 +1,7 @@
 <span class="videos-title"><%= section_title %></span>&nbsp;<span>(<%=videos.length%>)</span>
+<div class="isotope js-isotope" data-isotope-options='{ "itemSelector": ".video-item", "masonry": { "columnWidth": 200, "gutter": 20 } }'>
+  <div class="grid-sizer"></div>
   <% if videos.length > 0 %>
-    <div class="isotope js-isotope" data-isotope-options='{ "itemSelector": ".video-item", "masonry": { "columnWidth": 200, "gutter": 20 } }'>
-      <div class="grid-sizer"></div>
       <% videos.each do |v| %>
         <div class="video-item <%= get_num_matches(v.inspiration.id, v.heartbreak.id, i_filter, hb_filter) > 1 ? 'width2 height2' : '' %>" data-heartbreak-id="<%= v.heartbreak.id %>" data-inspiration-id="<%= v.inspiration.id %>">
       <%= link_to video_base_action.call(v.id), { class: 'video-link' } do %>
@@ -13,8 +13,6 @@
       <% end %>
         </div>
       <% end %>
-      </div>
-    </div>
   <% else %>
     <div class="panel empty-video-message text-center">
         <h5>
@@ -25,5 +23,7 @@
         </p>
     </div>
   <% end %>
+  </div>
+</div>
 <div id="video_modal" class="reveal-modal medium text-center" data-reveal>
 </div>
