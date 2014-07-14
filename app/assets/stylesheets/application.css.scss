@@ -205,14 +205,17 @@ div.footer div.columns a{
   height: 113px;
   margin-bottom: 30px;
   background: #DDD;
-  border: 2px solid #333;
-  border-color: hsla(0, 0%, 0%, 0.7);
+}
+
+.video-item .thumbnail-wrapper {
+  overflow: hidden;
 }
 
 .video-item .video-ss{
 	cursor: pointer;
 	width:100%;
-	height: 100%;
+  margin: -19px 0;
+
 }
 /* 2 cols + 1 gutter = 200 + 20 + 200 */
 .video-item.width2 { width: 401px; }
