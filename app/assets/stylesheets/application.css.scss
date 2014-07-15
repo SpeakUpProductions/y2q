@@ -200,20 +200,30 @@ div.footer div.columns a{
 /* ---- .item ---- */
 
 .video-item {
-  float: left;
-  width: 200px;
-  height: 113px;
-  margin-bottom: 30px;
+  width: 253px;
+  height: 142px;
   background: #DDD;
-  border: 2px solid #333;
-  border-color: hsla(0, 0%, 0%, 0.7);
+  margin-bottom: 30px;
+}
+
+.video-item .thumbnail-wrapper {
+  overflow: hidden;
 }
 
 .video-item .video-ss{
 	cursor: pointer;
 	width:100%;
-	height: 100%;
+  margin: -24px 0;
+
 }
-/* 2 cols + 1 gutter = 200 + 20 + 200 */
-.video-item.width2 { width: 401px; }
-.video-item.height2 { height: 226px; }
+.video-item.width2 { width: 526px; }
+.video-item.height2 { height: 314px; }
+.width2 img.video-ss {
+  margin-top: -53px;
+  width: 560px;
+  margin-left: -17px;
+  max-width: none;
+}
+.width2 div.thumbnail-wrapper {
+  height: 314px;
+}
