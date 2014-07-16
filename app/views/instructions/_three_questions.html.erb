@@ -1,0 +1,18 @@
+
+<dd class="accordion-navigation">
+  <a href="#three-questions">Reflect: Answer these 3 questions</a>
+  <div id="three-questions" class="content active">
+    <div class="row">
+      <h3>In 90 seconds, we want to hear the answer to 3 questions:</h3>
+      <%= render layout: "shared/components/blurb", locals: { blurb_title: "", icon_class: "fa fa-2x blurb-number-1" } do %>
+        <p>What breaks your heart?</p>
+      <% end %>
+      <%= render layout: "shared/components/blurb", locals: { blurb_title: "", icon_class: "fa fa-2x blurb-number-2" } do %>
+        <p>What makes you come alive?</p>
+      <% end %>
+      <%= render layout: "shared/components/blurb", locals: { blurb_title: "", icon_class: "fa fa-2x blurb-number-3" } do %>
+        <p>How are you (or will you) put these two together?</p>
+      <% end %>
+    </div>
+  </div>
+</dd>

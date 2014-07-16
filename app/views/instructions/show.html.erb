@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="small-12 medium-10 medium-offset-2 columns">
+    <h2>How to Y2Q</h2>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="small-12 medium-10 medium-offset-2 columns">
+    <dl class="accordion" data-accordion>
+      <%= render "three_questions" %>
+      <%= render "how_to_y2q_accordian_nav" %>
+      <dd class="accordion-navigation">
+        <a href="#panel2">Accordion 2</a>
+        <div id="panel2" class="content">
+          Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+      </dd>
+    </dl>
+  </div>
+</div>
+
+
+<%= link_to "I'm ready to upload!", new_video_path %>
