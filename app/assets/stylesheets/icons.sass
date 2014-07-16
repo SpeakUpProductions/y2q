@@ -1,0 +1,12 @@
+@mixin blurb-icon($content)
+  content: $content
+  font-weight:bold
+
+.blurb-number-1::before
+  @include blurb-icon("1")
+
+.blurb-number-2::before
+  @include blurb-icon("2")
+
+.blurb-number-3::before
+  @include blurb-icon("3")
