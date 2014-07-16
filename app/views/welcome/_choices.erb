@@ -14,13 +14,13 @@
           <div class="small-centered medium-4 medium-uncentered columns text-center">
             <span class="question">what breaks your heart?</span>
             <%= collection_select('hb', '', heartbreaks, :id, :display_text, {}, {class: 'question-select'}) %>
-            <span class="subLink">Find out &raquo;</span>
+            <%= link_to "Find out »", "http://www.globalissues.org", class: "subLink", target: "_blank" %>
           </div>
           <div class="medium-2 columns">&nbsp;</div>
           <div class="small-centered medium-4 medium-uncentered columns text-center">
             <span class="question">what makes you come alive?</span>
             <%= collection_select('i', '', inspirations, :id, :display_text, {}, {class: 'question-select'}) %>
-            <span class="subLink">Know thyself &raquo;</span>
+            <%= link_to "Know Thyself »", "http://www.16personalities.com ", class: "subLink", target: "_blank" %>
           </div>
           <div class="small-1 columns">&nbsp;</div>
         </div>
