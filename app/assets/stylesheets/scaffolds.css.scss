@@ -29,6 +29,11 @@ a {
     color: $main-green;
     background-color: none;
   }
+  &.callout-link
+  {
+    color: $main-green;
+    font-weight: bold;
+  }
 }
 
 div {
