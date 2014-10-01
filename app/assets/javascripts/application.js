@@ -17,6 +17,7 @@
 //= require_tree .
 //= require fonts
 //= require isotope
+//= require froogaloop
 //= require vimeo_controls
 
 $(function(){
