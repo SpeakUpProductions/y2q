@@ -12,6 +12,10 @@
     function onFinish(id) {
       flexVideo.slideUp(1500, function() {
         flexVideo.remove();
+        $.ajax({
+          url : 'welcome/played',
+          type : 'PUT'
+        });
       });
     }
   })

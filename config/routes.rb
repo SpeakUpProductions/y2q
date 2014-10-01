@@ -2,6 +2,7 @@ Y2q::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get "about/index"
+  put "welcome/played"
   get "videos/filtered", as: 'filtered_videos'
   get "instructions", as: :instructions, to: 'instructions#show'
   resources :videos
