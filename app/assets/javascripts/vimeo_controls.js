@@ -11,7 +11,8 @@
           player.addEvent('finish', onFinish);
       });
 
-      function onFinish(id) {
+      function closeVideo() {
+        $('.skip-video').remove();
         flexVideo.slideUp(1500, function() {
           flexVideo.remove();
           $.ajax({
@@ -19,6 +20,12 @@
             type : 'PUT'
           });
         });
+      }
+
+      $('.skip-video').click(closeVideo);
+
+      function onFinish(id) {
+        closeVideo();
       }
     }
   })
