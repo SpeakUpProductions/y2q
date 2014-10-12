@@ -1,5 +1,6 @@
 <div class="row">
-<div class="medium-12 columns text-center about-container">
+<div class="medium-8 medium-offset-2 columns text-center about-container">
+  <h2>Join the cause</h2>
   <p>
    Y2Q is a collaboration between Speak Up Productions, a film production company making films about what matters, and programmers looking for a way to do what makes them come alive, developing original sites. We are asking developers to donate their Time & Talent to this cause. The site is a being designed in Ruby on Rails.  
   </p>  
@@ -10,17 +11,28 @@
 </div>
 <%= form_for developer do |f| %>
   <div class="row">
-     <div class="small-12 medium-4 columns">
+    <div class="small-11 medium-6 medium-offset-4 columns">
+      <div class="row">
+        <div class="small-12 medium-2 columns">
         <%= f.label :name, :class=>"form-label" %>
-     </div>
-     <div class="small-12 medium-5 columns left">
+        </div>
+        <div class="small-12 medium-5 columns left">
         <%= f.text_field :name %>
-     </div>
-     <div class="small-12 medium-4 columns">
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 medium-2 columns">
         <%= f.label :email, :class=>"form-label" %>
-     </div>
-     <div class="small-12 medium-5 columns left">
+        </div>
+        <div class="small-12 medium-5 columns left">
         <%= f.text_field :email %>
-     </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-7 small-centered medium-2 medium-offset-5 columns center">
+      <%= f.submit "Submit", class:'button green-button' %>
+    </div>
   </div>
 <% end %>
