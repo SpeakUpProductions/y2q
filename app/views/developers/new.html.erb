@@ -1,0 +1,26 @@
+<div class="row">
+<div class="medium-12 columns text-center about-container">
+  <p>
+   Y2Q is a collaboration between Speak Up Productions, a film production company making films about what matters, and programmers looking for a way to do what makes them come alive, developing original sites. We are asking developers to donate their Time & Talent to this cause. The site is a being designed in Ruby on Rails.  
+  </p>  
+  <p>
+    Interested? Give us your contact info and someone on the team will follow up with you:
+  </p>
+</div> 
+</div>
+<%= form_for developer do |f| %>
+  <div class="row">
+     <div class="small-12 medium-4 columns">
+        <%= f.label :name, :class=>"form-label" %>
+     </div>
+     <div class="small-12 medium-5 columns left">
+        <%= f.text_field :name %>
+     </div>
+     <div class="small-12 medium-4 columns">
+        <%= f.label :email, :class=>"form-label" %>
+     </div>
+     <div class="small-12 medium-5 columns left">
+        <%= f.text_field :email %>
+     </div>
+  </div>
+<% end %>
