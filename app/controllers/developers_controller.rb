@@ -1,18 +1,18 @@
 class DevelopersController < ApplicationController
-  expose(:developer) 
-  expose(:message) 
+  expose(:developer) { Developer.new(developer_params) }
+  expose(:message)
+
   def new
-    self.developer = Developer.new
   end
+
   def create
-    developer = Developer.new(developer_params)
-    if developer.save
-      self.developer = developer
-    else
+    unless developer.save
       render :new
     end
   end
+
+  private
   def developer_params
-    params.require(:developer).permit(:name,:email,:comments)
+    params.fetch(:developer, {}).permit(:name,:email,:comments)
   end
 end
