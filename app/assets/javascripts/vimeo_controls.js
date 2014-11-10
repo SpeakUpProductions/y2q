@@ -9,11 +9,6 @@
         player.addEvent('finish', onFinish);
     });
 
-    // Call the API when a button is pressed
-    $('button').bind('click', function() {
-        player.api($(this).text().toLowerCase());
-    });
-
     function onFinish(id) {
       flexVideo.slideUp(1500, function() {
         flexVideo.remove();
