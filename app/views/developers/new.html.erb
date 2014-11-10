@@ -12,6 +12,17 @@
 <%= form_for developer do |f| %>
   <div class="row">
     <div class="small-11 medium-6 medium-offset-4 columns">
+      <% if developer.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(developer.errors.count, "error") %> prohibited this model from being saved:</h2>
+
+          <ul>
+            <% developer.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
       <div class="row">
         <div class="small-12 medium-2 columns">
         <%= f.label :name, :class=>"form-label" %>
@@ -33,7 +44,7 @@
         <%= f.label :comments, :class=>"form-label" %>
         </div>
         <div class="small-12 medium-5 columns left">
-        <%= f.text_area :comments %>
+        <%= f.text_area :comments, maxlength: 500 %>
         </div>
       </div>
     </div>
