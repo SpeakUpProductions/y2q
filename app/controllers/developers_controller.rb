@@ -7,7 +7,6 @@ class DevelopersController < ApplicationController
   def create
     developer = Developer.new(developer_params)
     if developer.save
-      DeveloperNotifier.send_email(developer).deliver
       self.developer = developer
     else
       render :new
