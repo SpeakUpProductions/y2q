@@ -1,0 +1,57 @@
+<div class="row">
+<div class="medium-8 medium-offset-2 columns text-center about-container">
+  <h2>Join the cause</h2>
+  <p>
+   Y2Q is a collaboration between Speak Up Productions, a film production company making films about what matters, and programmers looking for a way to do what makes them come alive, developing original sites. We are asking developers to donate their Time & Talent to this cause. The site is a being designed in Ruby on Rails.
+  </p>
+  <p>
+    Interested? Give us your contact info and someone on the team will follow up with you:
+  </p>
+</div>
+</div>
+<%= form_for developer do |f| %>
+  <div class="row">
+    <div class="small-11 medium-6 medium-offset-3 columns">
+      <% if developer.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(developer.errors.count, "error") %> prohibited this model from being saved:</h2>
+
+          <ul>
+            <% developer.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="row">
+        <div class="small-12 medium-2 columns">
+        <%= f.label :name, :class=>"form-label" %>
+        </div>
+        <div class="small-12 medium-5 columns left">
+        <%= f.text_field :name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 medium-2 columns">
+        <%= f.label :email, :class=>"form-label" %>
+        </div>
+        <div class="small-12 medium-5 columns left">
+        <%= f.text_field :email %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 medium-2 columns">
+        <%= f.label :comments, :class=>"form-label" %>
+        </div>
+        <div class="small-12 medium-10 columns">
+        <%= f.text_area :comments, maxlength: 500 %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 columns">
+          <%= f.submit "Submit", class:'button green-button right' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

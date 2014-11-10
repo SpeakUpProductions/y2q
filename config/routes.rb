@@ -6,6 +6,7 @@ Y2q::Application.routes.draw do
   get "videos/filtered", as: 'filtered_videos'
   get "instructions", as: :instructions, to: 'instructions#show'
   resources :videos
+  resources :developers
   resource :profile, only: ['edit', 'show', 'update'], as: 'current_profile' do
     get "videos", to: "videos#current_user_index", as: "current_user_videos"
   end
