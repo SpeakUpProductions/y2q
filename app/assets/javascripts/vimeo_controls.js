@@ -1,60 +1,18 @@
 (function() {
-  function attachVimeoHandlers(iframe) {
-    var url = iframe.attr('src').split('?')[0];
+  $(function(){
+    var iframe = $('#home_video')[0];
+    var player = $f(iframe);
+    var flexVideo = $('.flex-video.vimeo');
 
-    // Listen for messages from the player
-    if (window.addEventListener){
-      window.addEventListener('message', onMessageReceived, false);
-    }
-    else {
-      window.attachEvent('onmessage', onMessageReceived, false);
-    }
+    // When the player is ready, add listeners
+    player.addEvent('ready', function() {
+        player.addEvent('finish', onFinish);
+    });
 
-    // Handle messages received from the player
-    function onMessageReceived(e) {
-      var data = JSON.parse(e.data);
-
-      switch (data.event) {
-          case 'ready':
-              onReady();
-              break;
-
-          case 'finish':
-              onFinish();
-              break;
-      }
-    }
-
-    // Helper function for sending a message to the player
-    function post(action, value) {
-      var data = { method: action };
-
-      if (value) {
-          data.value = value;
-      }
-
-      iframe.each(function(){
-        var sData = JSON.stringify(data);
-        this.contentWindow.postMessage(sData, url);
-      });
-    }
-
-    function onReady() {
-      post('addEventListener', 'finish');
-    }
-
-    function onFinish() {
-
-      var flexVideo = $('.flex-video.vimeo')
+    function onFinish(id) {
       flexVideo.slideUp(1500, function() {
         flexVideo.remove();
       });
     }
-
-  }
-
-  $(function(){
-    var iframe = $('iframe#home_video');
-    if (iframe.length > 0) attachVimeoHandlers(iframe);
   })
 }())
