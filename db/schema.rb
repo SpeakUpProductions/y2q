@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20141012022608) do
   create_table "developers", force: true do |t|
     t.string "name"
     t.string "email"
-    t.string "comments"
+    t.text   "comments"
   end
 
   create_table "heartbreaks", force: true do |t|

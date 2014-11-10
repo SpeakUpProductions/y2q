@@ -3,7 +3,7 @@ class CreateDevelopers < ActiveRecord::Migration
     create_table :developers do |t|
       t.string :name
       t.string :email
-      t.string :comments
+      t.text :comments
     end
   end
 end
