@@ -4,7 +4,7 @@
     var player = $f(iframe);
     var flexVideo = $('.flex-video.vimeo');
 
-    // When the player is ready, add listeners for pause, finish, and playProgress
+    // When the player is ready, add listeners
     player.addEvent('ready', function() {
         player.addEvent('finish', onFinish);
     });
