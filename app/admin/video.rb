@@ -1,6 +1,7 @@
 ActiveAdmin.register Video do
   scope :unapproved
   scope :approved
+  scope :disapproved
   scope :all
 
   # See permitted parameters documentation:
@@ -30,6 +31,12 @@ ActiveAdmin.register Video do
 
     end
     f.actions
+  end
+
+  member_action :disapprove, :method => :post do
+    video = Video.find params[:id]
+    video.disapprove!
+    redirect_to admin_videos_path(scope: 'disapproved')
   end
 
   member_action :approve, :method => :post do
