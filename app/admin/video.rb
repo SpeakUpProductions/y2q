@@ -1,6 +1,7 @@
 ActiveAdmin.register Video do
   scope :unapproved
   scope :approved
+  scope :disapproved
   scope :all
 
   # See permitted parameters documentation:
@@ -32,10 +33,16 @@ ActiveAdmin.register Video do
     f.actions
   end
 
+  member_action :disapprove, :method => :post do
+    video = Video.find params[:id]
+    video.disapprove!
+    redirect_to admin_videos_path(scope: referer_params["scope"])
+  end
+
   member_action :approve, :method => :post do
     video = Video.find params[:id]
     video.approve!
-    redirect_to admin_videos_path(scope: 'unapproved')
+    redirect_to admin_videos_path(scope: referer_params["scope"])
   end
 
   index :as => :block do |video|
@@ -43,6 +50,12 @@ ActiveAdmin.register Video do
       render "index_video", video: video
       div do
       end
+    end
+  end
+
+  controller do
+    def referer_params
+      Rack::Utils.parse_query URI(request.referer).query
     end
   end
 end

@@ -5,8 +5,11 @@
       <% videos.each do |v| %>
         <div class="video-item <%= get_num_matches(v.inspiration.id, v.heartbreak.id, i_filter, hb_filter) > 1 ? 'width2 height2' : '' %>" data-heartbreak-id="<%= v.heartbreak.id %>" data-inspiration-id="<%= v.inspiration.id %>">
       <%= link_to video_base_action.call(v.id), { class: 'video-link' } do %>
-        <% if !v.approved %>
-          <span class="awaiting-approval">Awaiting Approval</span>
+        <% if !v.approved && !v.disapproved %>
+          <span class="video-tag awaiting-approval">Awaiting Approval</span>
+        <% end %>
+        <% if v.disapproved %>
+          <span class="video-tag disapproved">Disapproved</span>
         <% end %>
         <div class="thumbnail-wrapper">
           <%= image_tag v.thumbnail_url.blank? ? "video-placeholder-large.jpg" : v.thumbnail_url, class: "video-ss", data: { id: v.id } %>
