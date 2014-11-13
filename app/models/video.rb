@@ -8,9 +8,12 @@ class Video < ActiveRecord::Base
     update_attribute(:approved, true)
   end
 
-  def disapprove!
-    update_attribute(:disapproved, true)
-    update_attribute(:approved, false)
+  def disapprove!(reason)
+    update_attributes({
+      disapproved: true,
+      disapproval_reason: reason,
+      approved: false
+    })
   end
 
   def self.unapproved

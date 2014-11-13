@@ -35,7 +35,8 @@ ActiveAdmin.register Video do
 
   member_action :disapprove, :method => :post do
     video = Video.find params[:id]
-    video.disapprove!
+    debugger
+    video.disapprove! reason
     redirect_to admin_videos_path(scope: referer_params["scope"])
   end
 
@@ -56,6 +57,10 @@ ActiveAdmin.register Video do
   controller do
     def referer_params
       Rack::Utils.parse_query URI(request.referer).query
+    end
+
+    def reason
+      params.require(:disapproval_reason)
     end
   end
 end
