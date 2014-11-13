@@ -2,7 +2,7 @@
 //= require jquery
 
 $(function() {
-  $('a:contains("Disapprove")').click(function(e) {
+  $('form a:contains("Disapprove")').click(function(e) {
     e.preventDefault()
 
     reason = prompt("Please enter a reason for disapproving this video:")
