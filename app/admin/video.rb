@@ -35,7 +35,6 @@ ActiveAdmin.register Video do
 
   member_action :disapprove, :method => :post do
     video = Video.find params[:id]
-    debugger
     video.disapprove! reason
     redirect_to admin_videos_path(scope: referer_params["scope"])
   end
