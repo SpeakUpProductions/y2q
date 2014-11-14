@@ -14,7 +14,7 @@
     <%= form_tag(disapprove_admin_video_path(video.id), method: :post) do |f| %>
       <%= hidden_field_tag "disapproval_reason" %>
       <%= submit_tag "Submit", style: "display:none" %>
-      <%= link_to "Disapprove", {:action => 'disapprove', :id => video }, method: :post %>
+      <%= link_to "Disapprove", "/" %>
     <% end %>
   </div>
 <% end %>
