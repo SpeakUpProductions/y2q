@@ -10,11 +10,9 @@
         <% end %>
         <% if v.disapproved %>
           <span class="video-tag disapproved">Disapproved
-            <% unless v.disapproval_reason.blank? %>
-              <span data-tooltip class="has-tip" title="Reason for Disapproval: <%= v.disapproval_reason %>">
-                <i class="fa fa-info-circle"></i>
-              </span>
-            <% end %>
+            <span data-tooltip class="has-tip" title="Reason for Disapproval: <%= v.disapproval_reason || "[No reason given]" %>">
+              <i class="fa fa-info-circle"></i>
+            </span>
           </span>
         <% end %>
         <div class="thumbnail-wrapper">
