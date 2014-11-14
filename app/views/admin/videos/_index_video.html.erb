@@ -9,6 +9,12 @@
   <span class="heartbreak"><%= video.heartbreak.display_text %></span>
   <%= image_tag "heartbeat-18x18.png" %>
   <span class="inspiration"><%= video.inspiration.display_text %></span>
+<% if video.disapproved %>
+  <div>
+    <strong>Reason for Disapproval:</strong>
+    <%= video.disapproval_reason || "[No reason given]" %>
+  </div>
+<% end %>
 <% unless video.disapproved %>
   <div>
     <%= form_tag(disapprove_admin_video_path(video.id), method: :post) do |f| %>
