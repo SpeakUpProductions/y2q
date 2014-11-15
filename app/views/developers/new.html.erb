@@ -17,10 +17,7 @@
         <%= f.label :name, :class=>"form-label" %>
         </div>
         <div class="small-12 medium-5 columns left">
-          <%= f.text_field :name, class: ('error' if developer.errors[:name].any?) %>
-          <% if developer.errors[:name].any? %>
-            <small class="error"><%= developer.errors[:name].first %></small>
-          <% end %>
+          <%= render 'components/input', form: f, attribute: :name, type: "text_field", model: developer %>
         </div>
       </div>
       <div class="row">
@@ -28,10 +25,7 @@
         <%= f.label :email, :class=>"form-label" %>
         </div>
         <div class="small-12 medium-5 columns left">
-          <%= f.text_field :email, class: ('error' if developer.errors[:email].any?) %>
-          <% if developer.errors[:email].any? %>
-            <small class="error"><%= developer.errors[:email].first %></small>
-          <% end %>
+          <%= render 'components/input', form: f, attribute: :email, type: "email_field", model: developer %>
         </div>
       </div>
       <div class="row">
@@ -39,10 +33,7 @@
         <%= f.label :comments, :class=>"form-label" %>
         </div>
         <div class="small-12 medium-10 columns">
-          <%= f.text_area :comments, maxlenght: 500, class: ('error' if developer.errors[:comments].any?) %>
-          <% if developer.errors[:comments].any? %>
-            <small class="error"><%= developer.errors[:comments].first %></small>
-          <% end %>
+          <%= render 'components/input', form: f, attribute: :comments, type: "text_area", model: developer, options: { maxlength: 500 } %>
         </div>
       </div>
       <div class="row">
