@@ -12,23 +12,15 @@
 <%= form_for developer do |f| %>
   <div class="row">
     <div class="small-11 medium-6 medium-offset-3 columns">
-      <% if developer.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(developer.errors.count, "error") %> prohibited this model from being saved:</h2>
-
-          <ul>
-            <% developer.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
       <div class="row">
         <div class="small-12 medium-2 columns">
         <%= f.label :name, :class=>"form-label" %>
         </div>
         <div class="small-12 medium-5 columns left">
-        <%= f.text_field :name %>
+          <%= f.text_field :name, class: ('error' if developer.errors[:name].any?) %>
+          <% if developer.errors[:name].any? %>
+            <small class="error"><%= developer.errors[:name].first %></small>
+          <% end %>
         </div>
       </div>
       <div class="row">
@@ -36,7 +28,10 @@
         <%= f.label :email, :class=>"form-label" %>
         </div>
         <div class="small-12 medium-5 columns left">
-        <%= f.text_field :email %>
+          <%= f.text_field :email, class: ('error' if developer.errors[:email].any?) %>
+          <% if developer.errors[:email].any? %>
+            <small class="error"><%= developer.errors[:email].first %></small>
+          <% end %>
         </div>
       </div>
       <div class="row">
@@ -44,7 +39,10 @@
         <%= f.label :comments, :class=>"form-label" %>
         </div>
         <div class="small-12 medium-10 columns">
-        <%= f.text_area :comments, maxlength: 500 %>
+          <%= f.text_area :comments, maxlenght: 500, class: ('error' if developer.errors[:comments].any?) %>
+          <% if developer.errors[:comments].any? %>
+            <small class="error"><%= developer.errors[:comments].first %></small>
+          <% end %>
         </div>
       </div>
       <div class="row">
