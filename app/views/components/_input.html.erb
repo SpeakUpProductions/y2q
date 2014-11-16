@@ -1,0 +1,11 @@
+<% html_attrs = { class: ('error' if model.errors[attribute].any?)}.merge(options ||= {}) %>
+
+<%= form.send type, attribute, html_attrs %>
+<% if model.errors[attribute].any? %>
+  <small class="error">
+    <%= model.errors[attribute].first %>
+  </small>
+<% end %>
+
+
+
