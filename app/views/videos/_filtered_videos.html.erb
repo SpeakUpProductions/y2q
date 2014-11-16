@@ -9,7 +9,11 @@
           <span class="video-tag awaiting-approval">Awaiting Approval</span>
         <% end %>
         <% if v.disapproved %>
-          <span class="video-tag disapproved">Disapproved</span>
+          <span class="video-tag disapproved">Disapproved
+            <span data-tooltip class="has-tip" title="Reason for Disapproval: <%= v.disapproval_reason || "[No reason given]" %>">
+              <i class="fa fa-info-circle"></i>
+            </span>
+          </span>
         <% end %>
         <div class="thumbnail-wrapper">
           <%= image_tag v.thumbnail_url.blank? ? "video-placeholder-large.jpg" : v.thumbnail_url, class: "video-ss", data: { id: v.id } %>

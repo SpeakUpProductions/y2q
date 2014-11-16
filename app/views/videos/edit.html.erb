@@ -6,6 +6,15 @@
       </label>
   </div>
 </div>
+<% if video.disapproved %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div>
+        <strong>Reason for Disapproval:</strong> <%= video.disapproval_reason || "[No reason given]" %>
+      </div>
+    </div>
+  </div>
+<% end %>
 <div class="row">
   <div class="large-12 columns">
     <iframe src="<%=get_embed_src_no_options(video.embed_url)%>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
