@@ -13,7 +13,7 @@ gem 'decent_exposure', '~>2.3'
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
   gem 'dotenv-rails'
-  gem 'debugger'
+  gem 'byebug'
 end
 
 group :test do
