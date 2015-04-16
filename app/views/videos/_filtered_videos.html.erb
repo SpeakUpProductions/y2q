@@ -2,37 +2,37 @@
 <div class="isotope js-isotope" data-isotope-options='{ "itemSelector": ".video-item", "masonry": { "columnWidth": 253, "gutter": 20 } }'>
   <div class="grid-sizer"></div>
   <% if videos.length > 0 %>
-      <% videos.each do |v| %>
-        <div class="video-item <%= get_num_matches(v.inspiration.id, v.heartbreak.id, i_filter, hb_filter) > 1 ? 'width2 height2' : '' %>" data-heartbreak-id="<%= v.heartbreak.id %>" data-inspiration-id="<%= v.inspiration.id %>">
-      <%= link_to video_base_action.call(v.id), { class: 'video-link' } do %>
-        <% if !v.approved && !v.disapproved %>
-          <span class="video-tag awaiting-approval">Awaiting Approval</span>
-        <% end %>
-        <% if v.disapproved %>
-          <span class="video-tag disapproved">Disapproved
-            <span data-tooltip class="has-tip" title="Reason for Disapproval: <%= v.disapproval_reason || "[No reason given]" %>">
-              <i class="fa fa-info-circle"></i>
+    <% videos.each do |v| %>
+      <div class="video-item <%= get_num_matches(v.inspiration.id, v.heartbreak.id, i_filter, hb_filter) > 1 ? 'width2 height2' : '' %>" data-heartbreak-id="<%= v.heartbreak.id %>" data-inspiration-id="<%= v.inspiration.id %>">
+        <%= link_to video_base_action.call(v.id), { class: 'video-link' } do %>
+          <% if !v.approved && !v.disapproved %>
+            <span class="video-tag awaiting-approval">Awaiting Approval</span>
+          <% end %>
+          <% if v.disapproved %>
+            <span class="video-tag disapproved">Disapproved
+              <span data-tooltip class="has-tip" title="Reason for Disapproval: <%= v.disapproval_reason || "[No reason given]" %>">
+                <i class="fa fa-info-circle"></i>
+              </span>
             </span>
-          </span>
+          <% end %>
+          <div class="thumbnail-wrapper">
+            <%= image_tag v.thumbnail_url.blank? ? "video-placeholder-large.jpg" : v.thumbnail_url, class: "video-ss", data: { id: v.id } %>
+          </div>
+          <%= image_tag "brokenheart-18x18.png" %>
+          <span class="heartbreak"><%= v.heartbreak.display_text %></span>
+          <%= image_tag "heartbeat-18x18.png" %>
+          <span class="inspiration"><%= v.inspiration.display_text %></span>
         <% end %>
-        <div class="thumbnail-wrapper">
-          <%= image_tag v.thumbnail_url.blank? ? "video-placeholder-large.jpg" : v.thumbnail_url, class: "video-ss", data: { id: v.id } %>
-        </div>
-        <%= image_tag "brokenheart-18x18.png" %>
-        <span class="heartbreak"><%= v.heartbreak.display_text %></span>
-        <%= image_tag "heartbeat-18x18.png" %>
-        <span class="inspiration"><%= v.inspiration.display_text %></span>
-      <% end %>
-        </div>
-      <% end %>
+      </div>
+    <% end %>
   <% else %>
     <div class="panel empty-video-message text-center">
-        <h5>
-          There are currently no videos that match your criteria.
-        </h5>
-        <p>
-           Please choose another selection.
-        </p>
+      <h5>
+        There are currently no videos that match your criteria.
+      </h5>
+      <p>
+      Please choose another selection.
+      </p>
     </div>
   <% end %>
   </div>
